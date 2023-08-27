@@ -2,9 +2,21 @@
 
 import { Bar, BarChart, Tooltip, Legend, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
-export function SBChart({ data, xaxis, yaxis }) {
+type DataEntry = {
+  MONTH: string;
+  CHAIN: string;
+  [key: string]: string | number;
+};
 
-  const transformData = (data) => {
+interface SBChartProps {
+  data: DataEntry[];
+  xaxis: string;
+  yaxis: string;
+}
+
+export function SBChart({ data, xaxis, yaxis }: SBChartProps) {
+
+  const transformData = (data: DataEntry[]) => {
     const transformed = {};
 
     data.forEach((entry) => {

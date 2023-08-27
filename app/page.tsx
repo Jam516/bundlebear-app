@@ -3,7 +3,6 @@
 import type { NextPage } from "next";
 import React, { useState, useEffect } from 'react';
 import { Metadata } from "next";
-import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -11,11 +10,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/new-york-ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/new-york-ui/tabs";
-import { MainNav } from "@/components/main-nav";
+import { Tabs, TabsList, TabsTrigger } from "@/new-york-ui/tabs";
 import { BChart } from "@/components/bar-chart";
 import { SBChart } from "@/components/stacked-bar";
-import { Logo } from "@/components/site-logo";
 import { StatCard } from "@/components/stat-card";
 
 export const metadata: Metadata = {
@@ -23,7 +20,21 @@ export const metadata: Metadata = {
   description: "A dashboard tracking the adoption of ERC-4337 smart accounts.",
 };
 
-function TabContent({ data, isLoading, error, chain }) {
+interface TabContentProps {
+  data: {
+    deployments: { NUM_DEPLOYMENTS: number }[],
+    userops: { NUM_USEROPS: number }[],
+    transactions: { NUM_TXNS: number }[],
+    monthly_active_accounts: any[],
+    monthly_userops: any[],
+    monthly_paymaster_spend: any[],
+  };
+  isLoading: boolean;
+  error: string | null;
+  chain: 'all' | string;
+}
+
+function TabContent({ data, isLoading, error, chain }: TabContentProps) {
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error : {error}</p>;
 
