@@ -5,7 +5,7 @@ module.exports = {
   darkMode: ["class"],
   purge: {
     content: [
-      "pages/**/*.{ts,tsx}",
+      "app/**/*.{ts,tsx}",
       "components/**/*.{ts,tsx}",
       "lib/**/*.{ts,tsx}",
     ],
