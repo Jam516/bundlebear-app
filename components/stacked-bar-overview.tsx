@@ -1,6 +1,7 @@
 "use client";
 
 import { Bar, BarChart, Tooltip, Legend, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import moment from 'moment';
 
 type DataEntry = {
   MONTH: string;
@@ -26,9 +27,10 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
     const transformed: { [date: string]: TransformedEntry } = {};
 
     data.forEach((entry) => {
-      if (!transformed[entry.DATE]) {
-        transformed[entry.DATE] = {
-          DATE: entry.DATE
+      const formattedDate = moment(entry.DATE, 'YYYY-MM-DD').format('DD-MMM-YYYY').toUpperCase();
+      if (!transformed[formattedDate]) {
+        transformed[formattedDate] = {
+          DATE: formattedDate
         };
       }
 
