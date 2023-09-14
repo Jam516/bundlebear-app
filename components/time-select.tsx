@@ -16,7 +16,7 @@ export function TimeSelect() {
     const pathname = usePathname();
     const [activeTab, setActiveTab] = useState("week");
 
-    const handleSelect = (newValue) => {
+    const handleSelect = (newValue: string) => {
         const segments = pathname.split("/");
         const pathcore = segments.slice(0, 3).join('/');
         return router.push(`${pathcore}/${newValue}`);
