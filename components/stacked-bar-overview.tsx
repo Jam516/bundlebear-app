@@ -4,7 +4,7 @@ import { Bar, BarChart, Tooltip, Legend, ResponsiveContainer, XAxis, YAxis } fro
 import moment from 'moment';
 
 type DataEntry = {
-  MONTH: string;
+  DATE: string;
   CHAIN: string;
   [key: string]: string | number;
 };
@@ -34,7 +34,7 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         };
       }
 
-      transformed[entry.DATE][entry[segment]] = entry[yaxis];
+      transformed[formattedDate][entry[segment]] = entry[yaxis];
     });
 
     return Object.values(transformed);
