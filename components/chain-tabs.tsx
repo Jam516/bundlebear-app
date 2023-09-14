@@ -1,17 +1,28 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation'
 import { Tabs, TabsList, TabsTrigger } from "@/new-york-ui/tabs";
+// import { useParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 export function ChainTabs() {
+    const router = useRouter();
+    const pathname = usePathname();
+    const [activeTab, setActiveTab] = useState("all");
 
-    const [currentChain, setCurrentChain] = useState("all");
     const handleTabChange = (newValue) => {
-        setCurrentChain(newValue);
+        const segments = pathname.split("/");
+        return router.push(`/${segments[1]}/${newValue}`);
     };
 
+    useEffect(() => {
+        const segments = pathname.split("/");
+        setActiveTab(segments[2]);
+    }, [pathname]);
+
     return (
-        <Tabs defaultValue="all" className="space-y-4" onValueChange={handleTabChange}>
+        <Tabs defaultValue="all" className="space-y-4" onValueChange={handleTabChange} value={activeTab}>
             <TabsList>
                 <TabsTrigger value="all">Cross-chain</TabsTrigger>
                 <TabsTrigger value="polygon">Polygon</TabsTrigger>
