@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation'
 import { Tabs, TabsList, TabsTrigger } from "@/new-york-ui/tabs";
-// import { useParams } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 
 export function ChainTabs() {
@@ -11,7 +10,7 @@ export function ChainTabs() {
     const pathname = usePathname();
     const [activeTab, setActiveTab] = useState("all");
 
-    const handleTabChange = (newValue) => {
+    const handleTabChange = (newValue: string) => {
         const segments = pathname.split("/");
         return router.push(`/${segments[1]}/${newValue}`);
     };

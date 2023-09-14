@@ -16,10 +16,15 @@ interface SBChartProps {
   segment: string;
 }
 
+type TransformedEntry = {
+  DATE: string;
+  [key: string]: string | number;
+};
+
 export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
   const transformData = (data: DataEntry[]) => {
-    const transformed = {};
+    const transformed: { [date: string]: TransformedEntry } = {};
 
     data.forEach((entry) => {
       const formattedDate = moment(entry.DATE, 'YYYY-MM-DD').format('DD-MMM-YYYY').toUpperCase();
