@@ -59,7 +59,7 @@ export function MainNav({
         Account Deployers
       </Link>
       <Link
-        href="/applications"
+        href="/applications/all"
         className={cn(
           "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
           segments === "applications" ? "text-foreground" : "text-foreground/60"
