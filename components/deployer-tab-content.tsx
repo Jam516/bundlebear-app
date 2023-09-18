@@ -19,18 +19,27 @@ interface DeployerData {
 
 interface TabContentParams {
     data: DeployerData;
+    timeframe: string;
 }
 
-export function TabContent({ data }: TabContentParams) {
+export function TabContent({ data, timeframe }: TabContentParams) {
 
-    // console.log(data.leaderboard);
+    let titleparam: string = "Weekly";
+    if (timeframe === 'week') {
+        titleparam = 'Weekly';
+    } else if (timeframe === 'day') {
+        titleparam = 'Daily';
+    } else if (timeframe === 'month') {
+        titleparam = 'Monthly';
+    }
+
 
     return (
         <>
             <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Accounts Deployed</CardTitle>
+                        <CardTitle>{titleparam + " Accounts Deployed"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.deployments_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />

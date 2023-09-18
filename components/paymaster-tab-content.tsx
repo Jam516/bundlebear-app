@@ -20,18 +20,25 @@ interface PaymasterData {
 
 interface TabContentParams {
     data: PaymasterData;
+    timeframe: string;
 }
 
-export function TabContent({ data }: TabContentParams) {
-
-    // console.log(data.leaderboard);
+export function TabContent({ data, timeframe }: TabContentParams) {
+    let titleparam: string = "Weekly";
+    if (timeframe === 'week') {
+        titleparam = 'Weekly';
+    } else if (timeframe === 'day') {
+        titleparam = 'Daily';
+    } else if (timeframe === 'month') {
+        titleparam = 'Monthly';
+    }
 
     return (
         <>
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>UserOps Covered</CardTitle>
+                        <CardTitle>{titleparam + " UserOps Covered"}</CardTitle>
                         <CardDescription>UserOps paid for by paymaster</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -40,7 +47,7 @@ export function TabContent({ data }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>Gas Spend</CardTitle>
+                        <CardTitle>{titleparam + " Gas Spend"}</CardTitle>
                         <CardDescription>Amount spent by paymaster to cover UserOp gas fees</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">

@@ -20,18 +20,26 @@ interface BundlerData {
 
 interface TabContentParams {
     data: BundlerData;
+    timeframe: string;
 }
 
-export function TabContent({ data }: TabContentParams) {
+export function TabContent({ data, timeframe }: TabContentParams) {
 
-    // console.log(data.leaderboard);
+    let titleparam: string = "Weekly";
+    if (timeframe === 'week') {
+        titleparam = 'Weekly';
+    } else if (timeframe === 'day') {
+        titleparam = 'Daily';
+    } else if (timeframe === 'month') {
+        titleparam = 'Monthly';
+    }
 
     return (
         <>
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>UserOps Executed</CardTitle>
+                        <CardTitle>{titleparam + " UserOps Executed"}</CardTitle>
                         <CardDescription>UserOps executed by bundler</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -40,7 +48,7 @@ export function TabContent({ data }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>OnChain Revenue</CardTitle>
+                        <CardTitle>{titleparam + " OnChain Revenue"}</CardTitle>
                         <CardDescription>Revenue earned by charging a premium on UserOp gas</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">

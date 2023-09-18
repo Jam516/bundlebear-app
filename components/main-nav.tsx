@@ -4,6 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation"
 import { Logo } from "@/components/site-logo";
+import Image from 'next/image';
 
 export function MainNav({
   className,
@@ -18,7 +19,7 @@ export function MainNav({
       className={cn("flex items-center space-x-4 lg:space-x-6", className)}
       {...props}
     >
-      <Link href="/" className="mr-6 flex items-center space-x-2">
+      <Link href="/" className="flex items-center">
         <Logo />
       </Link>
       <Link
@@ -66,6 +67,25 @@ export function MainNav({
       >
         Applications
       </Link>
+      <Link
+        href="https://docs.google.com/spreadsheets/d/1QJEYDOr-AMD2bNAoupfjQJYJabFgdb2TRSyekdIfquM/edit#gid=0"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
+          segments === "applications" ? "text-foreground" : "text-foreground/60"
+        )}
+      >
+        Operator Registry
+      </Link>
+      <Link
+        href="https://docs.google.com/spreadsheets/d/1QJEYDOr-AMD2bNAoupfjQJYJabFgdb2TRSyekdIfquM/edit#gid=0"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
+          segments === "applications" ? "text-foreground" : "text-foreground/60"
+        )}
+      >
+        Sponsor
+      </Link>
+      {/* <img src="/support.png" alt="Supported by Allium and the Ethereum Foundation" className="h-8" /> */}
     </nav>
   );
 }

@@ -5,8 +5,7 @@ interface DeployerDataParams {
 
 interface DeployerData {
     leaderboard: any[],
-    userops_chart: any[],
-    spend_chart: any[],
+    deployments_chart: any[],
 }
 
 export async function getDeployerData({ chain, timeframe }: DeployerDataParams): Promise<DeployerData> {

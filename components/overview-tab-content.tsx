@@ -28,6 +28,15 @@ interface TabContentParams {
 
 export function TabContent({ data, chain, timeframe }: TabContentParams) {
 
+    let titleparam: string = "Weekly";
+    if (timeframe === 'week') {
+        titleparam = 'Weekly';
+    } else if (timeframe === 'day') {
+        titleparam = 'Daily';
+    } else if (timeframe === 'month') {
+        titleparam = 'Monthly';
+    }
+
     return (
         <>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -63,7 +72,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card className="col-span-2">
                     <CardHeader>
-                        <CardTitle>Active Smart Accounts</CardTitle>
+                        <CardTitle>{titleparam + " Active Smart Accounts"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} /> : <SBChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} />}
@@ -71,7 +80,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                 </Card>
                 <Card className="col-span-2">
                     <CardHeader>
-                        <CardTitle>Sucessful UserOps</CardTitle>
+                        <CardTitle>{titleparam + " Sucessful UserOps"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} /> : <SBChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} />}
@@ -81,7 +90,17 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card className="col-span-2">
                     <CardHeader>
-                        <CardTitle>Paymaster Gas Spend</CardTitle>
+                        <CardTitle>{titleparam + " Bundler Revenue"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        {chain != 'all' ? <BChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} /> : <SBChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"CHAIN"} />}
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                <Card className="col-span-2">
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Paymaster Gas Spend"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} /> : <SBChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"CHAIN"} />}

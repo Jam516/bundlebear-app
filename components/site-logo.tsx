@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export function Logo() {
   return (
-    <Avatar className="h-8 w-8">
-      <AvatarImage src="/bear_mini.png" alt="BundleBear" />
+    <Avatar className="h-8">
+      <AvatarImage src="/bblogo.png" alt="BundleBear" />
       <AvatarFallback>BundleBear</AvatarFallback>
     </Avatar>
   );
