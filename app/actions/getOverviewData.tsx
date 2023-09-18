@@ -15,7 +15,7 @@ interface ChainData {
 }
 
 export async function getOverviewData({ chain, timeframe }: OverviewDataParams): Promise<ChainData> {
-    const response = await fetch(`https://bundlebear-api.onrender.com/overview?chain=${chain}&timeframe=${timeframe}`);
+    const response = await fetch(`https://bundlebear-api.onrender.com/overview?chain=${chain}&timeframe=${timeframe}`, { next: { revalidate: 30 } });
 
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
