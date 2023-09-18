@@ -62,14 +62,14 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         />
         <Tooltip />
         <Legend />
-        <Bar dataKey="zerodev" stackId="a" fill="#adfa1d" />
-        <Bar dataKey="biconomy" stackId="a" fill="#ffc658" />
-        <Bar dataKey="blocto" stackId="a" fill="#ff5733" />
-        <Bar dataKey="safe" stackId="a" fill="#8884d8" />
-        <Bar dataKey="banana" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="fun.xyz" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="candide" stackId="a" fill="#3357ff" />
-        <Bar dataKey="Unknown" stackId="a" fill="#ff33ac" />
+        <Bar dataKey="zerodev" stackId="a" fill="#118AB2" />
+        <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
+        <Bar dataKey="candide" stackId="a" fill="#F5D491" />
+        <Bar dataKey="fun.xyz" stackId="a" fill="#3D3D3D" />
+        <Bar dataKey="Unknown" stackId="a" fill="#171717" />
+        <Bar dataKey="safe" stackId="a" fill="#2A9D8F" />
+        <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
+        <Bar dataKey="banana" stackId="a" fill="#FAC748" />
       </BarChart>
     </ResponsiveContainer>
   );

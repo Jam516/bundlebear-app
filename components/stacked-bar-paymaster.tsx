@@ -14,6 +14,7 @@ interface SBChartProps {
   xaxis: string;
   yaxis: string;
   segment: string;
+  usd: boolean;
 }
 
 type TransformedEntry = {
@@ -21,7 +22,7 @@ type TransformedEntry = {
   [key: string]: string | number;
 };
 
-export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
+export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
 
   const transformData = (data: DataEntry[]) => {
     const transformed: { [date: string]: TransformedEntry } = {};
@@ -58,18 +59,20 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `${value}`}
+          tickFormatter={(value) =>
+            usd ? `$${value.toLocaleString()}` : value.toLocaleString()
+          }
         />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pimlico" stackId="a" fill="#adfa1d" />
-        <Bar dataKey="stackup" stackId="a" fill="#8884d8" />
-        <Bar dataKey="alchemy" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="biconomy" stackId="a" fill="#ffc658" />
-        <Bar dataKey="blocto" stackId="a" fill="#ff5733" />
-        <Bar dataKey="pimlico erc-20" stackId="a" fill="#33ff57" />
-        <Bar dataKey="candide" stackId="a" fill="#3357ff" />
-        <Bar dataKey="Unknown" stackId="a" fill="#ff33ac" />
+        <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
+        <Bar dataKey="pimlico" stackId="a" fill="#F386FF" />
+        <Bar dataKey="pimlico erc-20" stackId="a" fill="#ED47FF" />
+        <Bar dataKey="stackup" stackId="a" fill="#1D2F6F" />
+        <Bar dataKey="candide" stackId="a" fill="#F5D491" />
+        <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
+        <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
+        <Bar dataKey="Unknown" stackId="a" fill="#171717" />
       </BarChart>
     </ResponsiveContainer>
   );

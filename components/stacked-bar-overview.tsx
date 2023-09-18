@@ -14,6 +14,7 @@ interface SBChartProps {
   xaxis: string;
   yaxis: string;
   segment: string;
+  usd: boolean;
 }
 
 type TransformedEntry = {
@@ -21,7 +22,7 @@ type TransformedEntry = {
   [key: string]: string | number;
 };
 
-export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
+export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
 
   const transformData = (data: DataEntry[]) => {
     const transformed: { [date: string]: TransformedEntry } = {};
@@ -57,14 +58,16 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `${value}`}
+          tickFormatter={(value) =>
+            usd ? `$${value.toLocaleString()}` : value.toLocaleString()
+          }
         />
         <Tooltip />
         <Legend />
-        <Bar dataKey="ethereum" stackId="a" fill="#adfa1d" />
-        <Bar dataKey="polygon" stackId="a" fill="#8884d8" />
-        <Bar dataKey="optimism" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="arbitrum" stackId="a" fill="#ffc658" />
+        <Bar dataKey="ethereum" stackId="a" fill="#333333" />
+        <Bar dataKey="polygon" stackId="a" fill="#A982ED" />
+        <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
+        <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
       </BarChart>
     </ResponsiveContainer>
   );

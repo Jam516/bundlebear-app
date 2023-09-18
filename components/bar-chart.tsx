@@ -8,9 +8,10 @@ interface BChartProps {
   }[];
   xaxis: string;
   yaxis: string;
+  usd: boolean;
 }
 
-export function BChart({ data, xaxis, yaxis }: BChartProps) {
+export function BChart({ data, xaxis, yaxis, usd }: BChartProps) {
   return (
     <ResponsiveContainer width="100%" height={350}>
       <BarChart data={data}>
@@ -26,10 +27,12 @@ export function BChart({ data, xaxis, yaxis }: BChartProps) {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `${value}`}
+          tickFormatter={(value) =>
+            usd ? `$${value.toLocaleString()}` : value.toLocaleString()
+          }
         />
         <Tooltip />
-        <Bar dataKey={yaxis} fill="#adfa1d" radius={[4, 4, 0, 0]} />
+        <Bar dataKey={yaxis} fill="#59adf6" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );

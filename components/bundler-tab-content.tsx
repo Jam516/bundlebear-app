@@ -43,7 +43,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                         <CardDescription>UserOps executed by bundler</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <SBChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} />
+                        <SBChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} usd={false} />
                     </CardContent>
                 </Card>
                 <Card>
@@ -52,7 +52,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                         <CardDescription>Revenue earned by charging a premium on UserOp gas</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <SBChart data={data.revenue_chart} xaxis={"DATE"} yaxis={"REVENUE"} segment={"BUNDLER_NAME"} />
+                        <SBChart data={data.revenue_chart} xaxis={"DATE"} yaxis={"REVENUE"} segment={"BUNDLER_NAME"} usd={true} />
                     </CardContent>
                 </Card>
             </div>

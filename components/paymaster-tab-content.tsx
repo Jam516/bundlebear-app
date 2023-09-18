@@ -42,7 +42,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                         <CardDescription>UserOps paid for by paymaster</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <SBChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"PAYMASTER_NAME"} />
+                        <SBChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"PAYMASTER_NAME"} usd={false} />
                     </CardContent>
                 </Card>
                 <Card>
@@ -51,7 +51,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                         <CardDescription>Amount spent by paymaster to cover UserOp gas fees</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <SBChart data={data.spend_chart} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"PAYMASTER_NAME"} />
+                        <SBChart data={data.spend_chart} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"PAYMASTER_NAME"} usd={true} />
                     </CardContent>
                 </Card>
             </div>

@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="mt-4 flex flex-row gap-20">
           <div>
             <p className="mb-4 text-center text-base font-semibold uppercase text-muted-foreground">
-              Data Infrastructure Partners
+              Powered By
             </p>
             <a
               className="flex items-center justify-center"
@@ -19,7 +19,7 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="mb-4 text-center text-base font-semibold uppercase text-muted-foreground">
-              Enterprise Sponsors
+              Sponsored By
             </p>
             <a
               className="flex items-center justify-center"

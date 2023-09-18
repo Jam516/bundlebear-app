@@ -7,9 +7,11 @@ interface ChainData {
     deployments: { NUM_DEPLOYMENTS: number }[],
     userops: { NUM_USEROPS: number }[],
     transactions: { NUM_TXNS: number }[],
+    paymaster_spend: { GAS_SPENT: number }[],
     monthly_active_accounts: any[],
     monthly_userops: any[],
     monthly_paymaster_spend: any[],
+    monthly_bundler_revenue: any[],
 }
 
 export async function getOverviewData({ chain, timeframe }: OverviewDataParams): Promise<ChainData> {

@@ -59,7 +59,7 @@ export function MainNav({
         Account Deployers
       </Link>
       <Link
-        href="/applications/all"
+        href="/applications"
         className={cn(
           "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
           segments === "applications" ? "text-foreground" : "text-foreground/60"
@@ -75,15 +75,6 @@ export function MainNav({
         )}
       >
         Operator Registry
-      </Link>
-      <Link
-        href="https://docs.google.com/spreadsheets/d/1QJEYDOr-AMD2bNAoupfjQJYJabFgdb2TRSyekdIfquM/edit#gid=0"
-        className={cn(
-          "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
-          segments === "applications" ? "text-foreground" : "text-foreground/60"
-        )}
-      >
-        Sponsor
       </Link>
       {/* <img src="/support.png" alt="Supported by Allium and the Ethereum Foundation" className="h-8" /> */}
     </nav>
