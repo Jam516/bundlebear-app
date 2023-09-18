@@ -65,7 +65,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pimlico" stackId="a" fill="#F386FF" />
+        <Bar dataKey="pimlico" stackId="a" fill="#7115AA" />
         <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
         <Bar dataKey="etherspot" stackId="a" fill="#FAC748" />
         <Bar dataKey="stackup" stackId="a" fill="#1D2F6F" />

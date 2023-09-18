@@ -66,8 +66,8 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Tooltip />
         <Legend />
         <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
-        <Bar dataKey="pimlico" stackId="a" fill="#F386FF" />
-        <Bar dataKey="pimlico erc-20" stackId="a" fill="#ED47FF" />
+        <Bar dataKey="pimlico" stackId="a" fill="#7115AA" />
+        <Bar dataKey="pimlico erc-20" stackId="a" fill="#F386FF" />
         <Bar dataKey="stackup" stackId="a" fill="#1D2F6F" />
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
