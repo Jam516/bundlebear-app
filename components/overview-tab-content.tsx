@@ -10,6 +10,7 @@ import {
 import { BChart } from "@/components/bar-chart";
 import { SBChart } from "@/components/stacked-bar-overview";
 import { StatCard } from "@/components/stat-card";
+import { MSChart } from "@/components/marketshare-bar-overview";
 
 interface ChainData {
     deployments: { NUM_DEPLOYMENTS: number }[],
@@ -82,10 +83,29 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                 </Card>
                 <Card className="col-span-2">
                     <CardHeader>
+                        <CardTitle>{titleparam + " Active Smart Accounts Marketshare"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        {chain != 'all' ? <BChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} usd={false} /> : <MSChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} />}
+                    </CardContent>
+                </Card>
+
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                <Card className="col-span-2">
+                    <CardHeader>
                         <CardTitle>{titleparam + " Sucessful UserOps"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} usd={false} /> : <SBChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} usd={false} />}
+                    </CardContent>
+                </Card>
+                <Card className="col-span-2">
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Sucessful UserOps Marketshare"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        {chain != 'all' ? <BChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} usd={false} /> : <MSChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} />}
                     </CardContent>
                 </Card>
             </div>
