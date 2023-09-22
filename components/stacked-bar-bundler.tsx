@@ -65,6 +65,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         />
         <Tooltip />
         <Legend />
+        {/* <ReferenceLine y={0} stroke="#000" /> */}
         <Bar dataKey="pimlico" stackId="a" fill="#7115AA" />
         <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
         <Bar dataKey="etherspot" stackId="a" fill="#FAC748" />
@@ -72,7 +73,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Bar dataKey="unipass" stackId="a" fill="#B6D6CC" />
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
-        <Bar dataKey="Unknown" stackId="a" fill="#171717" />
+        <Bar dataKey="Unknown" stackId="a" fill="#707070" />
       </BarChart>
     </ResponsiveContainer>
   );

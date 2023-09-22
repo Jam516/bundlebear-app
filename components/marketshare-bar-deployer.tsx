@@ -21,7 +21,15 @@ type TransformedEntry = {
   [key: string]: string | number;
 };
 
-export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
+const toPercent = (decimal: number) => `${(decimal * 100).toLocaleString()}%`;
+
+const getPercent = (value: number, total: number) => {
+  const ratio = total > 0 ? value / total : 0;
+
+  return toPercent(ratio);
+};
+
+export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
   const transformData = (data: DataEntry[]) => {
     const transformed: { [date: string]: TransformedEntry } = {};
@@ -45,7 +53,11 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
   return (
     <ResponsiveContainer width="100%" height={350}>
-      <BarChart data={transformedData}>
+      <BarChart
+        data={transformedData}
+        stackOffset="expand"
+        barCategoryGap={0}
+      >
         <XAxis
           dataKey={xaxis}
           stroke="#888888"
@@ -58,9 +70,19 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `${value}`}
+          tickFormatter={toPercent}
         />
-        <Tooltip />
+        <Tooltip
+          formatter={(value: number, name, entry) => {
+            // Calculate the total value for the current group
+            const total = Object.keys(entry.payload)
+              .filter(key => key !== 'DATE' && key !== xaxis)
+              .reduce((acc, key) => acc + (entry.payload[key] || 0), 0);
+
+            // Return the formatted percentage
+            return getPercent(value, total);
+          }}
+        />
         <Legend />
         <Bar dataKey="zerodev" stackId="a" fill="#118AB2" />
         <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />

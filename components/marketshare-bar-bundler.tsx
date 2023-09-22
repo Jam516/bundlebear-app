@@ -21,7 +21,15 @@ type TransformedEntry = {
   [key: string]: string | number;
 };
 
-export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
+const toPercent = (decimal: number) => `${(decimal * 100).toLocaleString()}%`;
+
+const getPercent = (value: number, total: number) => {
+  const ratio = total > 0 ? value / total : 0;
+
+  return toPercent(ratio);
+};
+
+export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
   const transformData = (data: DataEntry[]) => {
     const transformed: { [date: string]: TransformedEntry } = {};
@@ -45,7 +53,11 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
   return (
     <ResponsiveContainer width="100%" height={350}>
-      <BarChart data={transformedData}>
+      <BarChart
+        data={transformedData}
+        stackOffset="expand"
+        barCategoryGap={0}
+      >
         <XAxis
           dataKey={xaxis}
           stroke="#888888"
@@ -58,18 +70,29 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `${value}`}
+          tickFormatter={toPercent}
         />
-        <Tooltip />
+        <Tooltip
+          formatter={(value: number, name, entry) => {
+            // Calculate the total value for the current group
+            const total = Object.keys(entry.payload)
+              .filter(key => key !== 'DATE' && key !== xaxis)
+              .reduce((acc, key) => acc + (entry.payload[key] || 0), 0);
+
+            // Return the formatted percentage
+            return getPercent(value, total);
+          }}
+        />
         <Legend />
-        <Bar dataKey="zerodev" stackId="a" fill="#118AB2" />
-        <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
+        {/* <ReferenceLine y={0} stroke="#000" /> */}
+        <Bar dataKey="pimlico" stackId="a" fill="#7115AA" />
+        <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
+        <Bar dataKey="etherspot" stackId="a" fill="#FAC748" />
+        <Bar dataKey="stackup" stackId="a" fill="#1D2F6F" />
+        <Bar dataKey="unipass" stackId="a" fill="#B6D6CC" />
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
-        <Bar dataKey="fun.xyz" stackId="a" fill="#3D3D3D" />
-        <Bar dataKey="Unknown" stackId="a" fill="#707070" />
-        <Bar dataKey="safe" stackId="a" fill="#2A9D8F" />
         <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
-        <Bar dataKey="banana" stackId="a" fill="#FAC748" />
+        <Bar dataKey="Unknown" stackId="a" fill="#707070" />
       </BarChart>
     </ResponsiveContainer>
   );

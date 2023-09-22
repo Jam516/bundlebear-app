@@ -10,6 +10,7 @@ import {
     CardTitle,
 } from "@/new-york-ui/card";
 import { SBChart } from "@/components/stacked-bar-paymaster";
+import { MSChart } from "@/components/marketshare-bar-paymaster";
 // import { StatCard } from "@/components/stat-card";
 
 interface PaymasterData {
@@ -52,6 +53,26 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.spend_chart} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"PAYMASTER_NAME"} usd={true} />
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " UserOp Marketshare"}</CardTitle>
+                        <CardDescription>UserOps paid for by paymaster</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <MSChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"PAYMASTER_NAME"} />
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Gas Spend Marketshare"}</CardTitle>
+                        <CardDescription>Amount spent by paymaster to cover UserOp gas fees</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <MSChart data={data.spend_chart} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"PAYMASTER_NAME"} />
                     </CardContent>
                 </Card>
             </div>

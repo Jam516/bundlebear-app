@@ -72,7 +72,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
         <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
-        <Bar dataKey="Unknown" stackId="a" fill="#171717" />
+        <Bar dataKey="Unknown" stackId="a" fill="#707070" />
       </BarChart>
     </ResponsiveContainer>
   );
