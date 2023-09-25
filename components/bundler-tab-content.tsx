@@ -47,7 +47,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                         <SBChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} usd={false} />
                     </CardContent>
                 </Card>
-                {/* <Card>
+                <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " OnChain Revenue"}</CardTitle>
                         <CardDescription>Revenue earned by charging a premium on UserOp gas</CardDescription>
@@ -55,7 +55,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     <CardContent className="pl-2">
                         <SBChart data={data.revenue_chart} xaxis={"DATE"} yaxis={"REVENUE"} segment={"BUNDLER_NAME"} usd={true} />
                     </CardContent>
-                </Card> */}
+                </Card>
             </div>
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
@@ -68,9 +68,9 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
-            {/* <div className="container mx-auto py-10">
+            <div className="container mx-auto py-10">
                 <DataTable columns={bundlercolumns} data={data.leaderboard} />
-            </div> */}
+            </div>
         </>
     );
 }
