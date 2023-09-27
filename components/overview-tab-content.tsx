@@ -110,14 +110,14 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                 </Card>
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                {/* <Card className="col-span-2">
+                <Card className="col-span-2">
                     <CardHeader>
                         <CardTitle>{titleparam + " Bundler Revenue"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} usd={true} /> : <SBChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} segment={"CHAIN"} usd={true} />}
                     </CardContent>
-                </Card> */}
+                </Card>
                 <Card className="col-span-2">
                     <CardHeader>
                         <CardTitle>{titleparam + " Paymaster Gas Spend"}</CardTitle>
