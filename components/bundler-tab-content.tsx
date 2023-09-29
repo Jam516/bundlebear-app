@@ -11,12 +11,14 @@ import {
 } from "@/new-york-ui/card";
 import { SBChart } from "@/components/stacked-bar-bundler";
 import { MSChart } from "@/components/marketshare-bar-bundler";
+import { BChart } from "@/components/multiop-bar-chart";
 // import { StatCard } from "@/components/stat-card";
 
 interface BundlerData {
     leaderboard: any[],
     userops_chart: any[],
     revenue_chart: any[],
+    multi_userop_chart: any[],
 }
 
 interface TabContentParams {
@@ -27,12 +29,16 @@ interface TabContentParams {
 export function TabContent({ data, timeframe }: TabContentParams) {
 
     let titleparam: string = "Weekly";
+    let titleparam2: string = "Past Week";
     if (timeframe === 'week') {
         titleparam = 'Weekly';
+        titleparam2 = 'Past Week';
     } else if (timeframe === 'day') {
         titleparam = 'Daily';
+        titleparam2 = 'Past 24h';
     } else if (timeframe === 'month') {
         titleparam = 'Monthly';
+        titleparam2 = 'Past Month';
     }
 
     return (
@@ -49,6 +55,17 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
+                        <CardTitle>{titleparam + " UserOp Marketshare"}</CardTitle>
+                        <CardDescription>UserOps executed by bundler</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <MSChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} />
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                <Card>
+                    <CardHeader>
                         <CardTitle>{titleparam + " OnChain Revenue"}</CardTitle>
                         <CardDescription>Revenue earned by charging a premium on UserOp gas</CardDescription>
                     </CardHeader>
@@ -56,15 +73,13 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                         <SBChart data={data.revenue_chart} xaxis={"DATE"} yaxis={"REVENUE"} segment={"BUNDLER_NAME"} usd={true} />
                     </CardContent>
                 </Card>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " UserOp Marketshare"}</CardTitle>
-                        <CardDescription>UserOps executed by bundler</CardDescription>
+                        <CardTitle>{titleparam + " % Multi-UserOp Bundles"}</CardTitle>
+                        <CardDescription>% of bundle txns that have multiple UserOps</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <MSChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} />
+                        <BChart data={data.multi_userop_chart} xaxis={"DATE"} yaxis={"PCT_MULTI_USEROP"} />
                     </CardContent>
                 </Card>
             </div>

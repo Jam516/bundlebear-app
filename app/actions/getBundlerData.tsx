@@ -7,6 +7,7 @@ interface BundlerData {
     leaderboard: any[],
     userops_chart: any[],
     revenue_chart: any[],
+    multi_userop_chart: any[],
 }
 
 export async function getBundlerData({ chain, timeframe }: BundlerDataParams): Promise<BundlerData> {
