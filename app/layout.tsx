@@ -11,9 +11,9 @@ import { MobileBlocker } from "@/components/mobile-blocker";
 export const metadata: Metadata = {
   title: {
     default: "BundleBear",
-    template: `%s - BundleBear`,
+    template: `%s - ERC4337 Data`,
   },
-  description: "ERC4337 Data Analytics",
+  description: "ERC4337 Data",
   keywords: [
     "ERC4337",
     "smart accounts",
