@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 import { ChainTabs } from "@/components/chain-tabs";
 import { TimeSelect } from "@/components/time-select";
 import { MobileBlocker } from "@/components/mobile-blocker";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: {
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </div>
+        <Analytics />
       </body>
     </html>
   );
