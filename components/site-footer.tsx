@@ -21,13 +21,22 @@ export function SiteFooter() {
             <p className="mb-4 text-center text-base font-semibold uppercase text-muted-foreground">
               Sponsored By
             </p>
-            <a
-              className="flex items-center justify-center"
-              href="https://ethereum.org/en/foundation/"
-              target="_blank"
-            >
-              <img src="/ethereum-foundation-logo.png" alt="Ethereum Foundation Logo" className="h-[50px]" />
-            </a>
+            <div className="grid gap-4 grid-cols-2">
+              <a
+                className="flex items-center justify-center col-span-1"
+                href="https://ethereum.org/en/foundation/"
+                target="_blank"
+              >
+                <img src="/ethereum-foundation-logo.png" alt="Ethereum Foundation Logo" className="h-[50px]" />
+              </a>
+              <a
+                className="flex items-center justify-center col-span-1"
+                href="https://www.pimlico.io/"
+                target="_blank"
+              >
+                <img src="/pimlico-logo.png" alt="Pimlico Logo" className="h-[50px]" />
+              </a>
+            </div>
           </div>
         </div>
         <p className="text-center text-m leading-loose text-muted-foreground pt-6">

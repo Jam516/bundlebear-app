@@ -65,7 +65,7 @@ export function MainNav({
           segments === "applications" ? "text-foreground" : "text-foreground/60"
         )}
       >
-        Applications
+        Apps
       </Link>
       <Link
         href="https://docs.google.com/spreadsheets/d/1QJEYDOr-AMD2bNAoupfjQJYJabFgdb2TRSyekdIfquM/edit#gid=0"
