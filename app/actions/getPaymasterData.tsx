@@ -10,7 +10,7 @@ interface PaymasterData {
 }
 
 export async function getPaymasterData({ chain, timeframe }: PaymasterDataParams): Promise<PaymasterData> {
-    const response = await fetch(`https://bundlebear-api.onrender.com/paymaster?chain=${chain}&timeframe=${timeframe}`, { next: { revalidate: 3600 } });
+    const response = await fetch(`https://bundlebear-api.onrender.com/paymaster?chain=${chain}&timeframe=${timeframe}`, { next: { revalidate: 600 } });
     // , { next: { revalidate: 30 } }
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);

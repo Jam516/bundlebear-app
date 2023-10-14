@@ -9,7 +9,7 @@ interface DeployerData {
 }
 
 export async function getDeployerData({ chain, timeframe }: DeployerDataParams): Promise<DeployerData> {
-    const response = await fetch(`https://bundlebear-api.onrender.com/account_deployer?chain=${chain}&timeframe=${timeframe}`, { next: { revalidate: 3600 } });
+    const response = await fetch(`https://bundlebear-api.onrender.com/account_deployer?chain=${chain}&timeframe=${timeframe}`, { next: { revalidate: 600 } });
     // , { next: { revalidate: 30 } }
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
