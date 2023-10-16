@@ -50,13 +50,13 @@ export function MainNav({
         Paymasters
       </Link>
       <Link
-        href="/deployers/all"
+        href="/factories/all"
         className={cn(
           "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
-          segments === "deployers" ? "text-foreground" : "text-foreground/60"
+          segments === "factories" ? "text-foreground" : "text-foreground/60"
         )}
       >
-        Account Deployers
+        Account Factories
       </Link>
       <Link
         href="/applications/all"

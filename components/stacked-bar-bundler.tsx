@@ -74,6 +74,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
         <Bar dataKey="Unknown" stackId="a" fill="#707070" />
+        <Bar dataKey="particle" stackId="a" fill="#F386FF" />
       </BarChart>
     </ResponsiveContainer>
   );

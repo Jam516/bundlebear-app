@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import { TabContent } from "@/components/deployer-tab-content"
 
 export const metadata: Metadata = {
-    title: "BundleBear Account Deployer Stats",
-    description: "A dashboard tracking the activity of ERC-4337 account deployers.",
+    title: "BundleBear Account Factory Stats",
+    description: "A dashboard tracking the activity of ERC-4337 account factories.",
 };
 
 export default async function DeployerPage({ params }: { params: { slug: string[] } }) {
@@ -21,7 +21,7 @@ export default async function DeployerPage({ params }: { params: { slug: string[
             <div className="hidden flex-col md:flex">
                 <div className="flex-1 space-y-4 p-8 pt-6">
                     <div className="flex items-center justify-between space-y-2">
-                        <h2 className="text-3xl font-bold tracking-tight">Account Deployers</h2>
+                        <h2 className="text-3xl font-bold tracking-tight">Account Factories</h2>
                     </div>
                     <TabContent data={data} timeframe={timeframe} />
                 </div>

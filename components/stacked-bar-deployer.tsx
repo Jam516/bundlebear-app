@@ -62,14 +62,17 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         />
         <Tooltip />
         <Legend />
-        <Bar dataKey="zerodev" stackId="a" fill="#118AB2" />
+        <Bar dataKey="zerodev_kernel" stackId="a" fill="#118AB2" />
         <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="fun.xyz" stackId="a" fill="#3D3D3D" />
         <Bar dataKey="Unknown" stackId="a" fill="#707070" />
         <Bar dataKey="safe" stackId="a" fill="#2A9D8F" />
         <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
-        <Bar dataKey="banana" stackId="a" fill="#FAC748" />
+        <Bar dataKey="banana" stackId="a" fill="#F8E9E9" />
+        <Bar dataKey="simpleaccount" stackId="a" fill="#69995D" />
+        <Bar dataKey="alchemy_slightaccount" stackId="a" fill="#118AB2" />
+        <Bar dataKey="etherspot" stackId="a" fill="#FAC748" />
       </BarChart>
     </ResponsiveContainer>
   );
