@@ -27,6 +27,7 @@ export function ChainTabs() {
                 <TabsTrigger value="polygon">Polygon</TabsTrigger>
                 <TabsTrigger value="optimism">Optimism</TabsTrigger>
                 <TabsTrigger value="arbitrum">Arbitrum</TabsTrigger>
+                <TabsTrigger value="base">Base</TabsTrigger>
                 <TabsTrigger value="ethereum">Ethereum</TabsTrigger>
             </TabsList>
         </Tabs>

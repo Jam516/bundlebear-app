@@ -68,6 +68,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Bar dataKey="polygon" stackId="a" fill="#A982ED" />
         <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
         <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
+        <Bar dataKey="base" stackId="a" fill="#90C2E7" />
       </BarChart>
     </ResponsiveContainer>
   );
