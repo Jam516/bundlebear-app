@@ -11,6 +11,7 @@ import { BChart } from "@/components/bar-chart";
 import { SBChart } from "@/components/stacked-bar-overview";
 import { StatCard } from "@/components/stat-card";
 import { MSChart } from "@/components/marketshare-bar-overview";
+import { RetentionTable } from "@/components/retention-table";
 
 interface ChainData {
     deployments: { NUM_DEPLOYMENTS: number }[],
@@ -21,6 +22,7 @@ interface ChainData {
     monthly_userops: any[],
     monthly_paymaster_spend: any[],
     monthly_bundler_revenue: any[],
+    retention: any[],
 }
 
 interface TabContentParams {
@@ -129,6 +131,17 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} /> : <SBChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"CHAIN"} usd={true} />}
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="container mx-auto py-10">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Account Retention"}</CardTitle>
+                        <CardDescription>Retention of accounts segmented by the {timeframe} they became active</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <RetentionTable data={data.retention} timeframe={timeframe} />
                     </CardContent>
                 </Card>
             </div>

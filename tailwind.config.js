@@ -9,6 +9,10 @@ module.exports = {
       "components/**/*.{ts,tsx}",
       "lib/**/*.{ts,tsx}",
     ],
+    safelist: [
+      'bg-blue-100', 'bg-blue-200', 'bg-blue-300', 'bg-blue-400', 'bg-blue-500',
+      'bg-blue-600', 'bg-blue-700', 'bg-blue-800', 'bg-blue-900',
+    ],
   },
   theme: {
     container: {
