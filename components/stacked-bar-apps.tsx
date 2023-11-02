@@ -1,0 +1,88 @@
+import React from 'react';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+require('highcharts/modules/exporting')(Highcharts);
+
+type DataEntry = {
+    DATE: string;
+    NUM_UNIQUE_SENDERS: number;
+    PROJECT: string;
+};
+
+interface SBChartProps {
+    data: DataEntry[];
+}
+
+function prepareData(data: DataEntry[]) {
+    const seriesData = {};
+    const colors = {
+        Cyberconnect: '#2A9D8F',
+        CYBER: '#15514A',
+        xFANTV: '#F386FF',
+        G1: '#EA5230',
+        direct_transfer: '#FAC748',
+        Other: '#525252',
+        CapX: '#B42318',
+        USDC: '#118AB2',
+        Fantazy: '#F7E3AF',
+        "The Noise NFT": '#B6D6CC',
+        "Burn Address": '#171717',
+        "Minishard NFT": '#758E4F'
+    };
+    data.forEach(item => {
+        if (!seriesData[item.PROJECT]) {
+            seriesData[item.PROJECT] = {
+                name: item.PROJECT,
+                data: [],
+                color: colors[item.PROJECT] || `#${Math.floor(Math.random() * 16777215).toString(16)}`
+            };
+        }
+        seriesData[item.PROJECT].data.push([new Date(item.DATE).getTime(), item.NUM_UNIQUE_SENDERS]);
+    });
+
+    return Object.values(seriesData);
+}
+
+export function SBChart({ data }: SBChartProps) {
+    const series = prepareData(data);
+
+    const options = {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ' '
+        },
+        xAxis: {
+            type: 'datetime'
+        },
+        yAxis: {
+            title: {
+                text: ' '
+            }
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                pointPadding: 0,
+                groupPadding: 0
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series
+    };
+
+    return (
+        <HighchartsReact
+            highcharts={Highcharts}
+            options={options}
+        />
+    );
+};
+
+

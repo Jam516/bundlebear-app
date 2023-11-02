@@ -164,3 +164,54 @@ export const deployercolumns: ColumnDef<Deployer>[] = [
         },
     },
 ]
+
+export type Apps = {
+    PROJECT: string
+    NUM_UNIQUE_SENDERS: number
+    NUM_OPS: number
+}
+
+export const appcolumns: ColumnDef<Apps>[] = [
+    {
+        accessorKey: "PROJECT",
+        header: "Project",
+    },
+    {
+        accessorKey: "NUM_UNIQUE_SENDERS",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Total Users
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("NUM_UNIQUE_SENDERS"))
+
+            return <div className="text-center font-medium">{amount}</div>
+        },
+    },
+    {
+        accessorKey: "NUM_OPS",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Total UserOps
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("NUM_OPS"))
+
+            return <div className="text-center font-medium">{amount}</div>
+        },
+    },
+]

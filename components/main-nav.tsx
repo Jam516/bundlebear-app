@@ -59,7 +59,7 @@ export function MainNav({
         Account Factories
       </Link>
       <Link
-        href="/applications/all"
+        href="/apps/all"
         className={cn(
           "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
           segments === "applications" ? "text-foreground" : "text-foreground/60"
