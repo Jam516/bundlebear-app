@@ -13,9 +13,17 @@ interface SBChartProps {
     data: DataEntry[];
 }
 
+interface SeriesData {
+    [key: string]: {
+        name: string;
+        data: Array<[number, number]>;
+        color: string;
+    };
+}
+
 function prepareData(data: DataEntry[]) {
-    const seriesData = {};
-    const colors = {
+    const seriesData: SeriesData = {};
+    const colors: Record<string, string> = {
         Cyberconnect: '#2A9D8F',
         CYBER: '#15514A',
         xFANTV: '#F386FF',
