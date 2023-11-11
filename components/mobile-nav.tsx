@@ -27,7 +27,9 @@ export function MobileNav() {
 
     return (
         <div className="flex w-full justify-between ">
-            <Logo />
+            <Link href="/" className="flex items-center">
+                <Logo />
+            </Link>
             <div className="px-16">
                 <DropdownMenu >
                     <DropdownMenuTrigger asChild>
