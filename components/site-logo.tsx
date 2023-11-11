@@ -1,9 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/new-york-ui/avatar";
-import Image from "next/image";
 
 export function Logo() {
   return (
-    <Avatar className="h-8" style={{ maxWidth: '1500px' }}>
+    <Avatar className="h-8">
       <AvatarImage src="/bblogo.png" alt="BundleBear" />
       <AvatarFallback>BundleBear</AvatarFallback>
     </Avatar>
