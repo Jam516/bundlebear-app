@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="py-6 md:px-8 md:py-0 border-t border-gray-300">
       <div className="container flex flex-col items-center justify-between gap-1 md:h-24 ">
-        <div className="mt-4 flex flex-row gap-20">
+        <div className="mt-4 grid gap-10 grid-cols-1 md:grid-cols-2">
           <div>
             <p className="mb-4 text-center text-base font-semibold uppercase text-muted-foreground">
               Powered By
@@ -21,7 +21,7 @@ export function SiteFooter() {
             <p className="mb-4 text-center text-base font-semibold uppercase text-muted-foreground">
               Sponsored By
             </p>
-            <div className="grid gap-4 grid-cols-2">
+            <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
               <a
                 className="flex items-center justify-center col-span-1"
                 href="https://ethereum.org/en/foundation/"

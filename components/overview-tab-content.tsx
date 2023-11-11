@@ -74,8 +74,8 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                         <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                     } />
             </div>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card className="col-span-2">
+            <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+                <Card >
                     <CardHeader>
                         <CardTitle>{titleparam + " Active Smart Accounts"}</CardTitle>
                     </CardHeader>
@@ -83,7 +83,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                         {chain != 'all' ? <BChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} usd={false} /> : <SBChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} usd={false} />}
                     </CardContent>
                 </Card>
-                <Card className="col-span-2">
+                <Card >
                     <CardHeader>
                         <CardTitle>{titleparam + " Sucessful UserOps"}</CardTitle>
                     </CardHeader>
@@ -93,8 +93,8 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                 </Card>
             </div>
             {chain === 'all' ?
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                    <Card className="col-span-2">
+                <div className="grid gap-4 grid-cols-1  md:grid-cols-2 ">
+                    <Card >
                         <CardHeader>
                             <CardTitle>{titleparam + " Active Smart Accounts Marketshare"}</CardTitle>
                         </CardHeader>
@@ -102,7 +102,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                             {chain != 'all' ? <BChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} usd={false} /> : <MSChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} />}
                         </CardContent>
                     </Card>
-                    <Card className="col-span-2">
+                    <Card >
                         <CardHeader>
                             <CardTitle>{titleparam + " Sucessful UserOps Marketshare"}</CardTitle>
                         </CardHeader>
@@ -112,12 +112,12 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                     </Card>
                 </div>
                 :
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-4 grid-cols-1  md:grid-cols-2">
 
                 </div>
             }
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card className="col-span-2">
+            <div className="grid gap-4  grid-cols-1 md:grid-cols-2">
+                <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Bundler Revenue"}</CardTitle>
                     </CardHeader>
@@ -125,7 +125,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                         {chain != 'all' ? <BChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} usd={true} /> : <SBChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} segment={"CHAIN"} usd={true} />}
                     </CardContent>
                 </Card>
-                <Card className="col-span-2">
+                <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Paymaster Gas Spend"}</CardTitle>
                     </CardHeader>
@@ -134,7 +134,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
-            <div className="container mx-auto py-10">
+            <div className="hidden md:block container mx-auto py-10">
                 <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Account Retention"}</CardTitle>

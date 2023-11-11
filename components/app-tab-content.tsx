@@ -35,7 +35,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
 
     return (
         <>
-            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+            <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Active Accounts"}</CardTitle>
