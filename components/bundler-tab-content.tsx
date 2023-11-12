@@ -12,6 +12,7 @@ import {
 import { SBChart } from "@/components/stacked-bar-bundler";
 import { MSChart } from "@/components/marketshare-bar-bundler";
 import { BChart } from "@/components/multiop-bar-chart";
+import { LChart } from "@/components/line-bundler";
 // import { StatCard } from "@/components/stat-card";
 
 interface BundlerData {
@@ -19,6 +20,7 @@ interface BundlerData {
     userops_chart: any[],
     revenue_chart: any[],
     multi_userop_chart: any[],
+    accounts_chart: any[],
 }
 
 interface TabContentParams {
@@ -80,6 +82,17 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardHeader>
                     <CardContent className="pl-2">
                         <BChart data={data.multi_userop_chart} xaxis={"DATE"} yaxis={"PCT_MULTI_USEROP"} />
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Active Accounts"}</CardTitle>
+                        <CardDescription># of accounts that had a UserOp bundled by each bundler</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <LChart data={data.accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"BUNDLER_NAME"} usd={false} />
                     </CardContent>
                 </Card>
             </div>
