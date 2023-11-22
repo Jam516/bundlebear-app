@@ -7,6 +7,7 @@ type DataEntry = {
     BUNDLER_NAME: string;
     DATE: string;
     NUM_ACCOUNTS: number;
+    [key: string]: string | number;
 };
 
 interface SBChartProps {
