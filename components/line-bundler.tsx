@@ -36,7 +36,7 @@ export function LChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
                 };
             }
 
-            transformed[formattedDate][entry[segment]] = entry[yaxis];
+            transformed[formattedDate][entry[segment] as keyof DataEntry] = entry[yaxis as keyof DataEntry];
         });
 
         return Object.values(transformed);
