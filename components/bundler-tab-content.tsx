@@ -57,7 +57,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " UserOp Marketshare"}</CardTitle>
+                        <CardTitle>{titleparam + " UserOps Marketshare"}</CardTitle>
                         <CardDescription>UserOps executed by bundler</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
