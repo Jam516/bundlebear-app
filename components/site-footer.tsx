@@ -21,7 +21,7 @@ export function SiteFooter() {
             <p className="mb-4 text-center text-base font-semibold uppercase text-muted-foreground">
               Sponsored By
             </p>
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+            <div className="grid gap-1 grid-cols-1 md:grid-cols-3">
               <a
                 className="flex items-center justify-center col-span-1"
                 href="https://ethereum.org/en/foundation/"
@@ -35,6 +35,13 @@ export function SiteFooter() {
                 target="_blank"
               >
                 <img src="/pimlico-logo.png" alt="Pimlico Logo" className="h-[50px]" />
+              </a>
+              <a
+                className="flex items-center justify-center col-span-1"
+                href="https://www.biconomy.io/"
+                target="_blank"
+              >
+                <img src="/biconomy-logo.png" alt="Biconomy Logo" className="h-[50px]" />
               </a>
             </div>
           </div>
