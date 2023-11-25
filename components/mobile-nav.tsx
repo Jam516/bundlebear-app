@@ -7,6 +7,7 @@ import {
     LayoutPanelLeft,
     FileText,
     Menu,
+    Wallet
 } from "lucide-react"
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation"
@@ -104,7 +105,17 @@ export function MobileNav() {
                                 Operator Registry
                             </Link>
                         </DropdownMenuItem>
-
+                        <DropdownMenuItem>
+                            <Wallet className="mr-2 h-4 w-4" />
+                            <Link
+                                href="/wallets/all"
+                                className={cn(
+                                    segments === "applications" ? "text-foreground" : "text-foreground/60"
+                                )}
+                            >
+                                Wallets
+                            </Link>
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
