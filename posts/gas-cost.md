@@ -101,7 +101,7 @@ Once again, the selection of a smart account implementation has had a relatively
 
 # Account Deployment
 
-Finally, let’s take a look at the average dollar cost of deploying smart accounts. We will study the gas fees of transactions where a Safe or an ERC4337 account was created. It’s important to note that this is not a pure analysis of transactions where a single account was created. Multiple smart accounts can be created in the same transaction and, unlike Safe deployments, ERC4337 account deployments do not usually happen in isolation but rather get bundled with the first operation made by that account. 
+Finally, let’s take a look at the average dollar cost of deploying smart accounts. We will study the gas fees of transactions where a Safe or an ERC4337 account was created. It’s important to note that this is not a pure analysis of the cost of creating a single account. Multiple smart accounts can be created in the same transaction and, unlike Safe deployments, ERC4337 account deployments do not usually happen in isolation but rather get bundled with the first operation made by that account. 
 
 ### Polygon
 
