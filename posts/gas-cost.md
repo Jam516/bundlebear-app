@@ -4,42 +4,61 @@ date: '2023-12-07'
 ---
 
 Sponsored by Safe 
+ 
 
 Ethereum has a native account system in which each account, known as an EOA, is controlled by a single private key. Users must securely store this key and use it to sign every transaction. This approach has several drawbacks. Firstly, users are vulnerable to losing their funds if they misplace or have their keys stolen. Secondly, it is difficult to automate and customize transaction execution without giving up control of the keys or the assets in the account.
+ 
 
 Smart accounts address these problems by implementing a system where every account is controlled by a smart contract. Smart contracts are highly customizable, allowing smart accounts to incorporate various verification and transaction execution logic that would not be feasible with an EOA. Since 2018, Safe has been at the forefront of the smart account movement, offering an implementation with features such as multisignature signing, transaction batching and gas sponsorship. This year, a new standard called ERC4337 was launched to establish a common framework for smart accounts. 
+ 
 
 If smart accounts allow for more security and an enhanced user experience, why haven't smart accounts surpassed EOAs in adoption? One major factor has been the cost of creating and using them on Layer 1 (L1). During the peak of the 2021 bull run, it could cost hundreds of dollars to deploy a smart account on L1. This issue killed many early smart account teams, as they struggled to find users willing to pay the steep account creation costs and couldn't afford to pay the costs themselves. However, with the introduction of Layer 2s (L2s) and sidechains, the cost of deploying and using smart accounts in the Ethereum ecosystem has become more affordable. 
+ 
 
 In this article, we will analyze the cost of using smart accounts on these L2s and sidechains. Specifically, we will focus on Safe acoounts and ERC4337 implementations such as [Zerodev Kernel](https://zerodev.app/) and the [Biconomy Account](https://www.biconomy.io/). We will start by analyzing the cost of native token transfers (ETH transfer on Ethereum, Arbitrum, Optimism and MATIC transfers on Polygon). Then, we will break down the cost of performing ERC20 transfers and deploying new accounts. Finally, we discuss the future outlook of smart account economics.
+ 
 
 # Native Transfers
+ 
 
 Using historical data, let's examine the cost of performing a native token transfer using a smart account. For ERC4337 accounts, we will analyze the `actualGasCost` of UserOps that execute a native token transfer. For Safe accounts, we will consider the transaction fee for Safe transactions that achieve the same transfer. 
+ 
 
 This analysis does not aim to compare the gas efficiency of different account implementations. Several factors, such as fluctuating gas prices and the fee settings chosen by the application or wallet, influence the cost of an operation, apart from gas efficiency. Instead, this analysis aims to measure the costs that users are facing in real life.
+ 
 
 We have excluded [anomalous UserOps](https://optimistic.etherscan.io/tx/0x9c6d6690b0f16757ec2110d5e7677a92cc885e0d1dc2573d99abaae0936131f3) where the bundler accepted UserOps with fees significantly lower than the required amount to cover the bundle transaction cost and [anomalous transactions](https://polygonscan.com/tx/0x89dfa0aaeaa646b934b64142e6578a55107051f4c2d15dd188b81869e544e068) where gas prices greatly exceeded the norm.
+ 
 
 ### Polygon
+ 
 
-![newplot - 2023-12-07T061338.818.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/0a66a927-e98c-487e-b1e2-68e1c5ad1f94/newplot_-_2023-12-07T061338.818.png)
+![newplot - 2023-12-07T061338.818.png](https://i.imgur.com/tInxT8b.png)
+ 
 
 On Polygon, Safe users are currently spending the least on native transfers with a weekly average cost of $0.01, followed by Zerodev users at $0.025 and Biconomy users at $0.038. The small difference of $0.028 between the highest and lowest cost indicates that the chosen account implementation does not significantly impact the user experience on low-cost networks.
+ 
 
 This is particularly true because the current costs exhibit an unusually wide range of variation. In 87% of weeks, the difference between the highest and lowest cost is less than $0.015.
+ 
 
 ### Optimism
+ 
 
-![newplot - 2023-12-07T081100.404.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/2f43763d-5090-4ef2-af4f-616ab08b92df/newplot_-_2023-12-07T081100.404.png)
+![newplot - 2023-12-07T081100.404.png](https://i.imgur.com/KehLihw.png)
+ 
 
 On Optimism, it has been more expensive for smart accounts to make native transfers than on Polygon. Biconomy account users have a weekly average cost of $0.77 per native transfer, while Zerodev Kernel users spend $0.79 and Safe users spend $0.30.
+ 
 
 ### Arbitrum
+ 
 
-![newplot - 2023-12-07T081658.086.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/48801ace-86d8-438a-b73d-14ac3ff2ef3b/newplot_-_2023-12-07T081658.086.png)
+![newplot - 2023-12-07T081658.086.png](https://i.imgur.com/jVesq0d.png)
+ 
 
 ERC4337 accounts have made fewer native transfers on Arbitrum compared to Polygon and Optimism, so we only have enough data to measure spending in the past three months.
+ 
 
 Arbitrum has been more expensive for native transfers than both Polygon and Optimism. The cost of native transfers currently sits at $0.46 for Safes, $0.76 for Zerodev Kernels, and $1.05 for Bionomy accounts.
 
@@ -47,8 +66,9 @@ Arbitrum has been more expensive for native transfers than both Polygon and Opti
 
 Here we observe that selecting the most expensive network in the dataset (Arbitrum) instead of the cheapest one (Polygon) increases the average cost of making a native transfer by more than 30X. The impact of choosing one account implementation over another is negligible compared to the choice of network.
 
-It is also evident that UserOp fees and Safe transaction prices rose sharply in November. This can be attributed to a general increase in on-chain activity, possibly caused by the recent surge in asset prices, which is leading to higher gas fees.
-# chart of txns for all chains
+It is also evident that UserOp fees and Safe transaction prices rose sharply in November. This can be attributed to a general increase in on-chain activity, caused by the recent surge in [inscriptions](https://dune.com/hildobby/inscriptions), which is leading to higher gas fees.
+
+![txns.png](https://i.imgur.com/evjabcY.png)
 
 # ERC20 Transfers
 
@@ -56,7 +76,7 @@ Next, we will analyze the cost of making ERC20 transfers using different smart a
 
 ### Polygon
 
-![newplot - 2023-12-07T114924.908.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/3e40a6ca-7247-48a0-8dcb-1b6bde554097/newplot_-_2023-12-07T114924.908.png)
+![newplot - 2023-12-07T114924.908.png](https://i.imgur.com/8pezGcf.png)
 
 The weekly average cost of making an ERC20 transfer on Polygon is currently $0.011 for Safe account users, $0.017 for Zerodev Kernel users and $0.021 for Biconomy account users. 
 
@@ -64,7 +84,7 @@ The difference between the highest and lowest costs is only $0.01. Once again, w
 
 ### Optimism
 
-![newplot - 2023-12-07T123623.533.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/641aa81f-e73b-49d6-83dc-481861ed8114/newplot_-_2023-12-07T123623.533.png)
+![newplot - 2023-12-07T123623.533.png](https://i.imgur.com/DZPvQcG.png)
 
 On Optimism, ERC20 transfers currently cost an average of $0.59 for Safe accounts, $0.96 for Biconomy accounts and $0.99 for Zerodev Kernels.
 
@@ -72,7 +92,7 @@ As a reminder, we are excluding anomalous transactions like [0x5c…b9ae](https:
 
 ### Arbitrum
 
-![newplot - 2023-12-07T130034.619.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/f034a860-82d9-4007-89f3-731da4f35fdc/newplot_-_2023-12-07T130034.619.png)
+![newplot - 2023-12-07T130034.619.png](https://i.imgur.com/K7cNZV8.png)
 
 On Arbitrum, the weekly average cost of making an ERC20 transfer is currently $0.66 for Safe accounts, $1.14 for Biconomy accounts and $1.17 for Zerodev Kernels.
 
@@ -86,19 +106,19 @@ Finally, let’s take a look at the average dollar cost of deploying smart accou
 
 ### Polygon
 
-![newplot - 2023-12-07T152200.046.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/f5e1749a-881a-4309-89d5-8287ccb33189/newplot_-_2023-12-07T152200.046.png)
+![newplot - 2023-12-07T152200.046.png](https://i.imgur.com/0xJsHRC.png)
 
 Safe deployment transactions on Polygon currently cost an average of $0.036. On average, transactions involving a Zerodev Kernel deployment cost $0.048, while transactions involving a Biconomy account deployment cost $0.024.
 
 ### Optimism
 
-![newplot - 2023-12-07T152513.486.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/268f9ae1-e491-4d9c-9a56-df6a3559d031/newplot_-_2023-12-07T152513.486.png)
+![newplot - 2023-12-07T152513.486.png](https://i.imgur.com/UaBAHjg.png)
 
 Safe deployment transactions on Optimism have an average weekly cost of $0.0481. On average, transactions involving a Zerodev Kernel deployment cost $0.663, while transactions involving a Biconomy account deployment cost $1.10.
 
 ### Arbitrum
 
-![newplot - 2023-12-07T152639.407.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c4fe6ae6-0d15-412d-87a6-3b79904011c1/4dbe8866-185a-4efb-99f8-4565a7e52c71/newplot_-_2023-12-07T152639.407.png)
+![newplot - 2023-12-07T152639.407.png](https://i.imgur.com/t7RHqNh.png)
 
 Safe deployment transactions on Arbitrum have an average weekly cost of $0.44. On average, transactions involving a Zerodev Kernel deployment cost $0.98, while transactions involving a Biconomy account deployment cost $1.12.
 
