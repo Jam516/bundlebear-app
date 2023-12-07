@@ -3,8 +3,7 @@ title: 'How much does it cost to use a smart account?'
 date: '2023-12-07'
 ---
 
-Sponsored by Safe 
- 
+**Sponsored by Safe**🟢✨
 
 Ethereum has a native account system in which each account, known as an EOA, is controlled by a single private key. Users must securely store this key and use it to sign every transaction. This approach has several drawbacks. Firstly, users are vulnerable to losing their funds if they misplace or have their keys stolen. Secondly, it is difficult to automate and customize transaction execution without giving up control of the keys or the assets in the account.
  
@@ -124,7 +123,7 @@ Safe deployment transactions on Arbitrum have an average weekly cost of $0.44. O
 
 # Future Outlook
 
-Smart accounts make it possible to deliver better onchain user experiences and it’s important that they are affordable for users. ****L2s and sidechains have significantly reduced the cost of using smart accounts. The data indicates that the choice of chain has a greater impact on smart account costs than the choice of account implementation. While gas-based comparisons may indicate big differences between providers, the actual cost differences for users in terms of dollars are minimal if they opt for a low-cost chain/L2.
+Smart accounts make it possible to deliver better onchain user experiences and it’s important that they are affordable for users. L2s and sidechains have significantly reduced the cost of using smart accounts. The data indicates that the choice of chain has a greater impact on smart account costs than the choice of account implementation. While gas-based comparisons may indicate big differences between providers, the actual cost differences for users in terms of dollars are minimal if they opt for a low-cost chain/L2.
 
 It's still early days and there is work to be done. Here are some specific areas where progress can be made in reducing the cost of using ERC4337 accounts:
 

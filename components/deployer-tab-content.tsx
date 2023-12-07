@@ -48,7 +48,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Accounts Marketshare"}</CardTitle>
+                        <CardTitle>{titleparam + " Account Deployment Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSChart data={data.deployments_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />
