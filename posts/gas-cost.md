@@ -65,6 +65,8 @@ Arbitrum has been more expensive for native transfers than both Polygon and Opti
 
 Here we observe that selecting the most expensive network in the dataset (Arbitrum) instead of the cheapest one (Polygon) increases the average cost of making a native transfer by more than 30X. The impact of choosing one account implementation over another is negligible compared to the choice of network.
 
+That said, Safe account users consistently spent less than ERC4337 account users. 
+
 It is also evident that UserOp fees and Safe transaction prices rose sharply in November. This can be attributed to a general increase in on-chain activity, caused by the recent surge in [inscriptions](https://dune.com/hildobby/inscriptions), which is leading to higher gas fees.
 
 ![txns.png](https://i.imgur.com/evjabcY.png)
