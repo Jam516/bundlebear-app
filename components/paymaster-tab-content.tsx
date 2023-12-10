@@ -39,14 +39,14 @@ export function TabContent({ data, timeframe }: TabContentParams) {
     return (
         <>
             <div className="container mx-auto py-10">
-                <DataTable columns={paymastercolumns} data={data.leaderboard} entity={false} />
+                <DataTable columns={paymastercolumns} data={data.leaderboard} entity={true} />
             </div>
             <TimeSelect />
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " UserOps Covered"}</CardTitle>
-                        <CardDescription>UserOps paid for by paymaster</CardDescription>
+                        <CardTitle>{titleparam + " UserOps Served"}</CardTitle>
+                        <CardDescription>UserOps paid for using paymaster</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"PAYMASTER_NAME"} usd={false} />
@@ -55,7 +55,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " UserOp Marketshare"}</CardTitle>
-                        <CardDescription>UserOps paid for by paymaster</CardDescription>
+                        <CardDescription>UserOps paid for using paymaster</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"PAYMASTER_NAME"} />
@@ -67,7 +67,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Gas Spend"}</CardTitle>
-                        <CardDescription>Amount spent by paymaster to cover UserOp gas fees</CardDescription>
+                        <CardDescription>Amount spent using paymaster to cover UserOp gas fees</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.spend_chart} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"PAYMASTER_NAME"} usd={true} />
@@ -76,7 +76,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Gas Spend Marketshare"}</CardTitle>
-                        <CardDescription>Amount spent by paymaster to cover UserOp gas fees</CardDescription>
+                        <CardDescription>Amount spent using paymaster to cover UserOp gas fees</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSChart data={data.spend_chart} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"PAYMASTER_NAME"} />
