@@ -58,6 +58,8 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
+export const revalidate = 600
+
 export default function RootLayout({ children }: RootLayoutProps) {
 
 
