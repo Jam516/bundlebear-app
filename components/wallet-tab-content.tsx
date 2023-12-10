@@ -9,6 +9,7 @@ import {
 } from "@/new-york-ui/card";
 import { SBChart } from "@/components/stacked-bar-wallet";
 import { MSChart } from "@/components/marketshare-bar-wallet";
+import { TimeSelect } from "@/components/time-select";
 
 interface WalletData {
     deployments_chart: any[],
@@ -33,6 +34,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
 
     return (
         <>
+            <TimeSelect />
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>

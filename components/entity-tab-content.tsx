@@ -1,7 +1,5 @@
 'use client'
 
-import { Deployer, deployercolumns } from "@/components/columns"
-import { DataTable } from "@/components/data-table"
 import {
     Card,
     CardContent,
@@ -9,23 +7,21 @@ import {
     CardHeader,
     CardTitle,
 } from "@/new-york-ui/card";
-import { SBChart } from "@/components/stacked-bar-deployer";
-import { MSChart } from "@/components/marketshare-bar-deployer";
+import { LChart } from "@/components/line-entity";
 import { TimeSelect } from "@/components/time-select";
-// import { StatCard } from "@/components/stat-card";
 
-interface DeployerData {
-    leaderboard: any[],
-    deployments_chart: any[],
+interface EntityData {
+    bundler_userops_chart: any[],
+    bundler_accounts_chart: any[],
+    bundler_revenue_chart: any[],
 }
 
 interface TabContentParams {
-    data: DeployerData;
+    data: EntityData;
     timeframe: string;
 }
 
 export function TabContent({ data, timeframe }: TabContentParams) {
-
     let titleparam: string = "Weekly";
     if (timeframe === 'week') {
         titleparam = 'Weekly';
@@ -35,32 +31,37 @@ export function TabContent({ data, timeframe }: TabContentParams) {
         titleparam = 'Monthly';
     }
 
-
     return (
         <>
-            <div className="container mx-auto py-10">
-                <DataTable columns={deployercolumns} data={data.leaderboard} entity={false} />
-            </div>
             <TimeSelect />
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Accounts Deployed"}</CardTitle>
+                        <CardTitle>{titleparam + " UserOps Bundled"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <SBChart data={data.deployments_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />
+                        <LChart data={data.bundler_userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} usd={false} />
                     </CardContent>
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Account Deployment Marketshare"}</CardTitle>
+                        <CardTitle>{titleparam + " Revenue"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <MSChart data={data.deployments_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />
+                        <LChart data={data.bundler_revenue_chart} xaxis={"DATE"} yaxis={"REVENUE"} usd={true} />
                     </CardContent>
                 </Card>
             </div>
-
+            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Accounts Served"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <LChart data={data.bundler_accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} usd={false} />
+                    </CardContent>
+                </Card>
+            </div>
         </>
     );
 }

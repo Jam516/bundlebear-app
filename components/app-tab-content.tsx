@@ -11,6 +11,7 @@ import {
 } from "@/new-york-ui/card";
 import { SBChart } from "@/components/stacked-bar-apps";
 import { MSChart } from "@/components/marketshare-bar-apps";
+import { TimeSelect } from "@/components/time-select";
 
 interface AppData {
     usage_chart: any[],
@@ -35,6 +36,10 @@ export function TabContent({ data, timeframe }: TabContentParams) {
 
     return (
         <>
+            <div className="container mx-auto py-10">
+                <DataTable columns={appcolumns} data={data.leaderboard} entity={false} />
+            </div>
+            <TimeSelect />
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
@@ -53,9 +58,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
-            <div className="container mx-auto py-10">
-                <DataTable columns={appcolumns} data={data.leaderboard} />
-            </div>
+
         </>
     );
 }

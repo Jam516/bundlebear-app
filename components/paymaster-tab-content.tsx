@@ -12,6 +12,7 @@ import {
 import { SBChart } from "@/components/stacked-bar-paymaster";
 import { MSChart } from "@/components/marketshare-bar-paymaster";
 import { LChart } from "@/components/line-paymaster";
+import { TimeSelect } from "@/components/time-select";
 
 interface PaymasterData {
     leaderboard: any[],
@@ -37,6 +38,10 @@ export function TabContent({ data, timeframe }: TabContentParams) {
 
     return (
         <>
+            <div className="container mx-auto py-10">
+                <DataTable columns={paymastercolumns} data={data.leaderboard} entity={false} />
+            </div>
+            <TimeSelect />
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
@@ -89,9 +94,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
-            <div className="container mx-auto py-10">
-                <DataTable columns={paymastercolumns} data={data.leaderboard} />
-            </div>
+
         </>
     );
 }

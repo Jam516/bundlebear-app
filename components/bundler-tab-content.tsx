@@ -13,6 +13,7 @@ import { SBChart } from "@/components/stacked-bar-bundler";
 import { MSChart } from "@/components/marketshare-bar-bundler";
 import { BChart } from "@/components/multiop-bar-chart";
 import { LChart } from "@/components/line-bundler";
+import { TimeSelect } from "@/components/time-select";
 // import { StatCard } from "@/components/stat-card";
 
 interface BundlerData {
@@ -45,6 +46,10 @@ export function TabContent({ data, timeframe }: TabContentParams) {
 
     return (
         <>
+            <div className="container mx-auto py-10">
+                <DataTable columns={bundlercolumns} data={data.leaderboard} entity={true} />
+            </div>
+            <TimeSelect />
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
@@ -96,9 +101,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
-            <div className="container mx-auto py-10">
-                <DataTable columns={bundlercolumns} data={data.leaderboard} />
-            </div>
+
         </>
     );
 }

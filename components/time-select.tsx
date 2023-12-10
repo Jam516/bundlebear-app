@@ -34,12 +34,12 @@ export function TimeSelect() {
     return (
         <Select onValueChange={handleSelect} value={activeTab}>
             <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Toggle Bar Chart Settings" />
+                <SelectValue placeholder="Toggle Chart Settings" />
             </SelectTrigger>
             <SelectContent>
-                <SelectItem value="month">Monthly Bar Charts</SelectItem>
-                <SelectItem value="week">Weekly Bar Charts</SelectItem>
-                <SelectItem value="day">Daily Bar Charts</SelectItem>
+                <SelectItem value="month">Monthly Charts</SelectItem>
+                <SelectItem value="week">Weekly Charts</SelectItem>
+                <SelectItem value="day">Daily Charts</SelectItem>
             </SelectContent>
         </Select>
     )

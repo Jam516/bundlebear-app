@@ -1,6 +1,9 @@
 "use client"
 
 import * as React from "react"
+import Link from 'next/link';
+import { ExternalLink } from 'lucide-react';
+
 import {
     ColumnDef,
     SortingState,
@@ -22,11 +25,13 @@ import {
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
     data: TData[]
+    entity: boolean;
 }
 
 export function DataTable<TData, TValue>({
     columns,
     data,
+    entity,
 }: DataTableProps<TData, TValue>) {
     const [sorting, setSorting] = React.useState<SortingState>([])
     const table = useReactTable({
@@ -68,9 +73,18 @@ export function DataTable<TData, TValue>({
                                 key={row.id}
                                 data-state={row.getIsSelected() && "selected"}
                             >
-                                {row.getVisibleCells().map((cell) => (
+                                {row.getVisibleCells().map((cell, index) => (
                                     <TableCell key={cell.id}>
-                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                        {index === 0 && entity ? (
+                                            <Link href={`/entity/all/week/${cell.getValue()}`}>
+                                                <p className="font-bold text-blue-600">
+                                                    {cell.getValue() as string}
+                                                    <ExternalLink className="inline-block align-middle mr-2 h-4 w-4" />
+                                                </p>
+                                            </Link>
+                                        ) : (
+                                            flexRender(cell.column.columnDef.cell, cell.getContext())
+                                        )}
                                     </TableCell>
                                 ))}
                             </TableRow>
@@ -83,6 +97,7 @@ export function DataTable<TData, TValue>({
                         </TableRow>
                     )}
                 </TableBody>
+
             </Table>
         </div>
     )

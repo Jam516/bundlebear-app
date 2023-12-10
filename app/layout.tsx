@@ -73,9 +73,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <div className="relative flex min-h-screen flex-col">
           <SiteHeader />
-          <div className="hidden md:flex flex-1 space-x-4 p-8 pt-6">
+          <div className="hidden md:flex flex-1 space-x-4 pl-8 pt-6">
             <ChainTabs />
-            <TimeSelect />
+            {/* <TimeSelect /> */}
           </div>
           {/* <MobileBlocker /> */}
           <div className="flex-1">{children}</div>

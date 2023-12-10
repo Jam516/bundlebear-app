@@ -12,6 +12,7 @@ import { SBChart } from "@/components/stacked-bar-overview";
 import { StatCard } from "@/components/stat-card";
 import { MSChart } from "@/components/marketshare-bar-overview";
 import { RetentionTable } from "@/components/retention-table";
+import { TimeSelect } from "@/components/time-select";
 
 interface ChainData {
     deployments: { NUM_DEPLOYMENTS: number }[],
@@ -74,6 +75,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                         <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                     } />
             </div>
+            <TimeSelect />
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card >
                     <CardHeader>

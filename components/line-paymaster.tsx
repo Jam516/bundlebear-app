@@ -1,6 +1,6 @@
 "use client";
 
-import { Line, LineChart, Tooltip, Legend, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { Line, LineChart, Tooltip, Legend, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from "recharts";
 import moment from 'moment';
 
 type DataEntry = {
@@ -48,6 +48,7 @@ export function LChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
     return (
         <ResponsiveContainer width="100%" height={350}>
             <LineChart data={transformedData}>
+                <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
                 <XAxis
                     dataKey={xaxis}
                     stroke="#888888"
