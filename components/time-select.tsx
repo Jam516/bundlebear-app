@@ -19,6 +19,7 @@ export function TimeSelect() {
     const handleSelect = (newValue: string) => {
         const segments = pathname.split("/");
         const pathcore = segments.slice(0, 3).join('/');
+        // const pathcore = segments.slice(0, 3).join('/');
         return router.push(`${pathcore}/${newValue}`);
     };
 

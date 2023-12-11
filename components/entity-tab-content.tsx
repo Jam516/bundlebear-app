@@ -38,7 +38,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
 
     return (
         <>
-            <TimeSelect />
+            {/* <TimeSelect /> */}
             {data.bundler_exists && (
                 <>
                     <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
