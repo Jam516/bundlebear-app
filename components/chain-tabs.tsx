@@ -12,7 +12,12 @@ export function ChainTabs() {
 
     const handleTabChange = (newValue: string) => {
         const segments = pathname.split("/");
-        return router.push(`/${segments[1]}/${newValue}`);
+
+        if (segments[1] === 'entity') {
+            return router.push(`/${segments[1]}/${newValue}/${segments[3]}/${segments[4]}`);
+        } else {
+            return router.push(`/${segments[1]}/${newValue}`);
+        }
     };
 
     useEffect(() => {
