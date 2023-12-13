@@ -23,7 +23,7 @@ In this article, we will analyze the cost of using smart accounts on these L2s a
 Using historical data, let's examine the cost of performing a native token transfer using a smart account. For ERC4337 accounts, we will analyze the `actualGasCost` of UserOps that execute a native token transfer. For Safe accounts, we will consider the transaction fee for Safe transactions that achieve the same transfer. 
  
 
-This analysis does not aim to compare the gas efficiency of different account implementations. Several factors, such as fluctuating gas prices and the fee settings chosen by the application or wallet, influence the cost of an operation, apart from gas efficiency. Instead, this analysis aims to measure the costs that users are facing in real life.
+This analysis does not aim to compare the gas efficiency of different account implementations. Several factors, such as fluctuating gas prices, the gas premium charged by the bundler of the UserOp and the fee settings chosen by the app/wallet, influence the cost of an operation, apart from gas efficiency. Instead, this analysis aims to measure the costs that users are facing in real life.
  
 
 We have excluded [anomalous UserOps](https://optimistic.etherscan.io/tx/0x9c6d6690b0f16757ec2110d5e7677a92cc885e0d1dc2573d99abaae0936131f3) where the bundler accepted UserOps with fees significantly lower than the required amount to cover the bundle transaction cost and [anomalous transactions](https://polygonscan.com/tx/0x89dfa0aaeaa646b934b64142e6578a55107051f4c2d15dd188b81869e544e068) where gas prices greatly exceeded the norm.
