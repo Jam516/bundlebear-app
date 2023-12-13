@@ -25,6 +25,11 @@ export function ChainTabs() {
         setActiveTab(segments[2]);
     }, [pathname]);
 
+    const segments = pathname.split("/");
+    if (segments[1] === 'research' || segments[1] === 'posts') {
+        return <div></div>;
+    }
+
     return (
         <Tabs defaultValue="all" className="space-y-4" onValueChange={handleTabChange} value={activeTab}>
             <TabsList>
