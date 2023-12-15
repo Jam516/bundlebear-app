@@ -7,7 +7,8 @@ import {
     LayoutPanelLeft,
     FileText,
     Menu,
-    Wallet
+    Wallet,
+    ScrollText
 } from "lucide-react"
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation"
@@ -114,6 +115,17 @@ export function MobileNav() {
                                 )}
                             >
                                 Wallets
+                            </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <ScrollText className="mr-2 h-4 w-4" />
+                            <Link
+                                href="/research"
+                                className={cn(
+                                    segments === "applications" ? "text-foreground" : "text-foreground/60"
+                                )}
+                            >
+                                Research
                             </Link>
                         </DropdownMenuItem>
                     </DropdownMenuContent>

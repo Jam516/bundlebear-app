@@ -77,6 +77,15 @@ export function MainNav({
         Wallets
       </Link>
       <Link
+        href="/research"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
+          segments === "applications" ? "text-foreground" : "text-foreground/60"
+        )}
+      >
+        Research
+      </Link>
+      <Link
         href="https://docs.google.com/spreadsheets/d/1QJEYDOr-AMD2bNAoupfjQJYJabFgdb2TRSyekdIfquM/edit#gid=0"
         className={cn(
           "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
