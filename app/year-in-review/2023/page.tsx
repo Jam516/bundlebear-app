@@ -122,7 +122,7 @@ export default async function YIRPage() {
                             </CardHeader>
                             <CardContent >
                                 <div className="flex flex-col gap-6">
-                                    <p>In the first few months of ERC-4337 activity, apps like CapX (a quest protocol), Dexwin (an onchain casino) and Fantazy (a fantasy sports app) attracted a smanll number of early adopters, but there wasn't a breakout hit.</p>
+                                    <p>In the first few months of ERC-4337 activity, apps like CapX (a quest protocol), Dexwin (an onchain casino) and Fantazy (a fantasy sports app) attracted a smanll number of early adopters, but there wasn&apos;t a breakout hit.</p>
                                     <p>This changed in July when CyberConnect, an onchain social network, started creating ERC-4337 smart accounts for all of its users.
                                         This led to a massive increase in the usage of smart accounts.
                                         The peak of this growth occurred in August during their CYBER token airdrop.
@@ -144,7 +144,7 @@ export default async function YIRPage() {
                                     <p>Polygon had the highest number of active ERC-4337 accounts this year for two reasons:</p>
                                     <li>The three most popular apps for 4337 users, CyberConnect, Grindery, and FanTV, were all deployed on Polygon.</li>
                                     <li>It is much cheaper to deploy and use 4337 accounts on Polygon compared to other chains and L2s. For more insights on smart account costs, check out our cost analysis research report</li>
-                                    <p>The only break in Polygon's market dominance was in August, when CyberConnect dropped the CYBER token on Optimism and 200,000 ZTX NFTs were minted using smart accounts on Arbitrum.</p>
+                                    <p>The only break in Polygon&apos;s market dominance was in August, when CyberConnect dropped the CYBER token on Optimism and 200,000 ZTX NFTs were minted using smart accounts on Arbitrum.</p>
                                     <div className="flex justify-center">
                                         <p>Chains Share of Monthly UserOps</p>
                                     </div>
