@@ -5,10 +5,10 @@ import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 import { Button } from "@/components/button"
 
 export type Bundler = {
-    bundler_name: string
-    num_userops: number
-    num_txns: number
-    revenue: number
+    BUNDLER_NAME: string
+    NUM_USEROPS: number
+    NUM_TXNS: number
+    REVENUE: number
 }
 
 export const bundlercolumns: ColumnDef<Bundler>[] = [
@@ -212,6 +212,41 @@ export const appcolumns: ColumnDef<Apps>[] = [
             const amount = parseFloat(row.getValue("NUM_OPS"))
 
             return <div className="text-center font-medium">{amount}</div>
+        },
+    },
+]
+
+export type PaymasterMin = {
+    PAYMASTER_NAME: string
+    GAS_SPENT: number
+}
+
+export const paymastermincolumns: ColumnDef<PaymasterMin>[] = [
+    {
+        accessorKey: "PAYMASTER_NAME",
+        header: "Paymaster",
+    },
+    {
+        accessorKey: "GAS_SPENT",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Total Gas Spend
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("GAS_SPENT"))
+            const formatted = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+            }).format(amount)
+
+            return <div className="text-center font-medium">{formatted}</div>
         },
     },
 ]

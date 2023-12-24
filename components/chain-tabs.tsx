@@ -31,7 +31,7 @@ export function ChainTabs() {
     }
 
     return (
-        <Tabs defaultValue="all" className="space-y-4" onValueChange={handleTabChange} value={activeTab}>
+        <Tabs defaultValue="all" className="space-y-4 pt-6" onValueChange={handleTabChange} value={activeTab}>
             <TabsList>
                 <TabsTrigger value="all">Cross-chain</TabsTrigger>
                 <TabsTrigger value="polygon">Polygon</TabsTrigger>

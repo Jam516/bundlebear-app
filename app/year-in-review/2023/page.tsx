@@ -10,10 +10,15 @@ import {
     Users
 } from "lucide-react"
 import { LChart } from "@/components/line-entity";
-import { Apps, appcolumns } from "@/components/columns"
+import { BChart } from "@/components/multiop-bar-chart";
+import { Apps, appcolumns, bundlercolumns, paymastermincolumns } from "@/components/columns"
 import { DataTable } from "@/components/data-table"
 import MSBarChart from "@/components/marketshare-contracts"
 import { MSChart } from "@/components/marketshare-bar-overview";
+import { LUPChart } from "@/components/line-underpriced";
+import PieChartComponent from "@/components/pie";
+import { MSDChart } from "@/components/retro/marketshare-bar-deployer";
+import { MSWChart } from "@/components/retro/marketshare-bar-wallet";
 
 export const metadata: Metadata = {
     title: "BundleBear Year In Review",
@@ -24,58 +29,21 @@ export default async function YIRPage() {
 
     return (
         <>
-            <div className="flex flex-col">
+            <div className="flex flex-col bg-blue-200">
                 <div className="flex-1 space-y-4 p-8 pt-6">
                     <div className="flex flex-col items-left space-y-2">
                         <p>logo with name</p>
-                        <h2 className="text-3xl font-bold tracking-tight">2023 Year in Review</h2>
+                        <h2 className="text-4xl font-bold tracking-tight">2023 Year in Review</h2>
                     </div>
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
-                        <Card >
-                            <CardHeader>
-                                <CardTitle>User Insights</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <ul>
-                                    <li>- <a href="#section11">User Operations</a></li>
-                                    <li>- <a href="#section12">Accounts</a></li>
-                                    <li>- <a href="#section13">Top Apps</a></li>
-                                    <li>- <a href="#section14">Usage Trends</a></li>
-                                    <li>- <a href="#section15">Chains</a></li>
-                                </ul>
-                            </CardContent>
-                        </Card>
-                        <Card >
-                            <CardHeader>
-                                <CardTitle>Bundler Performance</CardTitle>
-                            </CardHeader>
-                            <CardContent className="pl-2">
-                                <p>TOC</p>
-                            </CardContent>
-                        </Card>
-                        <Card >
-                            <CardHeader>
-                                <CardTitle>Paymasters</CardTitle>
-                            </CardHeader>
-                            <CardContent className="pl-2">
-                                <p>TOC</p>
-                            </CardContent>
-                        </Card>
-                        <Card >
-                            <CardHeader>
-                                <CardTitle>Factories</CardTitle>
-                            </CardHeader>
-                            <CardContent className="pl-2">
-                                <p>TOC</p>
-                            </CardContent>
-                        </Card>
-                    </div>
+                    <p>This year, ERC-4337 massively accelerated the pace of innovation in the account abstraction field.
+                        The BundleBear 2023 Year in Review aims to provide a data-driven perspective on the major patterns and trends within the ERC-4337 smart accounts category.
+                        All insights are based on ERC-4337 activity on Polygon, Optimism, Arbitrum, Base and Ethereum.</p>
                     <div className="flex flex-row gap-2 items-center">
                         <Users />
                         <h2 className="text-3xl font-bold tracking-tight">User Insights</h2>
                     </div>
                     <div className="flex flex-col gap-4">
-                        <Card id="section11">
+                        <Card id="section11" className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="text-xl">7.5M+ User Operations were made in 2023</CardTitle>
                             </CardHeader>
@@ -91,7 +59,7 @@ export default async function YIRPage() {
                                 </div>
                             </CardContent>
                         </Card>
-                        <Card id="section12">
+                        <Card id="section12" className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="text-xl">1.7M accounts made a UserOp in 2023</CardTitle>
                             </CardHeader>
@@ -105,7 +73,7 @@ export default async function YIRPage() {
                                 </div>
                             </CardContent>
                         </Card>
-                        <Card id="section13">
+                        <Card id="section13" className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="text-xl">Top 10 most used protocols</CardTitle>
                             </CardHeader>
@@ -116,7 +84,7 @@ export default async function YIRPage() {
                                 </div>
                             </CardContent>
                         </Card>
-                        <Card id="section14">
+                        <Card id="section14" className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="text-xl">Top Usage Trends</CardTitle>
                             </CardHeader>
@@ -135,7 +103,7 @@ export default async function YIRPage() {
                                 </div>
                             </CardContent>
                         </Card>
-                        <Card id="section15">
+                        <Card id="section15" className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="text-xl">85% of all UserOps were made on Polygon this year.</CardTitle>
                             </CardHeader>
@@ -155,7 +123,7 @@ export default async function YIRPage() {
                     </div>
                     <h2 className="text-3xl font-bold tracking-tight">add icon - Bundler Performance</h2>
                     <div className="flex flex-col gap-4">
-                        <Card id="section21">
+                        <Card id="section21" className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="text-xl">5.2M bundle transactions were made in 2023</CardTitle>
                             </CardHeader>
@@ -166,7 +134,137 @@ export default async function YIRPage() {
                                     <div className="flex justify-center">
                                         <p>Monthly Bundle Transactions</p>
                                     </div>
-                                    {/* <MSBarChart data={month_chain_ops} /> */}
+                                    <LChart data={monthly_txns} xaxis={"DATE"} yaxis={"NUM_TRANSACTIONS"} usd={false} />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card id="section22" className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="text-xl">Top 5 Bundlers</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <div className="flex flex-col gap-6">
+                                    <p>Here are the Bundlers who had the most activity in 2023</p>
+                                    <DataTable columns={bundlercolumns} data={top_bundlers} entity={false} />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card id="section23" className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="text-xl">85% of the bundles made in 2023 only contained 1 UserOp
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <div className="flex flex-col gap-6">
+                                    <p>When bundles contain multiple UserOps, smart account users save money because the cost of the bundle transaction is shared between all the UserOps.
+                                        Bundlers also benefit because they spend less by making fewer transactions while charging the same gas premium on every UserOp.</p>
+                                    <p>Unfortunately, the number of bundles that contain only one UserOp still greatly exceeds the number of multi-UserOp bundles.
+                                        This is due to a combination of factors:</p>
+                                    <li>Building larger bundles increases the chances of getting front-ran and having your bundle reverted.
+                                        To prevent this, Bundlers can either use flashbot-protect (or a similar mechanism) to privately submit bundles to builders or have a direct integration with a builder.
+                                        However, flashbots-protect is not available on Polygon, the most popular chain for ERC-4337 usage.</li>
+                                    <li>There hasn&apos;t always been enough UserOp volume to fill bundles with multiple UserOps.</li>
+                                    <li>Bundler teams needed time to find multi-UserOp bundling algorithms that they were satisfied with.</li>
+                                    <div className="flex justify-center">
+                                        <p>Monthly % of Multi-UserOp Bundles</p>
+                                    </div>
+                                    <BChart data={multi_op_txns} xaxis={"DATE"} yaxis={"PCT_MULTI_USEROP"} />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card id="section24" className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="text-xl">9.7% of all bundle transactions were unprofitable
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <div className="flex flex-col gap-6">
+                                    <p>Accurately pricing UserOps has been a challenge for ERC-4337 apps and bundlers. The line chart below tracks the monthly percentage of unprofitable bundle transactions.
+                                        Here, ‘unprofitable’ refers to cases where the UserOps in the bundle collectively paid less in fees than the bundler spent on the transaction.</p>
+                                    <p>At the start of the year, top Bundlers frequently created bundles that did not generate enough revenue from their UserOps to cover gas costs.
+                                        However, as the year progressed, the percentage of unprofitable bundles decreased, and by December, all Bundlers fell within the less than 30% unprofitable range.
+                                    </p>
+                                    <div className="flex justify-center">
+                                        <p>Monthly % of Unprofitable Bundles</p>
+                                    </div>
+                                    <LUPChart data={pct_underpriced} xaxis={"DATE"} yaxis={"PCT_UNDERPRICED"} segment={"BUNDLER_NAME"} pct={true} />
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <h2 className="text-3xl font-bold tracking-tight">add icon - Paymaster Activity</h2>
+                    <div className="flex flex-col gap-4">
+                        <Card id="section31" className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="text-xl">Users and Apps have spent more than $950,000 through Paymasters</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <div className="flex flex-col gap-6">
+                                    <p>Paymaster contracts allow applications to set up custom gas fee policies for their users.</p>
+                                    <p>Apps can let users pay for gas using ERC-20 tokens or they can cover the gas fees on behalf of their users.
+                                        Paymasters have processed nearly a million dollars in total spending, with monthly volume consistently increasing over the past four months.</p>
+                                    <div className="flex justify-center">
+                                        <p>Monthly Paymaster Volume</p>
+                                    </div>
+                                    <LChart data={monthly_paymaster} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card id="section32" className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="text-xl">Top 5 Paymasters</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <div className="flex flex-col gap-6">
+                                    <p>Here are the Paymasters who had the most volume this year</p>
+                                    <DataTable columns={paymastermincolumns} data={top_paymasters} entity={false} />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card id="section33" className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="text-xl">96.4% of all UserOps were paid for using a Paymaster</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <div className="flex flex-col gap-6">
+                                    <p>Most of the UserOps made in 2023 were paid for using a paymaster.
+                                        This means that either the user paid their fees using an ERC20 token or the app/wallet they were using subsidized the fees.</p>
+                                    {/* <PieChartComponent data={paymasterUsed} /> */}
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <h2 className="text-3xl font-bold tracking-tight">Factories and Wallets</h2>
+                    <div className="flex flex-col gap-4">
+                        <Card id="section41" className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="text-xl">84% of ERC-4337 accounts were deployed using the Zerodev and Biconomy factory contracts</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <div className="flex flex-col gap-6">
+                                    <p>Most accounts are created using a factory contract.
+                                        A factory is a smart contract that generates other smart contracts.
+                                        55% of all accounts were deployed using the Kernel factory created by Zerodev, and 29% were deployed using the Biconomy Account factory created by Biconomy.</p>
+                                    <div className="flex justify-center">
+                                        <p>Factory Share of Monthly Accounts Deployed</p>
+                                    </div>
+                                    <MSDChart data={monthly_factory_share} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card id="section41" className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="text-xl">Patch and CyberConnect Wallet were the most popular ERC-4337 wallets of 2023</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <div className="flex flex-col gap-6">
+                                    <p>In December, 21% of active accounts used Patch wallet.
+                                        Patch is used by the Grindery telegram bot, and Grindery has been the primary driver of its growth.
+                                        Additionally, in December, 24% of active accounts used CyberConnect&apos;s built-in wallet.</p>
+                                    <div className="flex justify-center">
+                                        <p>Wallets Share of Monthly UserOps</p>
+                                    </div>
+                                    <MSWChart data={monthly_wallet} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"WALLET_NAME"} />
                                 </div>
                             </CardContent>
                         </Card>
@@ -390,18 +488,17 @@ const month_chain_ops = [{ 'DATE': '2023-01-01', 'CHAIN': 'ethereum', 'NUM_USERO
 { 'DATE': '2023-12-01', 'CHAIN': 'polygon', 'NUM_USEROPS': 660927 },
 { 'DATE': '2023-12-01', 'CHAIN': 'base', 'NUM_USEROPS': 11282 }]
 
-const multi_op_txns = [{ 'DATE': '2023-01-01', 'PCT_MULTI_USEROP': '0.000000' },
-{ 'DATE': '2023-02-01', 'PCT_MULTI_USEROP': '0.000000' },
-{ 'DATE': '2023-03-01', 'PCT_MULTI_USEROP': '0.000000' },
-{ 'DATE': '2023-04-01', 'PCT_MULTI_USEROP': '0.068400' },
-{ 'DATE': '2023-05-01', 'PCT_MULTI_USEROP': '0.350600' },
-{ 'DATE': '2023-06-01', 'PCT_MULTI_USEROP': '0.616300' },
-{ 'DATE': '2023-07-01', 'PCT_MULTI_USEROP': '0.063500' },
-{ 'DATE': '2023-08-01', 'PCT_MULTI_USEROP': '6.919400' },
-{ 'DATE': '2023-09-01', 'PCT_MULTI_USEROP': '1.017900' },
-{ 'DATE': '2023-10-01', 'PCT_MULTI_USEROP': '32.292600' },
-{ 'DATE': '2023-11-01', 'PCT_MULTI_USEROP': '15.939300' },
-{ 'DATE': '2023-12-01', 'PCT_MULTI_USEROP': '10.145600' }]
+const multi_op_txns = [
+    { 'DATE': '2023-03-01', 'PCT_MULTI_USEROP': '0.000000' },
+    { 'DATE': '2023-04-01', 'PCT_MULTI_USEROP': '0.068400' },
+    { 'DATE': '2023-05-01', 'PCT_MULTI_USEROP': '0.350600' },
+    { 'DATE': '2023-06-01', 'PCT_MULTI_USEROP': '0.616300' },
+    { 'DATE': '2023-07-01', 'PCT_MULTI_USEROP': '0.063500' },
+    { 'DATE': '2023-08-01', 'PCT_MULTI_USEROP': '6.919400' },
+    { 'DATE': '2023-09-01', 'PCT_MULTI_USEROP': '1.017900' },
+    { 'DATE': '2023-10-01', 'PCT_MULTI_USEROP': '32.292600' },
+    { 'DATE': '2023-11-01', 'PCT_MULTI_USEROP': '15.939300' },
+    { 'DATE': '2023-12-01', 'PCT_MULTI_USEROP': '10.145600' }]
 
 const pct_underpriced = [{
     'DATE': '2023-03-01',
@@ -849,3 +946,27 @@ const monthly_factory_share = [{ 'DATE': '2023-03-01', 'DEPLOYER_NAME': 'candide
 },
 { 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'Unknown', 'NUM_ACCOUNTS': 22177 },
 { 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'biconomy', 'NUM_ACCOUNTS': 145050 }]
+
+const paymasterUsed = [{ PAYMASTER: 0.947, NO_PAYMASTER: 0.053 }]
+
+const monthly_wallet = [{ 'DATE': '2023-03-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 84 },
+{ 'DATE': '2023-04-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 4621 },
+{ 'DATE': '2023-05-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 3266 },
+{ 'DATE': '2023-06-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 21222 },
+{ 'DATE': '2023-07-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 5426 },
+{ 'DATE': '2023-07-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 287056 },
+{ 'DATE': '2023-08-01', 'WALLET_NAME': 'patch', 'NUM_ACCOUNTS': 17 },
+{ 'DATE': '2023-08-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 194161 },
+{ 'DATE': '2023-08-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 227786 },
+{ 'DATE': '2023-09-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 25958 },
+{ 'DATE': '2023-09-01', 'WALLET_NAME': 'patch', 'NUM_ACCOUNTS': 13644 },
+{ 'DATE': '2023-09-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 79220 },
+{ 'DATE': '2023-10-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 90332 },
+{ 'DATE': '2023-10-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 5047 },
+{ 'DATE': '2023-10-01', 'WALLET_NAME': 'patch', 'NUM_ACCOUNTS': 55249 },
+{ 'DATE': '2023-11-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 201145 },
+{ 'DATE': '2023-11-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 97988 },
+{ 'DATE': '2023-11-01', 'WALLET_NAME': 'patch', 'NUM_ACCOUNTS': 110709 },
+{ 'DATE': '2023-12-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 86710 },
+{ 'DATE': '2023-12-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 182380 },
+{ 'DATE': '2023-12-01', 'WALLET_NAME': 'patch', 'NUM_ACCOUNTS': 66364 }]
