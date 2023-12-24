@@ -7,7 +7,10 @@ import {
     CardTitle,
 } from "@/new-york-ui/card";
 import {
-    Users
+    Users,
+    Layers,
+    Coins,
+    Wallet,
 } from "lucide-react"
 import { LChart } from "@/components/line-entity";
 import { BChart } from "@/components/multiop-bar-chart";
@@ -16,7 +19,7 @@ import { DataTable } from "@/components/data-table"
 import MSBarChart from "@/components/marketshare-contracts"
 import { MSChart } from "@/components/marketshare-bar-overview";
 import { LUPChart } from "@/components/line-underpriced";
-import PieChartComponent from "@/components/pie";
+// import PieChartComponent from "@/components/pie";
 import { MSDChart } from "@/components/retro/marketshare-bar-deployer";
 import { MSWChart } from "@/components/retro/marketshare-bar-wallet";
 
@@ -29,243 +32,204 @@ export default async function YIRPage() {
 
     return (
         <>
-            <div className="flex flex-col bg-blue-200">
-                <div className="flex-1 space-y-4 p-8 pt-6">
-                    <div className="flex flex-col items-left space-y-2">
-                        <p>logo with name</p>
-                        <h2 className="text-4xl font-bold tracking-tight">2023 Year in Review</h2>
+            <div className="flex flex-col">
+                <div className="flex-1 space-y-4 p-8 pt-6 md:w-3/5 mx-auto ">
+                    <div className="flex flex-col items-center text-center space-y-2 pb-6">
+                        <h2 className="text-5xl font-bold tracking-tight">2023 Year in Review</h2>
+                        <p>This year, ERC-4337 massively accelerated the pace of innovation in the account abstraction field.
+                            The BundleBear 2023 Year in Review aims to provide a data-driven perspective on the major patterns and trends within the ERC-4337 smart accounts category.
+                            All insights are based on ERC-4337 activity on Polygon, Optimism, Arbitrum, Base and Ethereum.</p>
                     </div>
-                    <p>This year, ERC-4337 massively accelerated the pace of innovation in the account abstraction field.
-                        The BundleBear 2023 Year in Review aims to provide a data-driven perspective on the major patterns and trends within the ERC-4337 smart accounts category.
-                        All insights are based on ERC-4337 activity on Polygon, Optimism, Arbitrum, Base and Ethereum.</p>
+
                     <div className="flex flex-row gap-2 items-center">
                         <Users />
                         <h2 className="text-3xl font-bold tracking-tight">User Insights</h2>
                     </div>
+
                     <div className="flex flex-col gap-4">
-                        <Card id="section11" className="border-4 border-black">
+                        <h2 id="section11" className="text-xl font-bold tracking-tight pt-6">7.5M+ User Operations were made in 2023</h2>
+                        <p>When you use an ERC-4337 account, you submit User Operations (UserOps) instead of transactions.
+                            These UserOps get grouped into bundle transactions that are executed onchain by Bundlers.</p>
+                        <p>The number of monthly UserOps reached a peak of 2.7M in October, then steadily declined to 720k in December.</p>
+                        <Card className="border-4 border-black ">
                             <CardHeader>
-                                <CardTitle className="text-xl">7.5M+ User Operations were made in 2023</CardTitle>
+                                <CardTitle className="mx-auto">Monthly UserOps</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>When you use an ERC-4337 account, you submit User Operations (UserOps) instead of transactions.
-                                        These UserOps get grouped into bundle transactions that are executed onchain by Bundlers.</p>
-                                    <p>The number of monthly UserOps reached a peak of 2.7M in October, then steadily declined to 720k in December.</p>
-                                    <div className="flex justify-center">
-                                        <p>Monthly UserOps</p>
-                                    </div>
-                                    <LChart data={monthly_ops} xaxis={"DATE"} yaxis={"USEROPS"} usd={false} />
-                                </div>
+                                <LChart data={monthly_ops} xaxis={"DATE"} yaxis={"USEROPS"} usd={false} />
                             </CardContent>
                         </Card>
-                        <Card id="section12" className="border-4 border-black">
+                        <h2 id="section12" className="text-xl font-bold tracking-tight pt-6">1.7M accounts made a UserOp in 2023</h2>
+                        <p>The highest number of monthly active smart accounts occurred in November, when 450k accounts made at least one UserOp.</p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">1.7M accounts made a UserOp in 2023</CardTitle>
+                                <CardTitle className="mx-auto">Monthly Active Accounts</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>The highest number of monthly active smart accounts occurred in November, when 450k accounts made at least one UserOp.</p>
-                                    <div className="flex justify-center">
-                                        <p>Monthly Active Accounts</p>
-                                    </div>
-                                    <LChart data={monthly_active_accounts} xaxis={"DATE"} yaxis={"ACTIVES"} usd={false} />
-                                </div>
+                                <LChart data={monthly_active_accounts} xaxis={"DATE"} yaxis={"ACTIVES"} usd={false} />
                             </CardContent>
                         </Card>
-                        <Card id="section13" className="border-4 border-black">
+                        <h2 id="section13" className="text-xl font-bold tracking-tight pt-6">Top 10 most used protocols</h2>
+                        <p>Here are the protocols that ERC-4337 accounts used the most this year:</p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">Top 10 most used protocols</CardTitle>
+                                <CardTitle className="text-xl"> </CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>Here are the protocols that ERC-4337 accounts used the most this year:</p>
-                                    <DataTable columns={appcolumns} data={top_five_apps} entity={false} />
-                                </div>
+                                <DataTable columns={appcolumns} data={top_five_apps} entity={false} />
                             </CardContent>
                         </Card>
-                        <Card id="section14" className="border-4 border-black">
+                        <h2 id="section14" className="text-xl font-bold tracking-tight pt-6">Top Usage Trends</h2>
+                        <p>In the first few months of ERC-4337 activity, apps like CapX (a quest protocol), Dexwin (an onchain casino) and Fantazy (a fantasy sports app) attracted a smanll number of early adopters, but there wasn&apos;t a breakout hit.</p>
+                        <p>This changed in July when CyberConnect, an onchain social network, started creating ERC-4337 smart accounts for all of its users.
+                            This led to a massive increase in the usage of smart accounts.
+                            The peak of this growth occurred in August during their CYBER token airdrop.
+                            Following the airdrop, smart account usage declined as many farmers shifted their focus from Cyberconnect to new targets. </p>
+                        <p>In the following months, token farming activity on Grindery (a crypto telegram bot) and FanTV (a streaming service that rewards users with tokens) took over as the most popular user behaviours, replacing airdrop farming on CyberConnect.</p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">Top Usage Trends</CardTitle>
+                                <CardTitle className="mx-auto">Projects Share of Monthly UserOps</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>In the first few months of ERC-4337 activity, apps like CapX (a quest protocol), Dexwin (an onchain casino) and Fantazy (a fantasy sports app) attracted a smanll number of early adopters, but there wasn&apos;t a breakout hit.</p>
-                                    <p>This changed in July when CyberConnect, an onchain social network, started creating ERC-4337 smart accounts for all of its users.
-                                        This led to a massive increase in the usage of smart accounts.
-                                        The peak of this growth occurred in August during their CYBER token airdrop.
-                                        Following the airdrop, smart account usage declined as many farmers shifted their focus from Cyberconnect to new targets. </p>
-                                    <p>In the following months, token farming activity on Grindery (a crypto telegram bot) and FanTV (a streaming service that rewards users with tokens) took over as the most popular user behaviours, replacing airdrop farming on CyberConnect.</p>
-                                    <div className="flex justify-center">
-                                        <p>Projects Share of Monthly UserOps</p>
-                                    </div>
-                                    <MSBarChart data={monthly_app_share} />
-                                </div>
+                                <MSBarChart data={monthly_app_share} />
                             </CardContent>
                         </Card>
-                        <Card id="section15" className="border-4 border-black">
+                        <h2 id="section15" className="text-xl font-bold tracking-tight pt-6">85% of all UserOps were made on Polygon this year</h2>
+                        <p>Polygon had the highest number of active ERC-4337 accounts this year for two reasons:</p>
+                        <li>The three most popular apps for 4337 users, CyberConnect, Grindery, and FanTV, were all deployed on Polygon.</li>
+                        <li>It is much cheaper to deploy and use 4337 accounts on Polygon compared to other chains and L2s. For more insights on smart account costs, check out our cost analysis research report</li>
+                        <p>The only break in Polygon&apos;s market dominance was in August, when CyberConnect dropped the CYBER token on Optimism and 200,000 ZTX NFTs were minted using smart accounts on Arbitrum.</p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">85% of all UserOps were made on Polygon this year.</CardTitle>
+                                <CardTitle className="mx-auto">Chains Share of Monthly UserOps</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>Polygon had the highest number of active ERC-4337 accounts this year for two reasons:</p>
-                                    <li>The three most popular apps for 4337 users, CyberConnect, Grindery, and FanTV, were all deployed on Polygon.</li>
-                                    <li>It is much cheaper to deploy and use 4337 accounts on Polygon compared to other chains and L2s. For more insights on smart account costs, check out our cost analysis research report</li>
-                                    <p>The only break in Polygon&apos;s market dominance was in August, when CyberConnect dropped the CYBER token on Optimism and 200,000 ZTX NFTs were minted using smart accounts on Arbitrum.</p>
-                                    <div className="flex justify-center">
-                                        <p>Chains Share of Monthly UserOps</p>
-                                    </div>
-                                    <MSChart data={month_chain_ops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} />
-                                </div>
+                                <MSChart data={month_chain_ops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} />
                             </CardContent>
                         </Card>
                     </div>
-                    <h2 className="text-3xl font-bold tracking-tight">add icon - Bundler Performance</h2>
+
+                    <div className="flex flex-row gap-2 items-center pt-7">
+                        <Layers />
+                        <h2 className="text-3xl font-bold tracking-tight">Bundler Performance</h2>
+                    </div>
+
                     <div className="flex flex-col gap-4">
-                        <Card id="section21" className="border-4 border-black">
+                        <h2 id="section21" className="text-xl font-bold tracking-tight pt-6">5.2M bundle transactions were made in 2023</h2>
+                        <p>The role of a Bundler is to package UserOps into bundle transactions.
+                            The number of monthly bundle transactions consistently increased month-over-month throughout the year.</p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">5.2M bundle transactions were made in 2023</CardTitle>
+                                <CardTitle className="mx-auto">Monthly Bundle Transactions</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>The role of a Bundler is to package UserOps into bundle transactions.
-                                        The number of monthly bundle transactions consistently increased month-over-month throughout the year.</p>
-                                    <div className="flex justify-center">
-                                        <p>Monthly Bundle Transactions</p>
-                                    </div>
-                                    <LChart data={monthly_txns} xaxis={"DATE"} yaxis={"NUM_TRANSACTIONS"} usd={false} />
-                                </div>
+                                <LChart data={monthly_txns} xaxis={"DATE"} yaxis={"NUM_TRANSACTIONS"} usd={false} />
                             </CardContent>
                         </Card>
-                        <Card id="section22" className="border-4 border-black">
+                        <h2 id="section22" className="text-xl font-bold tracking-tight pt-6">Top 5 Bundlers</h2>
+                        <p>Here are the Bundlers who had the most activity in 2023</p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">Top 5 Bundlers</CardTitle>
+                                <CardTitle className="text-xl"> </CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>Here are the Bundlers who had the most activity in 2023</p>
-                                    <DataTable columns={bundlercolumns} data={top_bundlers} entity={false} />
-                                </div>
+                                <DataTable columns={bundlercolumns} data={top_bundlers} entity={false} />
                             </CardContent>
                         </Card>
-                        <Card id="section23" className="border-4 border-black">
+                        <h2 id="section23" className="text-xl font-bold tracking-tight pt-6">85% of the bundles made in 2023 only contained 1 UserOp</h2>
+                        <p>When bundles contain multiple UserOps, smart account users save money because the cost of the bundle transaction is shared between all the UserOps.
+                            Bundlers also benefit because they spend less by making fewer transactions while charging the same gas premium on every UserOp.</p>
+                        <p>Unfortunately, the number of bundles that contain only one UserOp still greatly exceeds the number of multi-UserOp bundles.
+                            This is due to a combination of factors:</p>
+                        <li>Building larger bundles increases the chances of getting front-ran and having your bundle reverted.
+                            To prevent this, Bundlers can either use flashbot-protect (or a similar mechanism) to privately submit bundles to builders or have a direct integration with a builder.
+                            However, flashbots-protect is not available on Polygon, the most popular chain for ERC-4337 usage.</li>
+                        <li>There hasn&apos;t always been enough UserOp volume to fill bundles with multiple UserOps.</li>
+                        <li>Bundler teams needed time to find multi-UserOp bundling algorithms that they were satisfied with.</li>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">85% of the bundles made in 2023 only contained 1 UserOp
-                                </CardTitle>
+                                <CardTitle className="mx-auto">Monthly % of Multi-UserOp Bundles</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>When bundles contain multiple UserOps, smart account users save money because the cost of the bundle transaction is shared between all the UserOps.
-                                        Bundlers also benefit because they spend less by making fewer transactions while charging the same gas premium on every UserOp.</p>
-                                    <p>Unfortunately, the number of bundles that contain only one UserOp still greatly exceeds the number of multi-UserOp bundles.
-                                        This is due to a combination of factors:</p>
-                                    <li>Building larger bundles increases the chances of getting front-ran and having your bundle reverted.
-                                        To prevent this, Bundlers can either use flashbot-protect (or a similar mechanism) to privately submit bundles to builders or have a direct integration with a builder.
-                                        However, flashbots-protect is not available on Polygon, the most popular chain for ERC-4337 usage.</li>
-                                    <li>There hasn&apos;t always been enough UserOp volume to fill bundles with multiple UserOps.</li>
-                                    <li>Bundler teams needed time to find multi-UserOp bundling algorithms that they were satisfied with.</li>
-                                    <div className="flex justify-center">
-                                        <p>Monthly % of Multi-UserOp Bundles</p>
-                                    </div>
-                                    <BChart data={multi_op_txns} xaxis={"DATE"} yaxis={"PCT_MULTI_USEROP"} />
-                                </div>
+                                <BChart data={multi_op_txns} xaxis={"DATE"} yaxis={"PCT_MULTI_USEROP"} />
                             </CardContent>
                         </Card>
-                        <Card id="section24" className="border-4 border-black">
+                        <h2 id="section24" className="text-xl font-bold tracking-tight pt-6">9.7% of all bundle transactions were unprofitable</h2>
+                        <p>Accurately pricing UserOps has been a challenge for ERC-4337 apps and bundlers. The line chart below tracks the monthly percentage of unprofitable bundle transactions.
+                            Here, ‘unprofitable’ refers to cases where the UserOps in the bundle collectively paid less in fees than the bundler spent on the transaction.</p>
+                        <p>At the start of the year, top Bundlers frequently created bundles that did not generate enough revenue from their UserOps to cover gas costs.
+                            However, as the year progressed, the percentage of unprofitable bundles decreased, and by December, all Bundlers fell within the less than 30% unprofitable range.
+                        </p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">9.7% of all bundle transactions were unprofitable
-                                </CardTitle>
+                                <CardTitle className="mx-auto">Monthly % of Unprofitable Bundles</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>Accurately pricing UserOps has been a challenge for ERC-4337 apps and bundlers. The line chart below tracks the monthly percentage of unprofitable bundle transactions.
-                                        Here, ‘unprofitable’ refers to cases where the UserOps in the bundle collectively paid less in fees than the bundler spent on the transaction.</p>
-                                    <p>At the start of the year, top Bundlers frequently created bundles that did not generate enough revenue from their UserOps to cover gas costs.
-                                        However, as the year progressed, the percentage of unprofitable bundles decreased, and by December, all Bundlers fell within the less than 30% unprofitable range.
-                                    </p>
-                                    <div className="flex justify-center">
-                                        <p>Monthly % of Unprofitable Bundles</p>
-                                    </div>
-                                    <LUPChart data={pct_underpriced} xaxis={"DATE"} yaxis={"PCT_UNDERPRICED"} segment={"BUNDLER_NAME"} pct={true} />
-                                </div>
+                                <LUPChart data={pct_underpriced} xaxis={"DATE"} yaxis={"PCT_UNDERPRICED"} segment={"BUNDLER_NAME"} pct={true} />
                             </CardContent>
                         </Card>
                     </div>
-                    <h2 className="text-3xl font-bold tracking-tight">add icon - Paymaster Activity</h2>
-                    <div className="flex flex-col gap-4">
-                        <Card id="section31" className="border-4 border-black">
-                            <CardHeader>
-                                <CardTitle className="text-xl">Users and Apps have spent more than $950,000 through Paymasters</CardTitle>
-                            </CardHeader>
-                            <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>Paymaster contracts allow applications to set up custom gas fee policies for their users.</p>
-                                    <p>Apps can let users pay for gas using ERC-20 tokens or they can cover the gas fees on behalf of their users.
-                                        Paymasters have processed nearly a million dollars in total spending, with monthly volume consistently increasing over the past four months.</p>
-                                    <div className="flex justify-center">
-                                        <p>Monthly Paymaster Volume</p>
-                                    </div>
-                                    <LChart data={monthly_paymaster} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} />
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card id="section32" className="border-4 border-black">
-                            <CardHeader>
-                                <CardTitle className="text-xl">Top 5 Paymasters</CardTitle>
-                            </CardHeader>
-                            <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>Here are the Paymasters who had the most volume this year</p>
-                                    <DataTable columns={paymastermincolumns} data={top_paymasters} entity={false} />
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card id="section33" className="border-4 border-black">
-                            <CardHeader>
-                                <CardTitle className="text-xl">96.4% of all UserOps were paid for using a Paymaster</CardTitle>
-                            </CardHeader>
-                            <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>Most of the UserOps made in 2023 were paid for using a paymaster.
-                                        This means that either the user paid their fees using an ERC20 token or the app/wallet they were using subsidized the fees.</p>
-                                    {/* <PieChartComponent data={paymasterUsed} /> */}
-                                </div>
-                            </CardContent>
-                        </Card>
+
+                    <div className="flex flex-row gap-2 items-center pt-7">
+                        <Coins />
+                        <h2 className="text-3xl font-bold tracking-tight">Paymaster Activity</h2>
                     </div>
-                    <h2 className="text-3xl font-bold tracking-tight">Factories and Wallets</h2>
+
                     <div className="flex flex-col gap-4">
-                        <Card id="section41" className="border-4 border-black">
+                        <h2 id="section31" className="text-xl font-bold tracking-tight pt-6">Users and Apps have spent more than $950,000 on UserOp fees through Paymasters</h2>
+                        <p>Paymaster contracts allow applications to set up custom gas fee policies for their users.</p>
+                        <p>Apps can let users pay for gas using ERC-20 tokens or they can cover the gas fees on behalf of their users.
+                            Paymasters have processed nearly a million dollars in total spending, with monthly volume consistently increasing over the past four months.</p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">84% of ERC-4337 accounts were deployed using the Zerodev and Biconomy factory contracts</CardTitle>
+                                <CardTitle className="mx-auto">Monthly Paymaster Volume</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>Most accounts are created using a factory contract.
-                                        A factory is a smart contract that generates other smart contracts.
-                                        55% of all accounts were deployed using the Kernel factory created by Zerodev, and 29% were deployed using the Biconomy Account factory created by Biconomy.</p>
-                                    <div className="flex justify-center">
-                                        <p>Factory Share of Monthly Accounts Deployed</p>
-                                    </div>
-                                    <MSDChart data={monthly_factory_share} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />
-                                </div>
+                                <LChart data={monthly_paymaster} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} />
                             </CardContent>
                         </Card>
-                        <Card id="section41" className="border-4 border-black">
+                        <h2 id="section32" className="text-xl font-bold tracking-tight pt-6">Top 5 Paymasters</h2>
+                        <p>Here are the Paymasters who had the most volume this year:</p>
+                        <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="text-xl">Patch and CyberConnect Wallet were the most popular ERC-4337 wallets of 2023</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <div className="flex flex-col gap-6">
-                                    <p>In December, 21% of active accounts used Patch wallet.
-                                        Patch is used by the Grindery telegram bot, and Grindery has been the primary driver of its growth.
-                                        Additionally, in December, 24% of active accounts used CyberConnect&apos;s built-in wallet.</p>
-                                    <div className="flex justify-center">
-                                        <p>Wallets Share of Monthly UserOps</p>
-                                    </div>
-                                    <MSWChart data={monthly_wallet} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"WALLET_NAME"} />
-                                </div>
+                                <DataTable columns={paymastermincolumns} data={top_paymasters} entity={false} />
+                            </CardContent>
+                        </Card>
+                        <h2 id="section33" className="text-xl font-bold tracking-tight pt-6">96.4% of all UserOps were paid for using a Paymaster</h2>
+                        <p>Most of the UserOps made in 2023 were paid for using a paymaster.
+                            This means that either the user paid their fees using an ERC20 token or the app/wallet they were using subsidized the fees.</p>
+                    </div>
+
+                    <div className="flex flex-row gap-2 items-center pt-7">
+                        <Wallet />
+                        <h2 className="text-3xl font-bold tracking-tight">Factories and Wallets</h2>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+                        <h2 id="section41" className="text-xl font-bold tracking-tight pt-6">84% of ERC-4337 accounts were deployed using the Zerodev and Biconomy factory contracts</h2>
+                        <p>Most accounts are created using a factory contract.
+                            A factory is a smart contract that generates other smart contracts.
+                            55% of all accounts were deployed using the Kernel factory created by Zerodev, and 29% were deployed using the Biconomy Account factory created by Biconomy.</p>
+                        <Card className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="mx-auto">Factory Share of Monthly Accounts Deployed</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <MSDChart data={monthly_factory_share} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />
+                            </CardContent>
+                        </Card>
+                        <h2 id="section42" className="text-xl font-bold tracking-tight pt-6">Patch and CyberConnect Wallet were the most popular ERC-4337 wallets of 2023</h2>
+                        <Card className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="mx-auto">Wallets Share of Monthly UserOps</CardTitle>
+                                <p>In December, 21% of active accounts used Patch wallet.
+                                    Patch is used by the Grindery telegram bot, and Grindery has been the primary driver of its growth.
+                                    Additionally, in December, 24% of active accounts used CyberConnect&apos;s built-in wallet.</p>
+                            </CardHeader>
+                            <CardContent >
+                                <MSWChart data={monthly_wallet} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"WALLET_NAME"} />
                             </CardContent>
                         </Card>
                     </div>
