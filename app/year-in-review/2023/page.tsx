@@ -33,7 +33,7 @@ export default async function YIRPage() {
     return (
         <>
             <div className="flex flex-col">
-                <div className="flex-1 space-y-4 p-8 pt-6 md:w-3/5 mx-auto ">
+                <div className="flex-1 space-y-4 p-8 pt-6 md:w-3/5 md:mx-auto ">
                     <div className="flex flex-col items-center text-center space-y-2 pb-6">
                         <h2 className="text-5xl font-bold tracking-tight">2023 Year in Review</h2>
                         <p>This year, ERC-4337 massively accelerated the pace of innovation in the account abstraction field.
