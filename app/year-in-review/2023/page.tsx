@@ -41,7 +41,17 @@ export default async function YIRPage() {
                             All insights are based on ERC-4337 activity on Polygon, Optimism, Arbitrum, Base and Ethereum.</p>
                     </div>
 
-                    <div className="flex flex-row gap-2 items-center">
+                    <div className="flex flex-col pb-6">
+                        <h2 className="text-xl font-bold tracking-tight">Contents</h2>
+                        <ol>
+                            <li><a href="#section1" className="text-blue-500 underline">User Insights</a></li>
+                            <li><a href="#section2" className="text-blue-500 underline">Bundler Performance</a></li>
+                            <li><a href="#section3" className="text-blue-500 underline">Paymaster Activity</a></li>
+                            <li><a href="#section4" className="text-blue-500 underline">Factories and Wallets</a></li>
+                        </ol>
+                    </div>
+
+                    <div id="section1" className="flex flex-row gap-2 items-center">
                         <Users />
                         <h2 className="text-3xl font-bold tracking-tight">User Insights</h2>
                     </div>
@@ -109,7 +119,7 @@ export default async function YIRPage() {
                         </Card>
                     </div>
 
-                    <div className="flex flex-row gap-2 items-center pt-7">
+                    <div id="section2" className="flex flex-row gap-2 items-center pt-7">
                         <Layers />
                         <h2 className="text-3xl font-bold tracking-tight">Bundler Performance</h2>
                     </div>
@@ -170,7 +180,7 @@ export default async function YIRPage() {
                         </Card>
                     </div>
 
-                    <div className="flex flex-row gap-2 items-center pt-7">
+                    <div id="section3" className="flex flex-row gap-2 items-center pt-7">
                         <Coins />
                         <h2 className="text-3xl font-bold tracking-tight">Paymaster Activity</h2>
                     </div>
@@ -202,7 +212,7 @@ export default async function YIRPage() {
                             This means that either the user paid their fees using an ERC20 token or the app/wallet they were using subsidized the fees.</p>
                     </div>
 
-                    <div className="flex flex-row gap-2 items-center pt-7">
+                    <div id="section4" className="flex flex-row gap-2 items-center pt-7">
                         <Wallet />
                         <h2 className="text-3xl font-bold tracking-tight">Factories and Wallets</h2>
                     </div>

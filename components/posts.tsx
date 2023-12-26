@@ -1,5 +1,6 @@
 import { getSortedPostsData } from "@/lib/posts"
 import ListItem from "./list-item"
+import Link from "next/link"
 
 export default function Posts() {
     const posts = getSortedPostsData()
@@ -13,6 +14,11 @@ export default function Posts() {
                     {posts.map(post => (
                         <ListItem key={post.id} post={post} />
                     ))}
+                    <li className="mt-4 text-2xl dark:text-white/90">
+                        <Link className="underline hover:text-black/70 dark:hover:text-white" href={`year-in-review/2023`}>{"2023 Year In Review"}</Link>
+                        <br />
+                        <p className="text-sm mt-1">{"December 26, 2023"}</p>
+                    </li>
                 </ul>
 
             </div>
