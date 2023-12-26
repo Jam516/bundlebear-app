@@ -107,7 +107,7 @@ export default async function YIRPage() {
                         <h2 id="section15" className="text-xl font-bold tracking-tight pt-6">85% of all UserOps were made on Polygon this year</h2>
                         <p>Polygon had the highest number of active ERC-4337 accounts this year for two reasons:</p>
                         <li>The three most popular apps for 4337 users, CyberConnect, Grindery, and FanTV, were all deployed on Polygon.</li>
-                        <li>It is much cheaper to deploy and use 4337 accounts on Polygon compared to other chains and L2s. For more insights on smart account costs, check out our cost analysis research report</li>
+                        <li>It is much cheaper to deploy and use 4337 accounts on Polygon compared to other chains and L2s. For more insights on smart account costs, check out our <a href="https://www.bundlebear.com/posts/gas-cost" className="text-blue-500 underline">cost analysis research report</a></li>
                         <p>The only break in Polygon&apos;s market dominance was in August, when CyberConnect dropped the CYBER token on Optimism and 200,000 ZTX NFTs were minted using smart accounts on Arbitrum.</p>
                         <Card className="border-4 border-black">
                             <CardHeader>
