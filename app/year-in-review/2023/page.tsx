@@ -47,10 +47,10 @@ export default async function YIRPage() {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <h2 id="section11" className="text-xl font-bold tracking-tight pt-6">7.5M+ User Operations were made in 2023</h2>
+                        <h2 id="section11" className="text-xl font-bold tracking-tight pt-6">7.9M+ User Operations were made in 2023</h2>
                         <p>When you use an ERC-4337 account, you submit User Operations (UserOps) instead of transactions.
                             These UserOps get grouped into bundle transactions that are executed onchain by Bundlers.</p>
-                        <p>The number of monthly UserOps reached a peak of 2.7M in October, then steadily declined to 720k in December.</p>
+                        <p>The number of monthly UserOps reached a peak of 2.7M in October, then steadily declined to 880k in December.</p>
                         <Card className="border-4 border-black ">
                             <CardHeader>
                                 <CardTitle className="mx-auto">Monthly UserOps</CardTitle>
@@ -115,7 +115,7 @@ export default async function YIRPage() {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <h2 id="section21" className="text-xl font-bold tracking-tight pt-6">5.2M bundle transactions were made in 2023</h2>
+                        <h2 id="section21" className="text-xl font-bold tracking-tight pt-6">5.4M bundle transactions were made in 2023</h2>
                         <p>The role of a Bundler is to package UserOps into bundle transactions.
                             The number of monthly bundle transactions consistently increased month-over-month throughout the year.</p>
                         <Card className="border-4 border-black">
@@ -136,7 +136,7 @@ export default async function YIRPage() {
                                 <DataTable columns={bundlercolumns} data={top_bundlers} entity={false} />
                             </CardContent>
                         </Card>
-                        <h2 id="section23" className="text-xl font-bold tracking-tight pt-6">85% of the bundles made in 2023 only contained 1 UserOp</h2>
+                        <h2 id="section23" className="text-xl font-bold tracking-tight pt-6">86% of the bundles made in 2023 only contained 1 UserOp</h2>
                         <p>When bundles contain multiple UserOps, smart account users save money because the cost of the bundle transaction is shared between all the UserOps.
                             Bundlers also benefit because they spend less by making fewer transactions while charging the same gas premium on every UserOp.</p>
                         <p>Unfortunately, the number of bundles that contain only one UserOp still greatly exceeds the number of multi-UserOp bundles.
@@ -176,7 +176,7 @@ export default async function YIRPage() {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <h2 id="section31" className="text-xl font-bold tracking-tight pt-6">Users and Apps have spent more than $950,000 on UserOp fees through Paymasters</h2>
+                        <h2 id="section31" className="text-xl font-bold tracking-tight pt-6">Users and Apps have spent more than $1,000,000 on UserOp fees through Paymasters</h2>
                         <p>Paymaster contracts allow applications to set up custom gas fee policies for their users.</p>
                         <p>Apps can let users pay for gas using ERC-20 tokens or they can cover the gas fees on behalf of their users.
                             Paymasters have processed nearly a million dollars in total spending, with monthly volume consistently increasing over the past four months.</p>
@@ -224,9 +224,9 @@ export default async function YIRPage() {
                         <Card className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="mx-auto">Wallets Share of Monthly UserOps</CardTitle>
-                                <p>In December, 21% of active accounts used Patch wallet.
+                                <p>In December, 18% of active accounts used Patch wallet.
                                     Patch is used by the Grindery telegram bot, and Grindery has been the primary driver of its growth.
-                                    Additionally, in December, 24% of active accounts used CyberConnect&apos;s built-in wallet.</p>
+                                    Additionally, in December, 25% of active accounts used CyberConnect&apos;s built-in wallet.</p>
                             </CardHeader>
                             <CardContent >
                                 <MSWChart data={monthly_wallet} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"WALLET_NAME"} />
@@ -248,7 +248,7 @@ const monthly_ops = [{ 'DATE': '2023-03-01', 'USEROPS': 603 },
 { 'DATE': '2023-09-01', 'USEROPS': 884590 },
 { 'DATE': '2023-10-01', 'USEROPS': 2677380 },
 { 'DATE': '2023-11-01', 'USEROPS': 1758815 },
-{ 'DATE': '2023-12-01', 'USEROPS': 720754 }]
+{ 'DATE': '2023-12-01', 'USEROPS': 882371 }]
 
 const monthly_active_accounts = [
     { 'DATE': '2023-03-01', 'ACTIVES': 108 },
@@ -260,17 +260,17 @@ const monthly_active_accounts = [
     { 'DATE': '2023-09-01', 'ACTIVES': 144369 },
     { 'DATE': '2023-10-01', 'ACTIVES': 191611 },
     { 'DATE': '2023-11-01', 'ACTIVES': 450294 },
-    { 'DATE': '2023-12-01', 'ACTIVES': 322917 }]
+    { 'DATE': '2023-12-01', 'ACTIVES': 388617 }]
 
-const top_five_apps = [{ 'PROJECT': 'CyberConnect', 'NUM_UNIQUE_SENDERS': 515450, 'NUM_OPS': 965481 },
-{ 'PROJECT': 'xFANTV token', 'NUM_UNIQUE_SENDERS': 436917, 'NUM_OPS': 980863 },
-{ 'PROJECT': 'G1 token', 'NUM_UNIQUE_SENDERS': 245541, 'NUM_OPS': 3375820 },
-{ 'PROJECT': 'ZTX Hoodie NFT', 'NUM_UNIQUE_SENDERS': 245541, 'NUM_OPS': 216467 },
-{ 'PROJECT': 'CYBER token', 'NUM_UNIQUE_SENDERS': 126399, 'NUM_OPS': 138272 },
-{ 'PROJECT': 'Minishard NFT', 'NUM_UNIQUE_SENDERS': 64650, 'NUM_OPS': 79764 },
-{ 'PROJECT': 'CapX', 'NUM_UNIQUE_SENDERS': 45767, 'NUM_OPS': 581826 },
-{ 'PROJECT': 'CyberID NFT', 'NUM_UNIQUE_SENDERS': 25348, 'NUM_OPS': 26591 },
-{ 'PROJECT': 'USDC', 'NUM_UNIQUE_SENDERS': 9569, 'NUM_OPS': 26422 },
+const top_five_apps = [{ 'PROJECT': 'CyberConnect', 'NUM_UNIQUE_SENDERS': 534968, 'NUM_OPS': 986149 },
+{ 'PROJECT': 'xFANTV token', 'NUM_UNIQUE_SENDERS': 446375, 'NUM_OPS': 991284 },
+{ 'PROJECT': 'G1 token', 'NUM_UNIQUE_SENDERS': 246107, 'NUM_OPS': 3377415 },
+{ 'PROJECT': 'ZTX Hoodie NFT', 'NUM_UNIQUE_SENDERS': 211519, 'NUM_OPS': 216467 },
+{ 'PROJECT': 'CYBER token', 'NUM_UNIQUE_SENDERS': 126448, 'NUM_OPS': 138777 },
+{ 'PROJECT': 'Minishard NFT', 'NUM_UNIQUE_SENDERS': 64650, 'NUM_OPS': 79770 },
+{ 'PROJECT': 'CapX', 'NUM_UNIQUE_SENDERS': 45847, 'NUM_OPS': 584220 },
+{ 'PROJECT': 'CyberID NFT', 'NUM_UNIQUE_SENDERS': 25462, 'NUM_OPS': 26798 },
+{ 'PROJECT': 'USDC', 'NUM_UNIQUE_SENDERS': 9738, 'NUM_OPS': 27030 },
 { 'PROJECT': 'CapX ID NFT', 'NUM_UNIQUE_SENDERS': 9454, 'NUM_OPS': 9522 }]
 
 const monthly_app_share = [{ 'DATE': '2023-03-01', 'PROJECT': 'Other', 'NUM_OPS': 215 },
@@ -347,16 +347,16 @@ const monthly_app_share = [{ 'DATE': '2023-03-01', 'PROJECT': 'Other', 'NUM_OPS'
 { 'DATE': '2023-11-01', 'PROJECT': 'CapX', 'NUM_OPS': 119647 },
 { 'DATE': '2023-11-01', 'PROJECT': 'Cyberconnect', 'NUM_OPS': 117578 },
 { 'DATE': '2023-11-01', 'PROJECT': 'CyberID', 'NUM_OPS': 11912 },
-{ 'DATE': '2023-12-01', 'PROJECT': 'G1', 'NUM_OPS': 328008 },
-{ 'DATE': '2023-12-01', 'PROJECT': 'Other', 'NUM_OPS': 197297 },
-{ 'DATE': '2023-12-01', 'PROJECT': 'xFANTV', 'NUM_OPS': 148759 },
-{ 'DATE': '2023-12-01', 'PROJECT': 'Cyberconnect', 'NUM_OPS': 87258 },
+{ 'DATE': '2023-12-01', 'PROJECT': 'G1', 'NUM_OPS': 329525 },
+{ 'DATE': '2023-12-01', 'PROJECT': 'Other', 'NUM_OPS': 219556 },
+{ 'DATE': '2023-12-01', 'PROJECT': 'xFANTV', 'NUM_OPS': 166413 },
+{ 'DATE': '2023-12-01', 'PROJECT': 'Cyberconnect', 'NUM_OPS': 104219 },
 {
     'DATE': '2023-12-01',
     'PROJECT': '0xa0b9ebd2cc138e0748c69baf66df2e01c57521ec',
-    'NUM_OPS': 17097
+    'NUM_OPS': 40514
 },
-{ 'DATE': '2023-12-01', 'PROJECT': 'CapX ID', 'NUM_OPS': 9630 }]
+{ 'DATE': '2023-12-01', 'PROJECT': 'CapX ID', 'NUM_OPS': 22144 }]
 
 const monthly_txns = [
     { 'DATE': '2023-03-01', 'NUM_TRANSACTIONS': 659 },
@@ -368,37 +368,37 @@ const monthly_txns = [
     { 'DATE': '2023-09-01', 'NUM_TRANSACTIONS': 690029 },
     { 'DATE': '2023-10-01', 'NUM_TRANSACTIONS': 1338144 },
     { 'DATE': '2023-11-01', 'NUM_TRANSACTIONS': 1365482 },
-    { 'DATE': '2023-12-01', 'NUM_TRANSACTIONS': 691817 }]
+    { 'DATE': '2023-12-01', 'NUM_TRANSACTIONS': 783875 }]
 
 const top_bundlers = [{
     'BUNDLER_NAME': 'pimlico',
-    'NUM_USEROPS': 4473977,
-    'NUM_TXNS': 2749611,
-    'REVENUE': 25880.617851897
+    'NUM_USEROPS': 4514902,
+    'NUM_TXNS': 2788440,
+    'REVENUE': 42269.210241379
 },
 {
     'BUNDLER_NAME': 'biconomy',
-    'NUM_USEROPS': 1681150,
-    'NUM_TXNS': 1693719,
-    'REVENUE': 1239.70751768
+    'NUM_USEROPS': 1717173,
+    'NUM_TXNS': 1729676,
+    'REVENUE': 1621.092145579
 },
 {
     'BUNDLER_NAME': 'alchemy',
-    'NUM_USEROPS': 802277,
-    'NUM_TXNS': 472953,
-    'REVENUE': 57144.411136009
+    'NUM_USEROPS': 807769,
+    'NUM_TXNS': 478636,
+    'REVENUE': 57333.149686141
 },
 {
     'BUNDLER_NAME': 'stackup',
-    'NUM_USEROPS': 317916,
-    'NUM_TXNS': 292958,
-    'REVENUE': 15722.443447643
+    'NUM_USEROPS': 318952,
+    'NUM_TXNS': 294002,
+    'REVENUE': 16574.366268818
 },
 {
     'BUNDLER_NAME': 'particle',
-    'NUM_USEROPS': 4770,
-    'NUM_TXNS': 5096,
-    'REVENUE': -101.266046692
+    'NUM_USEROPS': 8255,
+    'NUM_TXNS': 8564,
+    'REVENUE': -74.697049699
 }]
 
 const month_chain_ops = [{ 'DATE': '2023-01-01', 'CHAIN': 'ethereum', 'NUM_USEROPS': 3 },
@@ -446,11 +446,11 @@ const month_chain_ops = [{ 'DATE': '2023-01-01', 'CHAIN': 'ethereum', 'NUM_USERO
 { 'DATE': '2023-11-01', 'CHAIN': 'polygon', 'NUM_USEROPS': 1638941 },
 { 'DATE': '2023-11-01', 'CHAIN': 'base', 'NUM_USEROPS': 5356 },
 { 'DATE': '2023-11-01', 'CHAIN': 'ethereum', 'NUM_USEROPS': 2054 },
-{ 'DATE': '2023-12-01', 'CHAIN': 'arbitrum', 'NUM_USEROPS': 74291 },
-{ 'DATE': '2023-12-01', 'CHAIN': 'ethereum', 'NUM_USEROPS': 4458 },
-{ 'DATE': '2023-12-01', 'CHAIN': 'optimism', 'NUM_USEROPS': 37091 },
-{ 'DATE': '2023-12-01', 'CHAIN': 'polygon', 'NUM_USEROPS': 660927 },
-{ 'DATE': '2023-12-01', 'CHAIN': 'base', 'NUM_USEROPS': 11282 }]
+{ 'DATE': '2023-12-01', 'CHAIN': 'arbitrum', 'NUM_USEROPS': 104266 },
+{ 'DATE': '2023-12-01', 'CHAIN': 'ethereum', 'NUM_USEROPS': 4942 },
+{ 'DATE': '2023-12-01', 'CHAIN': 'optimism', 'NUM_USEROPS': 40842 },
+{ 'DATE': '2023-12-01', 'CHAIN': 'polygon', 'NUM_USEROPS': 720154 },
+{ 'DATE': '2023-12-01', 'CHAIN': 'base', 'NUM_USEROPS': 12167 }]
 
 const multi_op_txns = [
     { 'DATE': '2023-03-01', 'PCT_MULTI_USEROP': '0.000000' },
@@ -462,7 +462,7 @@ const multi_op_txns = [
     { 'DATE': '2023-09-01', 'PCT_MULTI_USEROP': '1.017900' },
     { 'DATE': '2023-10-01', 'PCT_MULTI_USEROP': '32.292600' },
     { 'DATE': '2023-11-01', 'PCT_MULTI_USEROP': '15.939300' },
-    { 'DATE': '2023-12-01', 'PCT_MULTI_USEROP': '10.145600' }]
+    { 'DATE': '2023-12-01', 'PCT_MULTI_USEROP': '9.135500' }]
 
 const pct_underpriced = [{
     'DATE': '2023-03-01',
@@ -756,18 +756,28 @@ const pct_underpriced = [{
 },
 {
     'DATE': '2023-12-01',
+    'BUNDLER_NAME': 'candide',
+    'PCT_UNDERPRICED': '26.190500'
+},
+{
+    'DATE': '2023-12-01',
     'BUNDLER_NAME': 'etherspot',
     'PCT_UNDERPRICED': '22.222200'
 },
 {
     'DATE': '2023-12-01',
+    'BUNDLER_NAME': 'alchemy',
+    'PCT_UNDERPRICED': '3.012300'
+},
+{
+    'DATE': '2023-12-01',
     'BUNDLER_NAME': 'biconomy',
-    'PCT_UNDERPRICED': '2.301700'
+    'PCT_UNDERPRICED': '2.088100'
 },
 {
     'DATE': '2023-12-01',
     'BUNDLER_NAME': 'particle',
-    'PCT_UNDERPRICED': '5.312300'
+    'PCT_UNDERPRICED': '3.371100'
 },
 {
     'DATE': '2023-12-01',
@@ -776,23 +786,13 @@ const pct_underpriced = [{
 },
 {
     'DATE': '2023-12-01',
-    'BUNDLER_NAME': 'candide',
-    'PCT_UNDERPRICED': '27.160500'
-},
-{
-    'DATE': '2023-12-01',
-    'BUNDLER_NAME': 'alchemy',
-    'PCT_UNDERPRICED': '2.686600'
-},
-{
-    'DATE': '2023-12-01',
     'BUNDLER_NAME': 'pimlico',
-    'PCT_UNDERPRICED': '7.109000'
+    'PCT_UNDERPRICED': '7.733600'
 },
 {
     'DATE': '2023-12-01',
     'BUNDLER_NAME': 'stackup',
-    'PCT_UNDERPRICED': '27.515000'
+    'PCT_UNDERPRICED': '26.171600'
 }]
 
 const monthly_paymaster = [{ 'DATE': '2023-03-01', 'GAS_SPENT': 617.586294343 },
@@ -804,13 +804,13 @@ const monthly_paymaster = [{ 'DATE': '2023-03-01', 'GAS_SPENT': 617.586294343 },
 { 'DATE': '2023-09-01', 'GAS_SPENT': 41634.331369026 },
 { 'DATE': '2023-10-01', 'GAS_SPENT': 62725.9372769 },
 { 'DATE': '2023-11-01', 'GAS_SPENT': 151617.718719426 },
-{ 'DATE': '2023-12-01', 'GAS_SPENT': 277105.523589053 }]
+{ 'DATE': '2023-12-01', 'GAS_SPENT': 327385.125687275 }]
 
-const top_paymasters = [{ 'PAYMASTER_NAME': 'stackup', 'GAS_SPENT': 285427.814710012 },
-{ 'PAYMASTER_NAME': 'alchemy', 'GAS_SPENT': 261014.039632064 },
-{ 'PAYMASTER_NAME': 'pimlico', 'GAS_SPENT': 257033.505273963 },
-{ 'PAYMASTER_NAME': 'biconomy', 'GAS_SPENT': 51175.925686007 },
-{ 'PAYMASTER_NAME': 'blocto', 'GAS_SPENT': 1014.382554626 }]
+const top_paymasters = [{ 'PAYMASTER_NAME': 'pimlico', 'GAS_SPENT': 294075.318541413 },
+{ 'PAYMASTER_NAME': 'stackup', 'GAS_SPENT': 290258.169283822 },
+{ 'PAYMASTER_NAME': 'alchemy', 'GAS_SPENT': 262198.056162324 },
+{ 'PAYMASTER_NAME': 'biconomy', 'GAS_SPENT': 53397.787427149 },
+{ 'PAYMASTER_NAME': 'blocto', 'GAS_SPENT': 1018.167345478 }]
 
 const monthly_factory_share = [{ 'DATE': '2023-03-01', 'DEPLOYER_NAME': 'candide', 'NUM_ACCOUNTS': 1 },
 { 'DATE': '2023-03-01', 'DEPLOYER_NAME': 'Unknown', 'NUM_ACCOUNTS': 83 },
@@ -895,21 +895,21 @@ const monthly_factory_share = [{ 'DATE': '2023-03-01', 'DEPLOYER_NAME': 'candide
     'DEPLOYER_NAME': 'alchemy_lightaccount',
     'NUM_ACCOUNTS': 65
 },
-{ 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'simpleaccount', 'NUM_ACCOUNTS': 165 },
-{ 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'etherspot', 'NUM_ACCOUNTS': 3 },
+{ 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'Unknown', 'NUM_ACCOUNTS': 29369 },
+{ 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'biconomy', 'NUM_ACCOUNTS': 173477 },
 { 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'candide', 'NUM_ACCOUNTS': 1 },
 {
     'DATE': '2023-12-01',
-    'DEPLOYER_NAME': 'zerodev_kernel',
-    'NUM_ACCOUNTS': 143575
+    'DEPLOYER_NAME': 'alchemy_lightaccount',
+    'NUM_ACCOUNTS': 75
 },
 {
     'DATE': '2023-12-01',
-    'DEPLOYER_NAME': 'alchemy_lightaccount',
-    'NUM_ACCOUNTS': 50
+    'DEPLOYER_NAME': 'zerodev_kernel',
+    'NUM_ACCOUNTS': 160486
 },
-{ 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'Unknown', 'NUM_ACCOUNTS': 22177 },
-{ 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'biconomy', 'NUM_ACCOUNTS': 145050 }]
+{ 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'simpleaccount', 'NUM_ACCOUNTS': 179 },
+{ 'DATE': '2023-12-01', 'DEPLOYER_NAME': 'etherspot', 'NUM_ACCOUNTS': 3 }]
 
 const paymasterUsed = [{ PAYMASTER: 0.947, NO_PAYMASTER: 0.053 }]
 
@@ -931,6 +931,6 @@ const monthly_wallet = [{ 'DATE': '2023-03-01', 'WALLET_NAME': 'other', 'NUM_ACC
 { 'DATE': '2023-11-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 201145 },
 { 'DATE': '2023-11-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 97988 },
 { 'DATE': '2023-11-01', 'WALLET_NAME': 'patch', 'NUM_ACCOUNTS': 110709 },
-{ 'DATE': '2023-12-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 86710 },
-{ 'DATE': '2023-12-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 182380 },
-{ 'DATE': '2023-12-01', 'WALLET_NAME': 'patch', 'NUM_ACCOUNTS': 66364 }]
+{ 'DATE': '2023-12-01', 'WALLET_NAME': 'cyberconnect', 'NUM_ACCOUNTS': 91101 },
+{ 'DATE': '2023-12-01', 'WALLET_NAME': 'other', 'NUM_ACCOUNTS': 205711 },
+{ 'DATE': '2023-12-01', 'WALLET_NAME': 'patch', 'NUM_ACCOUNTS': 66778 }]
