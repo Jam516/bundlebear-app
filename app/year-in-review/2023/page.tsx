@@ -90,7 +90,7 @@ export default async function YIRPage() {
                             </CardContent>
                         </Card>
                         <h2 id="section14" className="text-xl font-bold tracking-tight pt-6">Top Usage Trends</h2>
-                        <p>In the first few months of ERC-4337 activity, apps like CapX (a quest protocol), Dexwin (an onchain casino) and Fantazy (a fantasy sports app) attracted a smanll number of early adopters, but there wasn&apos;t a breakout hit.</p>
+                        <p>In the first few months of ERC-4337 activity, apps like CapX (a quest protocol), Dexwin (an onchain casino) and Fantazy (a fantasy sports app) attracted a small number of early adopters, but there wasn&apos;t a breakout hit.</p>
                         <p>This changed in July when CyberConnect, an onchain social network, started creating ERC-4337 smart accounts for all of its users.
                             This led to a massive increase in the usage of smart accounts.
                             The peak of this growth occurred in August during their CYBER token airdrop.
@@ -151,9 +151,6 @@ export default async function YIRPage() {
                             Bundlers also benefit because they spend less by making fewer transactions while charging the same gas premium on every UserOp.</p>
                         <p>Unfortunately, the number of bundles that contain only one UserOp still greatly exceeds the number of multi-UserOp bundles.
                             This is due to a combination of factors:</p>
-                        <li>Building larger bundles increases the chances of getting front-ran and having your bundle reverted.
-                            To prevent this, Bundlers can either use flashbot-protect (or a similar mechanism) to privately submit bundles to builders or have a direct integration with a builder.
-                            However, flashbots-protect is not available on Polygon, the most popular chain for ERC-4337 usage.</li>
                         <li>There hasn&apos;t always been enough UserOp volume to fill bundles with multiple UserOps.</li>
                         <li>Bundler teams needed time to find multi-UserOp bundling algorithms that they were satisfied with.</li>
                         <Card className="border-4 border-black">
