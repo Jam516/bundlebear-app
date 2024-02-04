@@ -29,7 +29,7 @@ const getPercent = (value: number, total: number) => {
   return toPercent(ratio);
 };
 
-export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
+export function MSCategoryChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
   const transformData = (data: DataEntry[]) => {
     const transformed: { [date: string]: TransformedEntry } = {};
@@ -84,12 +84,22 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           }}
         />
         <Legend />
-        <Bar dataKey="ethereum" stackId="a" fill="#333333" />
-        <Bar dataKey="polygon" stackId="a" fill="#A982ED" />
-        <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
-        <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
-        <Bar dataKey="base" stackId="a" fill="#90C2E7" />
-        <Bar dataKey="avalanche" stackId="a" fill="#823038" />
+        {/* <ReferenceLine y={0} stroke="#000" /> */}
+        <Bar dataKey="DEX" stackId="a" fill="#264653" />
+        <Bar dataKey="ERC20" stackId="a" fill="#3454d1" />
+        <Bar dataKey="NFT" stackId="a" fill="#ef6461" />
+        <Bar dataKey="NFT drop" stackId="a" fill="#e76f51" />
+        <Bar dataKey="Watch2Earn" stackId="a" fill="#2a9d8f" />
+        <Bar dataKey="betting" stackId="a" fill="#e9c46a" />
+        <Bar dataKey="bridge" stackId="a" fill="#896a67" />
+        <Bar dataKey="derivatives" stackId="a" fill="#823038" />
+        <Bar dataKey="gaming" stackId="a" fill="#90c2e7" />
+        <Bar dataKey="lending" stackId="a" fill="#f5d491" />
+        <Bar dataKey="quest" stackId="a" fill="#f386ff" />
+        <Bar dataKey="restaking" stackId="a" fill="#a982ed" />
+        <Bar dataKey="social" stackId="a" fill="#ff4e17" />
+        <Bar dataKey="native transfer" stackId="a" fill="#31D892" />
+        <Bar dataKey="unlabeled" stackId="a" fill="#858585" />
       </BarChart>
     </ResponsiveContainer>
   );

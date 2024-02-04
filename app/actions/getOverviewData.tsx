@@ -13,6 +13,7 @@ interface ChainData {
     monthly_paymaster_spend: any[],
     monthly_bundler_revenue: any[],
     retention: any[],
+    userops_by_type: any[],
 }
 
 export async function getOverviewData({ chain, timeframe }: OverviewDataParams): Promise<ChainData> {

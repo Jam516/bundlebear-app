@@ -11,6 +11,7 @@ import { BChart } from "@/components/bar-chart";
 import { SBChart } from "@/components/stacked-bar-overview";
 import { StatCard } from "@/components/stat-card";
 import { MSChart } from "@/components/marketshare-bar-overview";
+import { MSCategoryChart } from "@/components/marketshare-bar-categories";
 import { RetentionTable } from "@/components/retention-table";
 import { TimeSelect } from "@/components/time-select";
 
@@ -24,6 +25,7 @@ interface ChainData {
     monthly_paymaster_spend: any[],
     monthly_bundler_revenue: any[],
     retention: any[],
+    userops_by_type: any[],
 }
 
 interface TabContentParams {
@@ -77,7 +79,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
             </div>
             <TimeSelect />
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-                <Card >
+                <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Active Smart Accounts"}</CardTitle>
                     </CardHeader>
@@ -85,7 +87,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                         {chain != 'all' ? <BChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} usd={false} /> : <SBChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} usd={false} />}
                     </CardContent>
                 </Card>
-                <Card >
+                <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Sucessful UserOps"}</CardTitle>
                     </CardHeader>
@@ -96,7 +98,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
             </div>
             {chain === 'all' ?
                 <div className="grid gap-4 grid-cols-1  md:grid-cols-2 ">
-                    <Card >
+                    <Card>
                         <CardHeader>
                             <CardTitle>{titleparam + " Active Smart Accounts Marketshare"}</CardTitle>
                         </CardHeader>
@@ -104,7 +106,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                             {chain != 'all' ? <BChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} usd={false} /> : <MSChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} />}
                         </CardContent>
                     </Card>
-                    <Card >
+                    <Card>
                         <CardHeader>
                             <CardTitle>{titleparam + " Sucessful UserOps Marketshare"}</CardTitle>
                         </CardHeader>
