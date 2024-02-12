@@ -89,7 +89,7 @@ export function MSCategoryChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="ERC20" stackId="a" fill="#3454d1" />
         <Bar dataKey="NFT" stackId="a" fill="#ef6461" />
         <Bar dataKey="NFT drop" stackId="a" fill="#e76f51" />
-        <Bar dataKey="Watch2Earn" stackId="a" fill="#2a9d8f" />
+        <Bar dataKey="Watch2Earn" stackId="a" fill="#a982ed" />
         <Bar dataKey="betting" stackId="a" fill="#e9c46a" />
         <Bar dataKey="bridge" stackId="a" fill="#896a67" />
         <Bar dataKey="derivatives" stackId="a" fill="#823038" />
@@ -98,9 +98,9 @@ export function MSCategoryChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="factory" stackId="a" fill="#4b2640" />
         <Bar dataKey="lending" stackId="a" fill="#f5d491" />
         <Bar dataKey="quest" stackId="a" fill="#f386ff" />
-        <Bar dataKey="restaking" stackId="a" fill="#a982ed" />
-        <Bar dataKey="social" stackId="a" fill="#ff4e17" />
-        <Bar dataKey="native transfer" stackId="a" fill="#31D892" />
+        <Bar dataKey="restaking" stackId="a" fill="#1A0C6D" />
+        <Bar dataKey="social" stackId="a" fill="#31D892" />
+        <Bar dataKey="native transfer" stackId="a" fill="#2a9d8f" />
         <Bar dataKey="unlabeled" stackId="a" fill="#858585" />
       </BarChart>
     </ResponsiveContainer>
