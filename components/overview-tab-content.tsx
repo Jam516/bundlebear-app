@@ -138,6 +138,16 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
+            <div className="block container mx-auto py-10">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " UserOps by Category"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <MSCategoryChart data={data.userops_by_type} xaxis={"DATE"} yaxis={"NUM_OPS"} segment={"CATEGORY"} />
+                    </CardContent>
+                </Card>
+            </div>
             <div className="hidden md:block container mx-auto py-10">
                 <Card>
                     <CardHeader>

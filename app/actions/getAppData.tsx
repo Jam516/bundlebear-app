@@ -9,7 +9,7 @@ interface AppData {
 }
 
 export async function getAppData({ chain, timeframe }: AppDataParams): Promise<AppData> {
-    const response = await fetch(`https://bundlebear-api.onrender.com/apps?chain=${chain}&timeframe=${timeframe}`, { next: { revalidate: 600 } });
+    const response = await fetch(`https://bundlebear-api.onrender.com/apps?chain=${chain}&timeframe=${timeframe}`);
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
     }

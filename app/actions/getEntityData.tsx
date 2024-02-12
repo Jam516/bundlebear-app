@@ -16,7 +16,7 @@ interface EntityData {
 }
 
 export async function getEntityData({ chain, timeframe, entity }: EntityDataParams): Promise<EntityData> {
-    const response = await fetch(`https://bundlebear-api.onrender.com/entity?chain=${chain}&timeframe=${timeframe}&entity=${entity}`, { next: { revalidate: 600 } });
+    const response = await fetch(`https://bundlebear-api.onrender.com/entity?chain=${chain}&timeframe=${timeframe}&entity=${entity}`);
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
     }

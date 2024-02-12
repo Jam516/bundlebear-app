@@ -93,7 +93,9 @@ export function MSCategoryChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="betting" stackId="a" fill="#e9c46a" />
         <Bar dataKey="bridge" stackId="a" fill="#896a67" />
         <Bar dataKey="derivatives" stackId="a" fill="#823038" />
-        <Bar dataKey="gaming" stackId="a" fill="#90c2e7" />
+        <Bar dataKey="game" stackId="a" fill="#90c2e7" />
+        <Bar dataKey="escrow" stackId="a" fill="#39400b" />
+        <Bar dataKey="factory" stackId="a" fill="#4b2640" />
         <Bar dataKey="lending" stackId="a" fill="#f5d491" />
         <Bar dataKey="quest" stackId="a" fill="#f386ff" />
         <Bar dataKey="restaking" stackId="a" fill="#a982ed" />
