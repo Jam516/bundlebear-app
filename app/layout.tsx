@@ -1,6 +1,6 @@
-import "@/styles/global.css";
+import "./global.css";
 import { Metadata } from "next"
-import { fontSans } from "@/lib/fonts";
+// import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -67,8 +67,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          "min-h-screen bg-background font-sans antialiased"
         )}
       >
         <div className="relative flex min-h-screen flex-col">
