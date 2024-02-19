@@ -2,6 +2,8 @@ import { getBundlerData } from "@/app/actions/getBundlerData"
 import { Metadata } from "next";
 import { TabContent } from "@/components/bundler-tab-content"
 
+export const maxDuration = 60;
+
 export const metadata: Metadata = {
   title: "BundleBear Bundler Stats",
   description: "A dashboard tracking the activity of ERC-4337 bundlers.",
