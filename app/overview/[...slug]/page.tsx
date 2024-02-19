@@ -2,7 +2,7 @@ import { getOverviewData } from "@/app/actions/getOverviewData"
 import { Metadata } from "next";
 import { TabContent } from "@/components/overview-tab-content"
 
-export const maxDuration = 60;
+// export const maxDuration = 60;
 
 function AboutBlock() {
   return (
