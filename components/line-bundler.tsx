@@ -6,8 +6,9 @@ import moment from 'moment';
 type DataEntry = {
     BUNDLER_NAME: string;
     DATE: string;
-    NUM_ACCOUNTS: number;
-    [key: string]: string | number;
+    NUM_ACCOUNTS?: number;
+    NUM_BUNDLES?: number;
+    [key: string]: string | number | undefined;
 };
 
 interface SBChartProps {

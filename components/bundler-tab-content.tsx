@@ -22,6 +22,7 @@ interface BundlerData {
     revenue_chart: any[],
     multi_userop_chart: any[],
     accounts_chart: any[],
+    frontrun_chart: any[]
 }
 
 interface TabContentParams {
@@ -98,6 +99,15 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardHeader>
                     <CardContent className="pl-2">
                         <LChart data={data.accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"BUNDLER_NAME"} usd={false} />
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Bundles Txns Failed due to Frontrunning"}</CardTitle>
+                        <CardDescription># of bundles that failed with AA25 nonce error</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <LChart data={data.frontrun_chart} xaxis={"DATE"} yaxis={"NUM_BUNDLES"} segment={"BUNDLER_NAME"} usd={false} />
                     </CardContent>
                 </Card>
             </div>
