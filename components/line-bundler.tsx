@@ -37,11 +37,18 @@ export function LChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
                 };
             }
 
-            transformed[formattedDate][entry[segment]] = entry[yaxis];
+            // Check if the keys exist in the entry object
+            if (entry.hasOwnProperty(segment) && entry.hasOwnProperty(yaxis)) {
+                const segmentKey = entry[segment] as string; // Cast to string because we know it exists
+                const yAxisValue = entry[yaxis] as number; // Cast to number because we know it exists
+
+                transformed[formattedDate][segmentKey] = yAxisValue;
+            }
         });
 
         return Object.values(transformed);
     };
+
 
     const transformedData = transformData(data);
     // console.log(transformedData);
