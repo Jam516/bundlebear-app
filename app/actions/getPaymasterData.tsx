@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 interface PaymasterDataParams {
     chain: string;
     timeframe: string;
@@ -11,6 +13,7 @@ interface PaymasterData {
 }
 
 export async function getPaymasterData({ chain, timeframe }: PaymasterDataParams): Promise<PaymasterData> {
+    noStore();
     const response = await fetch(`https://bundlebear-api.onrender.com/paymaster?chain=${chain}&timeframe=${timeframe}`);
     // , { next: { revalidate: 30 } }
     if (!response.ok) {

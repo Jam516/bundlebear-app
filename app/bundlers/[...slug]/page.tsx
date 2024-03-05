@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "A dashboard tracking the activity of ERC-4337 bundlers.",
 };
 
+export const maxDuration = 60;
+
 export default async function BundlerPage({ params }: { params: { slug: string[] } }) {
 
   const chain = params.slug[0];

@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 interface WalletDataParams {
     chain: string;
     timeframe: string;
@@ -10,6 +12,7 @@ interface WalletData {
 }
 
 export async function getWalletData({ chain, timeframe }: WalletDataParams): Promise<WalletData> {
+    noStore();
     const response = await fetch(`https://bundlebear-api.onrender.com/wallet?chain=${chain}&timeframe=${timeframe}`);
     // , { next: { revalidate: 30 } }
     if (!response.ok) {

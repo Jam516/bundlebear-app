@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 interface OverviewDataParams {
     chain: string;
     timeframe: string;
@@ -17,6 +19,7 @@ interface ChainData {
 }
 
 export async function getOverviewData({ chain, timeframe }: OverviewDataParams): Promise<ChainData> {
+    noStore();
     const response = await fetch(`https://bundlebear-api.onrender.com/overview?chain=${chain}&timeframe=${timeframe}`);
 
     if (!response.ok) {

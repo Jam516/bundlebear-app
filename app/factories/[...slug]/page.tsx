@@ -7,6 +7,8 @@ export const metadata: Metadata = {
     description: "A dashboard tracking the activity of ERC-4337 account factories.",
 };
 
+export const maxDuration = 60;
+
 export default async function DeployerPage({ params }: { params: { slug: string[] } }) {
 
     const chain = params.slug[0];
