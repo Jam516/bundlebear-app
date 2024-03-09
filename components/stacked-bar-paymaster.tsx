@@ -68,12 +68,13 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Legend />
         <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
         <Bar dataKey="pimlico" stackId="a" fill="#7115AA" />
-        <Bar dataKey="pimlico erc-20" stackId="a" fill="#F386FF" />
+
         <Bar dataKey="stackup" stackId="a" fill="#1D2F6F" />
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
         <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
         <Bar dataKey="Unknown" stackId="a" fill="#707070" />
+        <Bar dataKey="circle" stackId="a" fill="#008000" />
       </BarChart>
     </ResponsiveContainer>
   );
