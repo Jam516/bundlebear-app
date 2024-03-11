@@ -90,7 +90,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Sponsored vs ERC20 UserOps"}</CardTitle>
+                        <CardTitle>{titleparam + " Sponsored vs ERC20 Paymaster UserOps"}</CardTitle>
                         <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
