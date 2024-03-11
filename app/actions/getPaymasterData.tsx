@@ -10,6 +10,8 @@ interface PaymasterData {
     userops_chart: any[],
     spend_chart: any[],
     accounts_chart: any[],
+    spend_type_chart: any[],
+    userops_type_chart: any[],
 }
 
 export async function getPaymasterData({ chain, timeframe }: PaymasterDataParams): Promise<PaymasterData> {

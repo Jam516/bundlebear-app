@@ -13,12 +13,16 @@ import { SBChart } from "@/components/stacked-bar-paymaster";
 import { MSChart } from "@/components/marketshare-bar-paymaster";
 import { LChart } from "@/components/line-paymaster";
 import { TimeSelect } from "@/components/time-select";
+import { PaymasterTypeSBChart } from "@/components/stacked-bar-paymaster-type";
+import { PaymasterTypeMSChart } from "@/components/marketshare-bar-paymaster-type";
 
 interface PaymasterData {
     leaderboard: any[],
     userops_chart: any[],
     spend_chart: any[],
     accounts_chart: any[],
+    spend_type_chart: any[],
+    userops_type_chart: any[],
 }
 
 interface TabContentParams {
@@ -86,6 +90,46 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
+                        <CardTitle>{titleparam + " Sponsored vs ERC20 UserOps"}</CardTitle>
+                        <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <PaymasterTypeSBChart data={data.userops_type_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"PAYMASTER_TYPE"} usd={false} />
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Sponsored vs ERC20 Paymaster UserOp Marketshare"}</CardTitle>
+                        <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <PaymasterTypeMSChart data={data.userops_type_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"PAYMASTER_TYPE"} />
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Sponsored vs ERC20 Paymaster Volume"}</CardTitle>
+                        <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <PaymasterTypeSBChart data={data.spend_type_chart} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"PAYMASTER_TYPE"} usd={true} />
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Sponsored vs ERC20 Paymaster Volume Marketshare"}</CardTitle>
+                        <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <PaymasterTypeMSChart data={data.spend_type_chart} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"PAYMASTER_TYPE"} />
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                <Card>
+                    <CardHeader>
                         <CardTitle>{titleparam + " Active Accounts"}</CardTitle>
                         <CardDescription># of accounts that had a UserOp funded by each paymaster</CardDescription>
                     </CardHeader>
@@ -94,7 +138,6 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
-
         </>
     );
 }

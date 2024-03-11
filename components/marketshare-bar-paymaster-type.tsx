@@ -29,7 +29,7 @@ const getPercent = (value: number, total: number) => {
   return toPercent(ratio);
 };
 
-export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
+export function PaymasterTypeMSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
   const transformData = (data: DataEntry[]) => {
     const transformed: { [date: string]: TransformedEntry } = {};
@@ -84,14 +84,9 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           }}
         />
         <Legend />
-        <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
-        <Bar dataKey="pimlico" stackId="a" fill="#7115AA" />
-        <Bar dataKey="stackup" stackId="a" fill="#1D2F6F" />
-        <Bar dataKey="candide" stackId="a" fill="#F5D491" />
-        <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
-        <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
-        <Bar dataKey="circle" stackId="a" fill="#008000" />
-        <Bar dataKey="Unknown" stackId="a" fill="#707070" />
+        <Bar dataKey="Sponsored" stackId="a" fill="#FF4E17" />
+        <Bar dataKey="ERC20" stackId="a" fill="#7115AA" />
+        <Bar dataKey="unlabeled" stackId="a" fill="#707070" />
       </BarChart>
     </ResponsiveContainer>
   );
