@@ -89,13 +89,14 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="fun.xyz" stackId="a" fill="#3D3D3D" />
         <Bar dataKey="Unknown" stackId="a" fill="#707070" />
-        {/* <Bar dataKey="safe" stackId="a" fill="#2A9D8F" /> */}
+        <Bar dataKey="safe" stackId="a" fill="#2A9D8F" />
         <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
         <Bar dataKey="banana" stackId="a" fill="#F8E9E9" />
         <Bar dataKey="simpleaccount" stackId="a" fill="#69995D" />
         <Bar dataKey="alchemy_lightaccount" stackId="a" fill="#1167b1" />
         <Bar dataKey="etherspot" stackId="a" fill="#FAC748" />
         <Bar dataKey="circle" stackId="a" fill="#008000" />
+        <Bar dataKey="nani" stackId="a" fill="#FFC6FF" />
       </BarChart>
     </ResponsiveContainer>
   );

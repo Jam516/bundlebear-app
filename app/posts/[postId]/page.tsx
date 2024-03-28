@@ -50,7 +50,7 @@ export default async function Post({ params }: { params: { postId: string } }) {
                 {pubDate}
             </p>
             <article>
-                <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
+                <section className="prose lg:prose-xl" dangerouslySetInnerHTML={{ __html: contentHtml }} />
                 <p>
                     <Link href="/research">← Back to home</Link>
                 </p>
