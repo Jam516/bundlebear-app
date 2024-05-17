@@ -37,7 +37,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
 
     let chainlabel: string = " "
     if (chain != 'all') {
-        chainlabel = " " + chain;
+        chainlabel = chain;
     }
 
     return (
@@ -49,7 +49,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + chain + " Active Accounts"}</CardTitle>
+                        <CardTitle>{titleparam + " " + chain + " Active Accounts"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.usage_chart} />
@@ -57,7 +57,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + chain + " Account Marketshare"}</CardTitle>
+                        <CardTitle>{titleparam + " " + chain + " Account Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSChart data={data.usage_chart} />
