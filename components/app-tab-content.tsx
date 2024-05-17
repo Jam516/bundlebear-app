@@ -36,7 +36,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
     }
 
     let chainlabel: string = " "
-    if (chain != 'all') {
+    if (chain !== 'all') {
         chainlabel = chain;
     }
 
