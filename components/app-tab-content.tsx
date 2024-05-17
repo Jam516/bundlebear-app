@@ -21,9 +21,10 @@ interface AppData {
 interface TabContentParams {
     data: AppData;
     timeframe: string;
+    chain: string;
 }
 
-export function TabContent({ data, timeframe }: TabContentParams) {
+export function TabContent({ data, timeframe, chain }: TabContentParams) {
 
     let titleparam: string = "Weekly";
     if (timeframe === 'week') {
@@ -32,6 +33,11 @@ export function TabContent({ data, timeframe }: TabContentParams) {
         titleparam = 'Daily';
     } else if (timeframe === 'month') {
         titleparam = 'Monthly';
+    }
+
+    let chainlabel: string = " "
+    if (chain != 'all') {
+        chainlabel = " " + chain;
     }
 
     return (
@@ -43,7 +49,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Active Accounts"}</CardTitle>
+                        <CardTitle>{titleparam + chain + " Active Accounts"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.usage_chart} />
@@ -51,7 +57,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Account Marketshare"}</CardTitle>
+                        <CardTitle>{titleparam + chain + " Account Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSChart data={data.usage_chart} />
