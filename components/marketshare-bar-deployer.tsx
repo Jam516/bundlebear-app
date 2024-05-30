@@ -97,6 +97,7 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="etherspot" stackId="a" fill="#FAC748" />
         <Bar dataKey="circle" stackId="a" fill="#008000" />
         <Bar dataKey="nani" stackId="a" fill="#FFC6FF" />
+        <Bar dataKey="coinbase_smart_wallet" stackId="a" fill="#C4DD45" />
       </BarChart>
     </ResponsiveContainer>
   );
