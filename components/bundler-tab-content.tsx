@@ -104,7 +104,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 <Card>
                     <CardHeader>
                         <CardTitle>{titleparam + " Bundles Txns Failed due to Frontrunning"}</CardTitle>
-                        <CardDescription># of bundles that failed with AA25 nonce error</CardDescription>
+                        <CardDescription># of bundles that failed with AA25 nonce error or AA10 sender already constructed</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <LChart data={data.frontrun_chart} xaxis={"DATE"} yaxis={"NUM_BUNDLES"} segment={"BUNDLER_NAME"} usd={false} />
