@@ -11,7 +11,8 @@ interface BundlerData {
     revenue_chart: any[],
     multi_userop_chart: any[],
     accounts_chart: any[],
-    frontrun_chart: any[]
+    frontrun_chart: any[],
+    frontrun_pct_chart: any[]
 }
 
 export async function getBundlerData({ chain, timeframe }: BundlerDataParams): Promise<BundlerData> {

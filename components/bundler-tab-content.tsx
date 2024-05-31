@@ -22,7 +22,8 @@ interface BundlerData {
     revenue_chart: any[],
     multi_userop_chart: any[],
     accounts_chart: any[],
-    frontrun_chart: any[]
+    frontrun_chart: any[],
+    frontrun_pct_chart: any[]
 }
 
 interface TabContentParams {
@@ -111,7 +112,17 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
-
+            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " % Bundles that were frontran"}</CardTitle>
+                        <CardDescription>% of bundles that failed with AA25 nonce error or AA10 sender already constructed</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <BChart data={data.frontrun_pct_chart} xaxis={"DATE"} yaxis={"PCT_FRONTRUN"} />
+                    </CardContent>
+                </Card>
+            </div>
         </>
     );
 }
