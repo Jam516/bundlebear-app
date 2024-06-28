@@ -106,7 +106,7 @@ export function MobileNav() {
                                 Operator Registry
                             </Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem>
+                        {/* <DropdownMenuItem>
                             <Wallet className="mr-2 h-4 w-4" />
                             <Link
                                 href="/wallets/all"
@@ -116,7 +116,7 @@ export function MobileNav() {
                             >
                                 Wallets
                             </Link>
-                        </DropdownMenuItem>
+                        </DropdownMenuItem> */}
                         <DropdownMenuItem>
                             <ScrollText className="mr-2 h-4 w-4" />
                             <Link

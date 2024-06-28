@@ -73,6 +73,7 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="banana" stackId="a" fill="#F8E9E9" />
         <Bar dataKey="simpleaccount" stackId="a" fill="#69995D" />
         <Bar dataKey="alchemy_lightaccount" stackId="a" fill="#1167b1" />
+        <Bar dataKey="alchemy_modularaccount" stackId="a" fill="#1167b1" />
         <Bar dataKey="etherspot" stackId="a" fill="#FAC748" />
         <Bar dataKey="circle" stackId="a" fill="#008000" />
         <Bar dataKey="nani" stackId="a" fill="#FFC6FF" />

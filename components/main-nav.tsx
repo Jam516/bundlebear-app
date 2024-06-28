@@ -67,7 +67,7 @@ export function MainNav({
       >
         Apps
       </Link>
-      <Link
+      {/* <Link
         href="/wallets/all"
         className={cn(
           "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
@@ -75,7 +75,7 @@ export function MainNav({
         )}
       >
         Wallets
-      </Link>
+      </Link> */}
       <Link
         href="/research"
         className={cn(
