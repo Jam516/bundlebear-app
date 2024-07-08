@@ -73,6 +73,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
         <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
+        <Bar dataKey="coinbase" stackId="a" fill="#0052FF" />
         <Bar dataKey="Unknown" stackId="a" fill="#707070" />
         <Bar dataKey="circle" stackId="a" fill="#008000" />
         <Bar dataKey="nani" stackId="a" fill="#FFC6FF" />

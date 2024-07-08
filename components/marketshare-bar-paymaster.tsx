@@ -92,6 +92,7 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
         <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />
         <Bar dataKey="circle" stackId="a" fill="#008000" />
+        <Bar dataKey="coinbase" stackId="a" fill="#0052FF" />
         <Bar dataKey="Unknown" stackId="a" fill="#707070" />
         <Bar dataKey="nani" stackId="a" fill="#FFC6FF" />
       </BarChart>
