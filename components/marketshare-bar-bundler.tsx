@@ -92,7 +92,7 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="unipass" stackId="a" fill="#B6D6CC" />
         <Bar dataKey="candide" stackId="a" fill="#F5D491" />
         <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
-        <Bar dataKey="coinbase" stackId="a" fill="#D3E1FF" />
+        <Bar dataKey="coinbase" stackId="a" fill="#0052FF" />
         <Bar dataKey="Unknown" stackId="a" fill="#707070" />
         <Bar dataKey="particle" stackId="a" fill="#F386FF" />
         <Bar dataKey="cometh" stackId="a" fill="#5F6D81" />
