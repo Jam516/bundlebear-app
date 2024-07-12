@@ -78,6 +78,7 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="circle" stackId="a" fill="#008000" />
         <Bar dataKey="nani" stackId="a" fill="#FFC6FF" />
         <Bar dataKey="coinbase_smart_wallet" stackId="a" fill="#C4DD45" />
+        <Bar dataKey="lumx" stackId="a" fill="#6E05FF" />
       </BarChart>
     </ResponsiveContainer>
   );
