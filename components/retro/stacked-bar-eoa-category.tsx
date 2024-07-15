@@ -17,7 +17,7 @@ interface SBChartProps {
 }
 
 type TransformedEntry = {
-    DATE: string;
+    month: string;
     [key: string]: string | number;
 };
 
@@ -27,10 +27,10 @@ export function SBECChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         const transformed: { [date: string]: TransformedEntry } = {};
 
         data.forEach((entry) => {
-            const formattedDate = moment(entry.MONTH, 'YYYY-MM-DD').format('DD-MMM-YYYY').toUpperCase();
+            const formattedDate = moment(entry.MONTH, 'YYYY-MM-DD HH:mm:ss UTC').format('MMM YY').toUpperCase();
             if (!transformed[formattedDate]) {
                 transformed[formattedDate] = {
-                    DATE: formattedDate
+                    month: formattedDate
                 };
             }
 
@@ -48,7 +48,7 @@ export function SBECChart({ data, xaxis, yaxis, segment }: SBChartProps) {
             <BarChart data={transformedData}>
                 <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
                 <XAxis
-                    dataKey={xaxis}
+                    dataKey="month"
                     stroke="#888888"
                     fontSize={12}
                     tickLine={false}
@@ -59,7 +59,7 @@ export function SBECChart({ data, xaxis, yaxis, segment }: SBChartProps) {
                     fontSize={12}
                     tickLine={false}
                     axisLine={false}
-                    tickFormatter={(value) => `${value}`}
+                    tickFormatter={(value) => `${value.toLocaleString()}`}
                 />
                 <Tooltip />
                 <Legend />

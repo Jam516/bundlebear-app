@@ -76,7 +76,7 @@ export default async function YIRPage() {
                                 <SBCChart data={monthly_ops_category} xaxis={"MONTH"} yaxis={"NUM_ACCOUNTS"} segment={"CATEGORY"} />
                             </CardContent>
                         </Card>
-                        <p>There are fewer heavily used ERC-4337 accounts than heavily used EOA wallets. 52% of monthly active EOA wallets make more than one transaction per month.</p>
+                        <p>There are fewer heavily-used ERC-4337 accounts than heavily-used EOA wallets. 52% of monthly active EOA wallets make more than one transaction per month.</p>
                         <Card className="border-4 border-black ">
                             <CardHeader>
                                 <CardTitle className="mx-auto">Monthly Active EOA Wallets by Category</CardTitle>
@@ -129,8 +129,8 @@ export default async function YIRPage() {
                     <div className="flex flex-col gap-4">
                         <h2 id="section21" className="text-xl font-bold tracking-tight pt-2">Top 5 apps used by Heavy Users (Past 6 months)</h2>
                         <DataTable columns={appcolumns} data={heavy_users_app_table} entity={false} />
-                        <p>In Q1 2024, the most popular activity for Heavy User accounts was farming NFTs on Anichess, a free-to-play chess game.
-                            Then in May, Alfafrens, a SocialFi app where users are streamed ALFA tokens using Superfluid and pay transaction fees in DEGEN, briefly became the #1 app for power users.</p>
+                        <p>In Q1 2024, the most popular activity for Heavy User accounts was farming NFTs on <a href="https://anichess.com/" className="text-blue-500 underline" target="_blank">Anichess</a>, a free-to-play chess game.
+                            Then in May, <a href="https://www.alfafrens.com/" className="text-blue-500 underline" target="_blank">Alfafrens</a>, a SocialFi app where users are streamed ALFA tokens using Superfluid and pay transaction fees in DEGEN, briefly became the #1 app for power users.</p>
                         <Card className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="mx-auto">Monthly Heavy Users by App</CardTitle>
@@ -141,8 +141,8 @@ export default async function YIRPage() {
                         </Card>
                         <h2 id="section22" className="text-xl font-bold tracking-tight pt-6">Top 5 apps used by Medium Users (Past 6 months)</h2>
                         <DataTable columns={appcolumns} data={medium_users_app_table} entity={false} />
-                        <p>In Q4 of 2023, FanTV (a watch-to-earn India-focused streaming service) and CapX (users complete quests to earn tokens) were the most popular apps amongst Medium Users.
-                            In the first half of 2024, Anichess claimed the top spot, similar to what we saw with the power users. FanTV briefly retook the top spot in April 2024 before being surpassed by Anichess again.</p>
+                        <p>In Q4 of 2023, <a href="https://fantv.world/" className="text-blue-500 underline" target="_blank">FanTV</a> (a watch-to-earn India-focused streaming service) and <a href="https://www.capxai.org/" className="text-blue-500 underline" target="_blank">CapX</a> (users complete quests to earn tokens) were the most popular apps amongst Medium Users.
+                            In the first half of 2024, Anichess claimed the top spot, similar to what we saw with the Heavy users. FanTV briefly retook the top spot in April 2024 before being surpassed by Anichess again.</p>
                         <Card className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="mx-auto">Monthly Medium Users by App</CardTitle>
@@ -154,9 +154,9 @@ export default async function YIRPage() {
                         <h2 id="section23" className="text-xl font-bold tracking-tight pt-6">Top 5 apps used by Light Users (Past 6 months)</h2>
                         <DataTable columns={appcolumns} data={light_users_app_table} entity={false} />
                         <p>
-                            Cyberconnect (a crypto social app where every profile is a smart account) and FanTV drove most of the Light User activity in Q4 2023. In February 2024, Cyberconnect edged out FanTV and took the top spot by a wide margin.
+                            <a href="https://x.com/cyberconnecthq" className="text-blue-500 underline" target="_blank">Cyberconnect</a> (a crypto social app where every profile is a smart account) and FanTV drove most of the Light User activity in Q4 2023. In February 2024, Cyberconnect edged out FanTV and took the top spot by a wide margin.
                             Then, Piggybox NFT rapidly grew to eclipse all other apps used by this demographic.
-                            Users receive these NFTs when they sign up for EARN&apos;M, an app where you farm tokens by completing tasks like using different apps and following projects on Twitter.
+                            Users receive these NFTs when they sign up for <a href="https://app.earnm.com/en/piggybox" className="text-blue-500 underline" target="_blank">EARN&apos;M</a>, an app where you farm tokens by completing tasks like using different apps and following projects on Twitter.
                         </p>
                         <Card className="border-4 border-black">
                             <CardHeader>
@@ -173,13 +173,13 @@ export default async function YIRPage() {
                         <h2 className="text-3xl font-bold tracking-tight">Economic Impact</h2>
                     </div>
 
-                    <div>
-                        <h2 id="section31" className="text-xl font-bold tracking-tight pt-2">$92M of tokens are held by ERC-4337 accounts</h2>
+                    <div className="flex flex-col gap-4">
+                        <h2 id="section31" className="text-xl font-bold tracking-tight pt-2">$9.2M of tokens are held by ERC-4337 accounts</h2>
                         <i>Based on wallet balances for Base, Polygon, Arbitrum, Optimism and Ethereum</i>
                         <p>
                             Ethereum is currently the top chain by ERC-4337 TVL with more than $6M of funds held.
                             Polygon is a distant second with $1.6M, followed by Arbitrum with $1M.
-                            Base is fourth with $273k and Optimism is last with $183.
+                            Base is fourth with $273k and Optimism is last with $183k.
                             This is interesting because Ethereum has <a href="https://www.bundlebear.com/" className="text-blue-500 underline" target="_blank">less ERC-4337 activity</a> than the other chains in the dataset, but the average account on Ethereum is wealthier than the average account on its L2s.
                         </p>
                         <p className="py-4">
@@ -196,150 +196,60 @@ export default async function YIRPage() {
                         </Card>
                         <h2 id="section32" className="text-xl font-bold tracking-tight pt-6">35% of ERC-4337 TVL is in rsETH</h2>
                         <p>
-                            Ethereum is currently the top chain by ERC-4337 TVL with $6.15M of funds held.
-                            Polygon is a distant second with $1.57M, followed by Arbitrum with $1.07M.
-                            Base is fourth with $273k and Optimism is last with $183.
-                            This is interesting because Ethereum has <a href="https://www.bundlebear.com/" className="text-blue-500 underline" target="_blank">less ERC-4337 activity</a> than the other chains in the dataset, but the average account on Ethereum is wealthier than the average account on its L2s.
+                            More than 1,000 accounts on Ethereum hold a total of $3.2M rsETH, making it the #1 token contributing to ERC-4337 TVL.
+                            WAVX holds the #2 spot.
+                            The catch is that all $1.36M of WAVX is held by a single account on Ethereum (<a href="https://etherscan.io/address/0x6e281d7c6c1eacc87ead6035a9832c563b2d496c" className="text-blue-500 underline" target="_blank">0x6e28..6c</a>).
+                            ETH is in third place with $1.16M held by more than 23,000 accounts across Optimism, Ethereum, Base, and Arbitrum.
+                            USDT is in fourth place with $848k held by over 11,000 accounts on Arbitrum, Polygon, Ethereum, and Optimism.
                         </p>
+                        <Card className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="mx-auto">TVL by Token</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <PieChartC data={tvl_token} yaxis={'TVL'} pct={true} />
+                            </CardContent>
+                        </Card>
+                        <h2 id="section33" className="text-xl font-bold tracking-tight pt-6">75% of accounts with non-zero balances hold less than $10</h2>
+                        <p>
+                            Out of the ~55,000 smart accounts with non-zero balances, 2% hold more than $1000.
+                            This small group of $1000+ accounts is responsible for 86% of ERC-4337 TVL.
+                        </p>
+                        <Card className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="mx-auto">Quantity of Accounts with Non-zero Balances</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <PieChartC data={tvl_category} yaxis={'NUM_ACCOUNTS'} pct={true} />
+                            </CardContent>
+                        </Card>
+                        <h2 id="section34" className="text-xl font-bold tracking-tight pt-6">99.4% of the deployed accounts currently don&apos;t hold any funds</h2>
+                        <i>(or at least don&apos;t hold tokens for which we have price data)</i>
+                        <p>
+                            This makes sense when you consider that most ERC-4337 activity is driven by free apps. For example, creating a profile on Cyberconnect or claiming an Anichess NFT with your gas sponsored by the app doesn&apos;t require you to fund your account. Or you might be using an app like FanTV where you claim a token that can only be used for in-app activities and isn&apos;t traded on DEXs.
+                        </p>
+                        <h2 id="section35" className="text-xl font-bold tracking-tight pt-6">ERC-4337 usage has consumed $3.2M of Gas Fees</h2>
+                        <i>Based on the price of ETH/MATIC/AVAX at time of transaction</i>
+                        <p>
+                            Ethereum is the top chain by ERC-4337 bundler gas spend. Bundlers have spent over $1M bundling UserOps into transactions on Ethereum. Given Ethereum&apos;s higher gas fees compared to the L2s and alt-L1s in the dataset, it&apos;s not surprising it took the #1 spot. Base ranks second for ERC-4337 gas spending with $745K, and Arbitrum is third with $450K.
+                        </p>
+                        <Card className="border-4 border-black">
+                            <CardHeader>
+                                <CardTitle className="mx-auto">Bundler Gas Spend by Chain</CardTitle>
+                            </CardHeader>
+                            <CardContent >
+                                <PieChartC data={gas_chain} yaxis={'GAS_SPEND'} pct={true} />
+                            </CardContent>
+                        </Card>
                     </div>
 
                 </div>
-            </div>
+            </div >
         </>
     )
 }
 
 const monthly_ops_category = [
-    {
-        "MONTH": "2023-01-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 10
-    },
-    {
-        "MONTH": "2023-01-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 3
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 17
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CATEGORY": "More than 10 UserOps",
-        "NUM_ACCOUNTS": 7
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 22
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 43
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 53
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CATEGORY": "More than 10 UserOps",
-        "NUM_ACCOUNTS": 18
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 4373
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CATEGORY": "More than 10 UserOps",
-        "NUM_ACCOUNTS": 59
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 261
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 1964
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CATEGORY": "More than 10 UserOps",
-        "NUM_ACCOUNTS": 150
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 1364
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 14085
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 7490
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CATEGORY": "More than 10 UserOps",
-        "NUM_ACCOUNTS": 199
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 225049
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CATEGORY": "More than 10 UserOps",
-        "NUM_ACCOUNTS": 437
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 67961
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 142910
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 296762
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CATEGORY": "More than 10 UserOps",
-        "NUM_ACCOUNTS": 2066
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CATEGORY": "01 UserOp",
-        "NUM_ACCOUNTS": 94964
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CATEGORY": "02-10 UserOps",
-        "NUM_ACCOUNTS": 41026
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CATEGORY": "More than 10 UserOps",
-        "NUM_ACCOUNTS": 11165
-    },
     {
         "MONTH": "2023-10-01 00:00:00",
         "CATEGORY": "01 UserOp",
@@ -541,196 +451,6 @@ const eoa_categories = [
 ]
 
 const heavy_users_chain = [
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 4
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 3
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 7
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 3
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 3
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 4
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 2
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 6
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 9
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 41
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 19
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 123
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 6
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 2
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 148
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 34
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 4
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 2
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 11
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 300
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 25
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 69
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 32
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 11
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 310
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 1280
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "BASE",
-        "NUM_ACCOUNTS": 123
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 23
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 58
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 272
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 1726
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 128
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 9092
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "BASE",
-        "NUM_ACCOUNTS": 8
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 201
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 10
-    },
     {
         "MONTH": "2023-10-01 00:00:00",
         "CHAIN": "ARBITRUM",
@@ -1005,216 +725,6 @@ const heavy_users_chain = [
 
 const medium_users_chain = [
     {
-        "MONTH": "2023-01-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-01-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 4
-    },
-    {
-        "MONTH": "2023-01-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 5
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 5
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 12
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 5
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 13
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 2
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 37
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 10
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 45
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 192
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 7
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 7
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 36
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 1303
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 7
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 5
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 13
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 13921
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 100
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 3
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 16
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 45
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 65877
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 582
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 251
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 1216
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 35
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 146
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 5686
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 795
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "BASE",
-        "NUM_ACCOUNTS": 1258
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 129737
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 5288
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 766
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 32102
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 7506
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 478
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 75
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "BASE",
-        "NUM_ACCOUNTS": 99
-    },
-    {
         "MONTH": "2023-10-01 00:00:00",
         "CHAIN": "AVALANCHE",
         "NUM_ACCOUNTS": 592
@@ -1487,216 +997,7 @@ const medium_users_chain = [
 ]
 
 const light_users_chain = [
-    {
-        "MONTH": "2023-01-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-01-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 2
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 11
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-02-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 5
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 8
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 11
-    },
-    {
-        "MONTH": "2023-03-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 23
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 36
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 9
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 4326
-    },
-    {
-        "MONTH": "2023-04-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 1910
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 14
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 3
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 10
-    },
-    {
-        "MONTH": "2023-05-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 27
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 27
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 5
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 7355
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 101
-    },
-    {
-        "MONTH": "2023-06-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 2
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 37
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 11
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 4773
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "BASE",
-        "NUM_ACCOUNTS": 1
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 219888
-    },
-    {
-        "MONTH": "2023-07-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 339
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 43725
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 23711
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 207501
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "BASE",
-        "NUM_ACCOUNTS": 21530
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 46
-    },
-    {
-        "MONTH": "2023-08-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 249
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "OPTIMISM",
-        "NUM_ACCOUNTS": 10277
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "BASE",
-        "NUM_ACCOUNTS": 4244
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "POLYGON",
-        "NUM_ACCOUNTS": 65530
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "ETHEREUM",
-        "NUM_ACCOUNTS": 45
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "ARBITRUM",
-        "NUM_ACCOUNTS": 14575
-    },
-    {
-        "MONTH": "2023-09-01 00:00:00",
-        "CHAIN": "AVALANCHE",
-        "NUM_ACCOUNTS": 293
-    },
+
     {
         "MONTH": "2023-10-01 00:00:00",
         "CHAIN": "POLYGON",
@@ -3642,5 +2943,98 @@ const tvl_chain = [
     {
         "NAME": "ARBITRUM",
         "TVL": 1072775
+    }
+]
+
+const tvl_token = [
+    {
+        "NAME": "rsETH",
+        "TVL": 3247684.0602612076
+    },
+    {
+        "NAME": "WAVX",
+        "TVL": 1358276.1630175235
+    },
+    {
+        "NAME": "ETH",
+        "TVL": 1162894.8328497703
+    },
+    {
+        "NAME": "OTHER",
+        "TVL": 960746.6063934232
+    },
+    {
+        "NAME": "USDT",
+        "TVL": 848297.2511440943
+    },
+    {
+        "NAME": "WBTC",
+        "TVL": 706197.3964477566
+    },
+    {
+        "NAME": "WETH",
+        "TVL": 340050.27168179234
+    },
+    {
+        "NAME": "USDC",
+        "TVL": 203615.67528028824
+    },
+    {
+        "NAME": "stETH",
+        "TVL": 153343.22364243685
+    },
+    {
+        "NAME": "pufETH",
+        "TVL": 138361.0882872058
+    },
+    {
+        "NAME": "SOL",
+        "TVL": 97996.33991390278
+    }
+]
+
+const tvl_category = [
+    {
+        "NAME": "Less than $10",
+        "NUM_ACCOUNTS": 41510
+    },
+    {
+        "NAME": "$100 to $1000",
+        "NUM_ACCOUNTS": 2859
+    },
+    {
+        "NAME": "More than $1000",
+        "NUM_ACCOUNTS": 1168
+    },
+    {
+        "NAME": "$10 to $100",
+        "NUM_ACCOUNTS": 9817
+    }
+]
+
+const gas_chain = [
+    {
+        "NAME": "ARBITRUM",
+        "GAS_SPEND": 450228.44929734507
+    },
+    {
+        "NAME": "AVALANCHE",
+        "GAS_SPEND": 141072.2138564056
+    },
+    {
+        "NAME": "BASE",
+        "GAS_SPEND": 745113.9157931113
+    },
+    {
+        "NAME": "ETHEREUM",
+        "GAS_SPEND": 1070706.7424770447
+    },
+    {
+        "NAME": "OPTIMISM",
+        "GAS_SPEND": 377195.78786552005
+    },
+    {
+        "NAME": "POLYGON",
+        "GAS_SPEND": 412889.56930085446
     }
 ]

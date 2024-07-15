@@ -17,7 +17,7 @@ type MSChartProps = {
 };
 
 const formatDate = (date: string) => {
-    return moment(date, 'YYYY-MM-DD').format('DD-MMM-YY');
+    return moment(date, 'YYYY-MM-DD').format('MMM YY');
 };
 
 const predefinedColors = ['#896A67', '#264653', '#DDD1C7', '#EF6461', '#E9C46A', '#F4A261', '#823038', '#E76F51', '#1E000E', '#f16f9b', '#36eac2', '#39400b', '#4b2640'];
@@ -91,9 +91,13 @@ const SBPChart: React.FC<MSChartProps> = ({ data }) => {
                 data={transformedData}
                 barCategoryGap={0}
             >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="DATE" tick={{ style: axisLabelStyle }} tickFormatter={formatDate} />
-                <YAxis tick={{ style: axisLabelStyle }} />
+                <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
+                <XAxis
+                    dataKey="DATE"
+                    tick={{ style: axisLabelStyle }}
+                    tickFormatter={formatDate}
+                />
+                <YAxis tick={{ style: axisLabelStyle }} tickFormatter={(value) => `${value.toLocaleString()}`} />
                 <Tooltip />
                 {/* <Legend /> */}
                 {projects.map(project => (
