@@ -35,7 +35,7 @@ export default async function YIRPage() {
                     <div className="flex flex-col items-center  space-y-2 pb-6">
                         <h2 className="text-5xl font-bold tracking-tight">2024 Half-Year Report</h2>
                         <p>
-                            Ever since the launch of the ERC-4337 standard in April 2023, more than 8 million accounts have been created and they've made 28 million user operations (UserOps).
+                            Ever since the launch of the ERC-4337 standard in April 2023, more than 8 million accounts have been created and they&apos;ve made 28 million user operations (UserOps).
                             The BundleBear 2024 Half-Year Report aims to push past vanity metrics and offer deeper insight into how many “valuable users” are present in the ERC-4337 ecosystem and what those users are doing. </p>
                         <div>
                             <p>
@@ -156,7 +156,7 @@ export default async function YIRPage() {
                         <p>
                             Cyberconnect (a crypto social app where every profile is a smart account) and FanTV drove most of the Light User activity in Q4 2023. In February 2024, Cyberconnect edged out FanTV and took the top spot by a wide margin.
                             Then, Piggybox NFT rapidly grew to eclipse all other apps used by this demographic.
-                            Users receive these NFTs when they sign up for EARN'M, an app where you farm tokens by completing tasks like using different apps and following projects on Twitter.
+                            Users receive these NFTs when they sign up for EARN&apos;M, an app where you farm tokens by completing tasks like using different apps and following projects on Twitter.
                         </p>
                         <Card className="border-4 border-black">
                             <CardHeader>
