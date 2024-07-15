@@ -41,7 +41,8 @@ function prepareData(data: DataEntry[]) {
         ALFA: '#0400F5',
         DEGEN: '#A36EFD',
         DEGENx: '#532E9F',
-        Piggybox: '#5ED2DA'
+        Piggybox: '#00D632',
+        "Anichess Orb Token Claim": '#43D0D7'
     };
 
     data.forEach(item => {

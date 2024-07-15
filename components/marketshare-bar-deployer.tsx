@@ -21,13 +21,8 @@ type TransformedEntry = {
   [key: string]: string | number;
 };
 
-const toPercent = (decimal: number) => `${(decimal * 100).toLocaleString()}%`;
-
-const getPercent = (value: number, total: number) => {
-  const ratio = total > 0 ? value / total : 0;
-
-  return toPercent(ratio);
-};
+const toPercent = (decimal: number, decimalPlaces: number = 1) =>
+  `${(decimal * 100).toFixed(decimalPlaces)}%`;
 
 export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
@@ -49,7 +44,27 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
   };
 
   const transformedData = transformData(data);
-  // console.log(transformedData);
+
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      const total = payload.reduce((sum: number, entry: any) => sum + (entry.value || 0), 0);
+
+      return (
+        <div className="custom-tooltip" style={{ backgroundColor: 'white', padding: '10px', border: '1px solid #ccc' }}>
+          <p className="label">{`Date: ${label}`}</p>
+          {payload.map((entry: any, index: number) => {
+            const percentage = (entry.value / total) * 100;
+            return (
+              <p key={`item-${index}`} style={{ color: entry.color }}>
+                {`${entry.name}: ${toPercent(percentage / 100, 2)}`}
+              </p>
+            );
+          })}
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <ResponsiveContainer width="100%" height={350}>
@@ -72,17 +87,7 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           axisLine={false}
           tickFormatter={toPercent}
         />
-        <Tooltip
-          formatter={(value: number, name, entry) => {
-            // Calculate the total value for the current group
-            const total = Object.keys(entry.payload)
-              .filter(key => key !== 'DATE' && key !== xaxis)
-              .reduce((acc, key) => acc + (entry.payload[key] || 0), 0);
-
-            // Return the formatted percentage
-            return getPercent(value, total);
-          }}
-        />
+        <Tooltip content={<CustomTooltip />} />
         <Legend />
         <Bar dataKey="zerodev_kernel" stackId="a" fill="#118AB2" />
         <Bar dataKey="blocto" stackId="a" fill="#B6D6CC" />

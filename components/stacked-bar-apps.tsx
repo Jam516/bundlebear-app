@@ -35,7 +35,13 @@ function prepareData(data: DataEntry[]) {
         Fantazy: '#F7E3AF',
         "The Noise NFT": '#B6D6CC',
         "Burn Address": '#171717',
-        "Minishard NFT": '#758E4F'
+        "Minishard NFT": '#758E4F',
+        Superfluid: '#1DB227',
+        ALFA: '#0400F5',
+        DEGEN: '#A36EFD',
+        DEGENx: '#532E9F',
+        Piggybox: '#00D632',
+        "Anichess Orb Token Claim": '#43D0D7'
     };
     data.forEach(item => {
         if (!seriesData[item.PROJECT]) {
