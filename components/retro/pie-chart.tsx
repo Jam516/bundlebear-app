@@ -8,9 +8,10 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 interface PieChartProps {
     data: { NAME: string;[key: string]: string | number }[];
     yaxis: string;
+    pct: boolean;
 }
 
-const PieChartC: React.FC<PieChartProps> = ({ data, yaxis }) => {
+const PieChartC: React.FC<PieChartProps> = ({ data, yaxis, pct }) => {
     const presetColors: { [key: string]: string } = {
         'ARBITRUM': '#3454D1',
         'ETHEREUM': '#333333',
@@ -54,8 +55,16 @@ const PieChartC: React.FC<PieChartProps> = ({ data, yaxis }) => {
             tooltip: {
                 callbacks: {
                     label: (context: TooltipItem<'pie'>) => {
-                        const value = context.parsed as number;
-                        return `${value.toFixed(0)}%`;
+                        const label = context.label || '';
+                        const value = context.parsed;
+                        const total = context.dataset.data.reduce((a: number, b: number) => a + b, 0);
+                        const percentage = ((value / total) * 100).toFixed(2);
+
+                        if (pct) {
+                            return `${label}: ${percentage}%`;
+                        } else {
+                            return `${label}: ${value.toLocaleString()}`;
+                        }
                     },
                 },
             },

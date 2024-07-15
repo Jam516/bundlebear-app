@@ -37,12 +37,14 @@ export default async function YIRPage() {
                         <p>
                             Ever since the launch of the ERC-4337 standard in April 2023, more than 8 million accounts have been created and they've made 28 million user operations (UserOps).
                             The BundleBear 2024 Half-Year Report aims to push past vanity metrics and offer deeper insight into how many “valuable users” are present in the ERC-4337 ecosystem and what those users are doing. </p>
-                        <p>
-                            One way to segment accounts by “value” is to look at how often they transact. In this report, I will categorise smart accounts as follows:
+                        <div>
+                            <p>
+                                One way to segment accounts by “value” is to look at how often they transact. In this report, I will categorise smart accounts as follows:
+                            </p>
                             <li>Light users = 1 UserOp a month</li>
                             <li>Medium users = 2 to 10 UserOps a month</li>
                             <li>Heavy users = More than 10 UserOps a month</li>
-                        </p>
+                        </div>
                         <p>
                             The BundleBear dataset includes all the ERC-4337 activity on Polygon, Optimism, Arbitrum, Base, Ethereum and Avalanche.
                         </p>
@@ -189,7 +191,7 @@ export default async function YIRPage() {
                                 <CardTitle className="mx-auto">TVL by Chain</CardTitle>
                             </CardHeader>
                             <CardContent >
-                                <PieChartC data={tvl_chain} yaxis={'TVL'} />
+                                <PieChartC data={tvl_chain} yaxis={'TVL'} pct={true} />
                             </CardContent>
                         </Card>
                         <h2 id="section32" className="text-xl font-bold tracking-tight pt-6">35% of ERC-4337 TVL is in rsETH</h2>
