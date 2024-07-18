@@ -3,6 +3,7 @@ import { Metadata } from "next"
 // import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SiteFooter } from "@/components/site-footer";
+import { ShoutOut } from "@/components/shout-out";
 import { SiteHeader } from "@/components/site-header";
 import { ChainTabs } from "@/components/chain-tabs";
 import { TimeSelect } from "@/components/time-select";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <div className="relative flex min-h-screen flex-col">
+          <ShoutOut />
           <SiteHeader />
           <div className="hidden md:flex flex-1 space-x-4 pl-8 ">
             <ChainTabs />
