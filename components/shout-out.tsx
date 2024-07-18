@@ -3,7 +3,7 @@
 export function ShoutOut() {
     return (
         <div className="container items-center bg-black p-1">
-            <p className="text-center text-m leading-loose text-muted-foreground text-green-500 font-bold">
+            <p className="text-center text-m leading-loose text-green-500 font-bold">
                 CONGRATS TO SAFE ON LAUNCHING THEIR MULTI-CHAIN{" "}
                 <a
                     href="https://safe.global/gas-station"
