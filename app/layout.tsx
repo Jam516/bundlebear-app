@@ -72,7 +72,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <div className="relative flex min-h-screen flex-col">
-          <ShoutOut />
+          {/* <ShoutOut /> */}
           <SiteHeader />
           <div className="hidden md:flex flex-1 space-x-4 pl-8 ">
             <ChainTabs />
