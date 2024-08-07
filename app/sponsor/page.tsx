@@ -44,6 +44,9 @@ export default async function SPage() {
                         <li>A private telegram chat where we can discuss any ERC-4337 data analysis questions</li>
                         <li>Issues and feature requests you bring up will be prioritized</li>
                     </div>
+                    <div className="flex flex-col gap-4">
+                        <h2 id="section11" className="text-xl font-bold tracking-tight pt-6">Contact: kufuorkofi@gmail.com</h2>
+                    </div>
                 </div>
             </div>
         </>
