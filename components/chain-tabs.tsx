@@ -26,7 +26,7 @@ export function ChainTabs() {
     }, [pathname]);
 
     const segments = pathname.split("/");
-    if (segments[1] === 'research' || segments[1] === 'posts' || segments[1] === 'year-in-review') {
+    if (segments[1] === 'research' || segments[1] === 'posts' || segments[1] === 'year-in-review' || segments[1] === 'sponsor') {
         return <div></div>;
     }
 
