@@ -20,7 +20,7 @@ export default async function SPage() {
                             BundleBear is a free, opensource dashboard that delivers data-driven insight into the adoption of <a href="https://www.erc4337.io/" className="text-blue-500 underline">ERC-4337</a> wallets.
                         </p>
                         <p>
-                            Your sponsorship supports BundleBear's development. The funds collected are used to support the development work and hosting fees for the site. My work is only sustainable thanks to the generous financial backing of BundleBear sponsors.
+                            Your sponsorship supports BundleBear&apos;s development. The funds collected are used to support the development work and hosting fees for the site. My work is only sustainable thanks to the generous financial backing of BundleBear sponsors.
                         </p>
                     </div>
                     <div id="section1" className="flex flex-row gap-2 items-center">
@@ -31,8 +31,8 @@ export default async function SPage() {
                         <h2 id="section11" className="text-xl font-bold tracking-tight pt-6">Small Enterprise</h2>
                         <p>$400 a month</p>
                         <p>Are you a small company or startup? Recommended monthly contribution for companies with fewer than 10 employees.</p>
-                        <li>Your company's logo placed in BundleBear's footer</li>
-                        <li>I will join your company chat and answer any ERC-4337 data analysis questions</li>
+                        <li>Your company&apos;s logo placed in BundleBear&apos;s footer</li>
+                        <li>A private telegram chat where we can discuss any ERC-4337 data analysis questions</li>
                         <li>Issues and feature requests you bring up will be prioritized</li>
                     </div>
                     <div className="flex flex-col gap-4">
@@ -40,8 +40,8 @@ export default async function SPage() {
                         <p>$2,000 a month</p>
                         <p>Are you a large company or startup? Recommended monthly contribution for companies with 10 or more employees.</p>
                         <li>Read-access to the BundleBear database via Snowflake Share</li>
-                        <li>Your company's logo placed in BundleBear's footer</li>
-                        <li>I will join your company chat and answer any ERC-4337 data analysis questions</li>
+                        <li>Your company&apos;s logo placed in BundleBear&apos;s footer</li>
+                        <li>A private telegram chat where we can discuss any ERC-4337 data analysis questions</li>
                         <li>Issues and feature requests you bring up will be prioritized</li>
                     </div>
                 </div>
