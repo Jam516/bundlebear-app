@@ -55,6 +55,8 @@ Among known Bundler operators, Alchemy has been hit hardest by the surge in MEV 
 
 Of the UserOps executed by MEV frontrunners, 38% involved USDT transfers, 11% transferred G1 (the token of [Grindery](https://www.grindery.com/) wallet), and 8.6% minted [Piggybox](https://app.earnm.com/en/piggybox) NFTs (rewards for [Earn'm](https://www.earnm.com/) farmers).
 
+Frontrunning doesn't affect the users' experience or negatively affect apps; they only see that their UserOp got executed. But it harms bundler operators who pay gas on failed transactions but don't earn the UserOp fees.
+
 ## What's next?
 
 These frontrunning bots monitor the mempool—the blockchain's waiting room for pending transactions—to identify valuable transactions before execution and execute them first. Bundlers need to use solutions that hide their transactions from these searchers. On Polygon, [Fastlane auctions](https://polygon.fastlane.xyz/) can be used to send bundles directly to validator nodes, preventing frontrunning.
