@@ -8,6 +8,7 @@ interface DeployerDataParams {
 interface DeployerData {
     leaderboard: any[],
     deployments_chart: any[],
+    accounts_chart: any[],
 }
 
 export async function getDeployerData({ chain, timeframe }: DeployerDataParams): Promise<DeployerData> {

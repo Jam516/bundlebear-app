@@ -59,7 +59,7 @@ export function SBChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `${value}`}
+          tickFormatter={(value) => `${value.toLocaleString()}`}
         />
         <Tooltip />
         <Legend />

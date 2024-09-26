@@ -22,7 +22,7 @@ type TransformedEntry = {
 };
 
 const toPercent = (decimal: number, decimalPlaces: number = 1) =>
-  `${(decimal * 100).toFixed(decimalPlaces)}%`;
+  `${(decimal * 100).toFixed(2)}%`;
 
 export function PaymasterTypeMSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 

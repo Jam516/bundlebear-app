@@ -17,6 +17,7 @@ import { TimeSelect } from "@/components/time-select";
 interface DeployerData {
     leaderboard: any[],
     deployments_chart: any[],
+    accounts_chart: any[],
 }
 
 interface TabContentParams {
@@ -60,7 +61,24 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                     </CardContent>
                 </Card>
             </div>
-
+            <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Active Accounts"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <SBChart data={data.accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"FACTORY_NAME"} />
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Active Accounts Marketshare"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <MSChart data={data.accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"FACTORY_NAME"} />
+                    </CardContent>
+                </Card>
+            </div>
         </>
     );
 }
