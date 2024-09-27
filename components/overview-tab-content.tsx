@@ -9,6 +9,7 @@ import {
 } from "@/new-york-ui/card";
 import { BChart } from "@/components/bar-chart";
 import { SBChart } from "@/components/stacked-bar-overview";
+import { SBACChart } from "@/components/stacked-bar-account-category";
 import { StatCard } from "@/components/stat-card";
 import { MSChart } from "@/components/marketshare-bar-overview";
 import { MSCategoryChart } from "@/components/marketshare-bar-categories";
@@ -26,6 +27,7 @@ interface ChainData {
     monthly_bundler_revenue: any[],
     retention: any[],
     userops_by_type: any[],
+    accounts_by_category: any[]
 }
 
 interface TabContentParams {
@@ -120,6 +122,16 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
 
                 </div>
             }
+            <div className="block container mx-auto py-10">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{titleparam + " Active Accounts by Userop Quantity"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <SBACChart data={data.accounts_by_category} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CATEGORY"} usd={false} />
+                    </CardContent>
+                </Card>
+            </div>
             <div className="grid gap-4  grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
@@ -135,16 +147,6 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} /> : <SBChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"CHAIN"} usd={true} />}
-                    </CardContent>
-                </Card>
-            </div>
-            <div className="block container mx-auto py-10">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>{titleparam + " UserOps by Category"}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="pl-2">
-                        <MSCategoryChart data={data.userops_by_type} xaxis={"DATE"} yaxis={"NUM_OPS"} segment={"CATEGORY"} />
                     </CardContent>
                 </Card>
             </div>
