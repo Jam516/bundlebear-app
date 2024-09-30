@@ -1,6 +1,7 @@
 import { getDeployerData } from "@/app/actions/getDeployerData"
 import { Metadata } from "next";
 import { TabContent } from "@/components/deployer-tab-content"
+import { AboutBlock } from "@/components/about-block"
 
 export const metadata: Metadata = {
     title: "BundleBear Account Factory Stats",
@@ -26,6 +27,7 @@ export default async function DeployerPage({ params }: { params: { slug: string[
                         <h2 className="text-3xl font-bold tracking-tight">Account Factories</h2>
                     </div>
                     <TabContent data={data} timeframe={timeframe} />
+                    <AboutBlock />
                 </div>
             </div>
         </>

@@ -1,6 +1,7 @@
 import { getAppData } from "@/app/actions/getAppData"
 import { Metadata } from "next";
 import { TabContent } from "@/components/app-tab-content"
+import { AboutBlock } from "@/components/about-block"
 
 export const metadata: Metadata = {
     title: "BundleBear App Stats",
@@ -26,6 +27,7 @@ export default async function AppPage({ params }: { params: { slug: string[] } }
                         <h2 className="text-3xl font-bold tracking-tight">Applications</h2>
                     </div>
                     <TabContent data={data} timeframe={timeframe} chain={chain} />
+                    <AboutBlock />
                 </div>
             </div>
         </>

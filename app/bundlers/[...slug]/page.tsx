@@ -1,6 +1,7 @@
 import { getBundlerData } from "@/app/actions/getBundlerData"
 import { Metadata } from "next";
 import { TabContent } from "@/components/bundler-tab-content"
+import { AboutBlock } from "@/components/about-block"
 
 // export const maxDuration = 60;
 
@@ -28,6 +29,7 @@ export default async function BundlerPage({ params }: { params: { slug: string[]
             <h2 className="text-3xl font-bold tracking-tight">Bundlers</h2>
           </div>
           <TabContent data={data} timeframe={timeframe} />
+          <AboutBlock />
         </div>
       </div>
     </>

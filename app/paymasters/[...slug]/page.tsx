@@ -1,6 +1,7 @@
 import { getPaymasterData } from "@/app/actions/getPaymasterData"
 import { Metadata } from "next";
 import { TabContent } from "@/components/paymaster-tab-content"
+import { AboutBlock } from "@/components/about-block"
 
 export const metadata: Metadata = {
     title: "BundleBear Paymaster Stats",
@@ -26,6 +27,7 @@ export default async function PaymasterPage({ params }: { params: { slug: string
                         <h2 className="text-3xl font-bold tracking-tight">Paymasters</h2>
                     </div>
                     <TabContent data={data} timeframe={timeframe} />
+                    <AboutBlock />
                 </div>
             </div>
         </>
