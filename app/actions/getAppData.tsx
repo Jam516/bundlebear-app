@@ -7,7 +7,9 @@ interface AppDataParams {
 
 interface AppData {
     usage_chart: any[],
-    leaderboard: any[]
+    leaderboard: any[],
+    ops_chart: any[],
+    ops_paymaster_chart: any[]
 }
 
 export async function getAppData({ chain, timeframe }: AppDataParams): Promise<AppData> {
