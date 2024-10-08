@@ -47,6 +47,12 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
         titleparam = 'Monthly';
     }
 
+    let chainlabel: string = " "
+    if (chain !== 'all') {
+        chainlabel = chain.charAt(0).toUpperCase() + chain.slice(1) + " ";
+    }
+
+
     return (
         <>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -83,7 +89,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Active Smart Accounts"}</CardTitle>
+                        <CardTitle>{chainlabel + titleparam + " Active Smart Accounts"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} usd={false} /> : <SBChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} usd={false} />}
@@ -91,7 +97,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Sucessful UserOps"}</CardTitle>
+                        <CardTitle>{chainlabel + titleparam + " Sucessful UserOps"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} usd={false} /> : <SBChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} usd={false} />}
@@ -102,7 +108,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                 <div className="grid gap-4 grid-cols-1  md:grid-cols-2 ">
                     <Card>
                         <CardHeader>
-                            <CardTitle>{titleparam + " Active Smart Accounts Marketshare"}</CardTitle>
+                            <CardTitle>{chainlabel + titleparam + " Active Smart Accounts Marketshare"}</CardTitle>
                         </CardHeader>
                         <CardContent className="pl-2">
                             {chain != 'all' ? <BChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} usd={false} /> : <MSChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} />}
@@ -110,7 +116,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                     </Card>
                     <Card>
                         <CardHeader>
-                            <CardTitle>{titleparam + " Sucessful UserOps Marketshare"}</CardTitle>
+                            <CardTitle>{chainlabel + titleparam + " Sucessful UserOps Marketshare"}</CardTitle>
                         </CardHeader>
                         <CardContent className="pl-2">
                             {chain != 'all' ? <BChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} usd={false} /> : <MSChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} />}
@@ -125,7 +131,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
             <div className="block container mx-auto py-10">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Active Accounts by Userop Quantity"}</CardTitle>
+                        <CardTitle>{chainlabel + titleparam + " Active Accounts by Userop Quantity"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBACChart data={data.accounts_by_category} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CATEGORY"} usd={false} />
@@ -135,7 +141,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
             <div className="grid gap-4  grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Bundler Revenue"}</CardTitle>
+                        <CardTitle>{chainlabel + titleparam + " Bundler Revenue"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} usd={true} /> : <SBChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} segment={"CHAIN"} usd={true} />}
@@ -143,7 +149,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Paymaster Gas Spend"}</CardTitle>
+                        <CardTitle>{chainlabel + titleparam + " Paymaster Gas Spend"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         {chain != 'all' ? <BChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} /> : <SBChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"CHAIN"} usd={true} />}
@@ -153,7 +159,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
             <div className="hidden md:block container mx-auto py-10">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Account Retention"}</CardTitle>
+                        <CardTitle>{chainlabel + titleparam + " Account Retention"}</CardTitle>
                         <CardDescription>Retention of accounts segmented by the {timeframe} they became active</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">

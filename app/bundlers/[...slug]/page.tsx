@@ -28,7 +28,7 @@ export default async function BundlerPage({ params }: { params: { slug: string[]
           <div className="flex items-center justify-between space-y-2">
             <h2 className="text-3xl font-bold tracking-tight">Bundlers</h2>
           </div>
-          <TabContent data={data} timeframe={timeframe} />
+          <TabContent data={data} timeframe={timeframe} chain={chain} />
           <AboutBlock />
         </div>
       </div>

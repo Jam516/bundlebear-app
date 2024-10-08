@@ -23,9 +23,10 @@ interface DeployerData {
 interface TabContentParams {
     data: DeployerData;
     timeframe: string;
+    chain: string;
 }
 
-export function TabContent({ data, timeframe }: TabContentParams) {
+export function TabContent({ data, timeframe, chain }: TabContentParams) {
 
     let titleparam: string = "Weekly";
     if (timeframe === 'week') {
@@ -36,6 +37,10 @@ export function TabContent({ data, timeframe }: TabContentParams) {
         titleparam = 'Monthly';
     }
 
+    let chainlabel: string = " "
+    if (chain !== 'all') {
+        chainlabel = chain.charAt(0).toUpperCase() + chain.slice(1);
+    }
 
     return (
         <>
@@ -46,7 +51,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Accounts Deployed"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Accounts Deployed"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.deployments_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />
@@ -54,7 +59,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Account Deployment Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Account Deployment Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSChart data={data.deployments_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"DEPLOYER_NAME"} />
@@ -64,7 +69,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Active Accounts"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Active Accounts"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"FACTORY_NAME"} />
@@ -72,7 +77,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Active Accounts Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Active Accounts Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSChart data={data.accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"FACTORY_NAME"} />

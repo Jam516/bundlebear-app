@@ -29,9 +29,10 @@ interface BundlerData {
 interface TabContentParams {
     data: BundlerData;
     timeframe: string;
+    chain: string;
 }
 
-export function TabContent({ data, timeframe }: TabContentParams) {
+export function TabContent({ data, timeframe, chain }: TabContentParams) {
 
     let titleparam: string = "Weekly";
     let titleparam2: string = "Past Week";
@@ -46,6 +47,11 @@ export function TabContent({ data, timeframe }: TabContentParams) {
         titleparam2 = 'Past Month';
     }
 
+    let chainlabel: string = " "
+    if (chain !== 'all') {
+        chainlabel = chain.charAt(0).toUpperCase() + chain.slice(1);
+    }
+
     return (
         <>
             <div className="container mx-auto py-10">
@@ -55,7 +61,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " UserOps Executed"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " UserOps Executed"}</CardTitle>
                         <CardDescription>UserOps executed by bundler</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -64,7 +70,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " UserOps Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " UserOps Marketshare"}</CardTitle>
                         <CardDescription>UserOps executed by bundler</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -75,7 +81,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " OnChain Revenue"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " OnChain Revenue"}</CardTitle>
                         <CardDescription>Revenue earned by charging a premium on UserOp gas</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -84,7 +90,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " % Multi-UserOp Bundles"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " % Multi-UserOp Bundles"}</CardTitle>
                         <CardDescription>% of bundle txns that have multiple UserOps</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -95,7 +101,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Active Accounts"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Active Accounts"}</CardTitle>
                         <CardDescription># of accounts that had a UserOp bundled by each bundler</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -104,7 +110,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Bundles Txns Failed due to Frontrunning"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Bundles Txns Failed due to Frontrunning"}</CardTitle>
                         <CardDescription># of bundles that failed with AA25 nonce error or AA10 sender already constructed</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -115,7 +121,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " % Bundles that were frontran"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " % Bundles that were frontran"}</CardTitle>
                         <CardDescription>% of bundles that failed with AA25 nonce error or AA10 sender already constructed</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">

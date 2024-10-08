@@ -41,7 +41,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
 
     let chainlabel: string = " "
     if (chain !== 'all') {
-        chainlabel = chain;
+        chainlabel = chain.charAt(0).toUpperCase() + chain.slice(1);
     }
 
     return (
@@ -56,7 +56,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{chain + " " + titleparam + " Active Accounts"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Active Accounts"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBChart data={data.usage_chart} />
@@ -64,7 +64,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{chain + " " + titleparam + " Account Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Account Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSChart data={data.usage_chart} />
@@ -74,7 +74,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{chain + " " + titleparam + " Userops"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Userops"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBOPChart data={data.ops_chart} />
@@ -82,7 +82,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{chain + " " + titleparam + " UserOps Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " UserOps Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSOPChart data={data.ops_chart} />
@@ -92,7 +92,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{chain + " " + titleparam + " Userops with Paymaster"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Userops with Paymaster"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <SBOPChart data={data.ops_chart} />
@@ -100,7 +100,7 @@ export function TabContent({ data, timeframe, chain }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{chain + " " + titleparam + " UserOps with Paymaster Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " UserOps with Paymaster Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
                         <MSOPChart data={data.ops_chart} />

@@ -19,6 +19,7 @@ export default async function AppPage({ params }: { params: { slug: string[] } }
     };
     const data = await getAppData({ chain, timeframe });
 
+
     return (
         <>
             <div className="flex flex-col">

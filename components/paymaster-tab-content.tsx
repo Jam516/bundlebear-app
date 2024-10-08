@@ -28,9 +28,10 @@ interface PaymasterData {
 interface TabContentParams {
     data: PaymasterData;
     timeframe: string;
+    chain: string;
 }
 
-export function TabContent({ data, timeframe }: TabContentParams) {
+export function TabContent({ data, timeframe, chain }: TabContentParams) {
     let titleparam: string = "Weekly";
     if (timeframe === 'week') {
         titleparam = 'Weekly';
@@ -38,6 +39,11 @@ export function TabContent({ data, timeframe }: TabContentParams) {
         titleparam = 'Daily';
     } else if (timeframe === 'month') {
         titleparam = 'Monthly';
+    }
+
+    let chainlabel: string = " "
+    if (chain !== 'all') {
+        chainlabel = chain.charAt(0).toUpperCase() + chain.slice(1);
     }
 
     return (
@@ -49,7 +55,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " UserOps Served"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " UserOps Served"}</CardTitle>
                         <CardDescription>UserOps paid for using paymaster</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -58,7 +64,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " UserOp Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " UserOp Marketshare"}</CardTitle>
                         <CardDescription>UserOps paid for using paymaster</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -70,7 +76,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Gas Spend"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Gas Spend"}</CardTitle>
                         <CardDescription>Amount spent using paymaster to cover UserOp gas fees</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -79,7 +85,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Gas Spend Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Gas Spend Marketshare"}</CardTitle>
                         <CardDescription>Amount spent using paymaster to cover UserOp gas fees</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -90,7 +96,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Sponsored vs ERC20 Paymaster UserOps"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Sponsored vs ERC20 Paymaster UserOps"}</CardTitle>
                         <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -99,7 +105,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Sponsored vs ERC20 Paymaster UserOp Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Sponsored vs ERC20 Paymaster UserOp Marketshare"}</CardTitle>
                         <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -110,7 +116,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Sponsored vs ERC20 Paymaster Volume"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Sponsored vs ERC20 Paymaster Volume"}</CardTitle>
                         <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -119,7 +125,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Sponsored vs ERC20 Paymaster Volume Marketshare"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Sponsored vs ERC20 Paymaster Volume Marketshare"}</CardTitle>
                         <CardDescription>Sponsored = App paid for user. ERC20 = User paid in ERC20s.</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
@@ -130,7 +136,7 @@ export function TabContent({ data, timeframe }: TabContentParams) {
             <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{titleparam + " Active Accounts"}</CardTitle>
+                        <CardTitle>{chainlabel + " " + titleparam + " Active Accounts"}</CardTitle>
                         <CardDescription># of accounts that had a UserOp funded by each paymaster</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
