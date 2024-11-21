@@ -10,7 +10,7 @@ export function AboutBlock() {
                 <li>- Apps can use <b>Paymasters</b> to pay for gas on behalf of their users</li>
             </ul>
             <p className="text-green-500 font-bold">
-                LAST UPDATED: {new Date().toISOString().split('T')[0]} 00:00
+                LAST UPDATED: {new Date().toISOString().split('T')[0]} 00:00 UTC
             </p>
         </div>
     )
