@@ -9,6 +9,9 @@ export function AboutBlock() {
                 <li>- <b>Bundlers</b> bundle batches of UserOps into onchain transactions</li>
                 <li>- Apps can use <b>Paymasters</b> to pay for gas on behalf of their users</li>
             </ul>
+            <p className="text-green-500 font-bold">
+                LAST UPDATED: {new Date().toISOString().split('T')[0]} 00:00
+            </p>
         </div>
     )
 }
