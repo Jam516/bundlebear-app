@@ -1,4 +1,4 @@
-import { unstable_noStore as noStore } from "next/cache";
+// import { unstable_noStore as noStore } from "next/cache";
 
 interface EntityDataParams {
     chain: string;
@@ -18,7 +18,7 @@ interface EntityData {
 }
 
 export async function getEntityData({ chain, timeframe, entity }: EntityDataParams): Promise<EntityData> {
-    noStore();
+    // noStore();
     const response = await fetch(`https://bundlebear-api.onrender.com/entity?chain=${chain}&timeframe=${timeframe}&entity=${entity}`);
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);

@@ -1,4 +1,4 @@
-import { unstable_noStore as noStore } from "next/cache";
+// import { unstable_noStore as noStore } from "next/cache";
 
 interface BundlerDataParams {
     chain: string;
@@ -16,7 +16,7 @@ interface BundlerData {
 }
 
 export async function getBundlerData({ chain, timeframe }: BundlerDataParams): Promise<BundlerData> {
-    noStore();
+    // noStore();
     const response = await fetch(`https://bundlebear-api.onrender.com/bundler?chain=${chain}&timeframe=${timeframe}`);
     // , { next: { revalidate: 30 } }
     if (!response.ok) {
