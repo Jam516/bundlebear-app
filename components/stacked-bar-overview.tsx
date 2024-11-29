@@ -65,13 +65,14 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         />
         <Tooltip />
         <Legend />
-        <Bar dataKey="ethereum" stackId="a" fill="#333333" />
-        <Bar dataKey="polygon" stackId="a" fill="#A982ED" />
-        <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
-        <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
         <Bar dataKey="base" stackId="a" fill="#90C2E7" />
+        <Bar dataKey="polygon" stackId="a" fill="#A982ED" />
+        <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
+        <Bar dataKey="linea" stackId="a" fill="#121212" />
+        <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
         <Bar dataKey="avalanche" stackId="a" fill="#823038" />
         <Bar dataKey="bsc" stackId="a" fill="#F0B90B" />
+        <Bar dataKey="ethereum" stackId="a" fill="#333333" />
       </BarChart>
     </ResponsiveContainer>
   );
