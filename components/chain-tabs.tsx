@@ -39,7 +39,7 @@ export function ChainTabs() {
                 <TabsTrigger value="arbitrum">Arbitrum</TabsTrigger>
                 <TabsTrigger value="optimism">Optimism</TabsTrigger>
                 <TabsTrigger value="avalanche">Avalanche</TabsTrigger>
-                <TabsTrigger value="avalanche">BSC</TabsTrigger>
+                <TabsTrigger value="bsc">BSC</TabsTrigger>
                 <TabsTrigger value="ethereum">Ethereum</TabsTrigger>
 
             </TabsList>
