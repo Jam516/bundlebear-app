@@ -34,12 +34,14 @@ export function ChainTabs() {
         <Tabs defaultValue="all" className="space-y-4 pt-6" onValueChange={handleTabChange} value={activeTab}>
             <TabsList>
                 <TabsTrigger value="all">Cross-chain</TabsTrigger>
-                <TabsTrigger value="polygon">Polygon</TabsTrigger>
-                <TabsTrigger value="optimism">Optimism</TabsTrigger>
-                <TabsTrigger value="arbitrum">Arbitrum</TabsTrigger>
                 <TabsTrigger value="base">Base</TabsTrigger>
-                <TabsTrigger value="ethereum">Ethereum</TabsTrigger>
+                <TabsTrigger value="polygon">Polygon</TabsTrigger>
+                <TabsTrigger value="arbitrum">Arbitrum</TabsTrigger>
+                <TabsTrigger value="optimism">Optimism</TabsTrigger>
                 <TabsTrigger value="avalanche">Avalanche</TabsTrigger>
+                <TabsTrigger value="avalanche">BSC</TabsTrigger>
+                <TabsTrigger value="ethereum">Ethereum</TabsTrigger>
+
             </TabsList>
         </Tabs>
     );
