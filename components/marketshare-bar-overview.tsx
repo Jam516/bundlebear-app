@@ -95,6 +95,7 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
         <Bar dataKey="base" stackId="a" fill="#90C2E7" />
         <Bar dataKey="avalanche" stackId="a" fill="#823038" />
+        <Bar dataKey="bsc" stackId="a" fill="#F0B90B" />
       </BarChart>
     </ResponsiveContainer>
   );
