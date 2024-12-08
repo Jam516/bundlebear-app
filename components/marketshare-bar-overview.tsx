@@ -94,6 +94,7 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
         <Bar dataKey="linea" stackId="a" fill="#121212" />
         <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
+        <Bar dataKey="celo" stackId="a" fill="#FCFF52" />
         <Bar dataKey="avalanche" stackId="a" fill="#823038" />
         <Bar dataKey="bsc" stackId="a" fill="#F0B90B" />
         <Bar dataKey="ethereum" stackId="a" fill="#333333" />
