@@ -41,7 +41,6 @@ export default async function YIRPage() {
                     <div className="flex flex-col items-center text-center space-y-2 pb-6">
                         <h2 className="text-5xl font-bold tracking-tight">2024 Year in Review</h2>
                         <p>ERC-4337 smart accounts empower developers to deliver great onchain user experiences.
-                            Using smart accounts, you can build apps where users don&apos;t need to worry about the complexities of gas fees and seed phrase management.
                             In 2024, ERC-4337 adoption grew more than tenfold and impacted a range of categories, from gaming to decentralised social apps. </p>
                         <p>The BundleBear 2024 Year in Review aims to provide a data-driven perspective on the major patterns and trends in the ERC-4337 ecosystem. </p>
                         <i>All insights are based on ERC-4337 activity on Base, Polygon, Optimism, Arbitrum, Linea, Arbitrum Nova, Celo, Avalanche, BSC and Ethereum.</i>
