@@ -15,7 +15,7 @@ import {
 } from "lucide-react"
 import { LChart } from "@/components/line-entity";
 import { BChart } from "@/components/multiop-bar-chart";
-import { Apps, appcolumns, bundlercolumns, paymastermincolumns, deployercolumns } from "@/components/columns"
+import { Apps, appcolumns, bundlercolumns, paymastercolumns, deployercolumns } from "@/components/columns"
 import { DataTable } from "@/components/data-table"
 import MSBarChart from "@/components/marketshare-contracts"
 import { MSChart } from "@/components/marketshare-bar-overview";
@@ -227,7 +227,7 @@ export default async function YIRPage() {
                             <CardHeader>
                             </CardHeader>
                             <CardContent >
-                                <DataTable columns={paymastermincolumns} data={top_paymasters} entity={false} />
+                                <DataTable columns={paymastercolumns} data={top_paymasters} entity={false} />
                             </CardContent>
                         </Card>
                         <h2 id="section33" className="text-xl font-bold tracking-tight pt-6">87% of all UserOps were paid for using a Paymaster</h2>

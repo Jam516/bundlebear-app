@@ -80,9 +80,9 @@ export const bundlercolumns: ColumnDef<Bundler>[] = [
 ]
 
 export type Paymaster = {
-    paymaster_name: string
-    num_userops: number
-    gas_spent: number
+    PAYMASTER_NAME: string
+    NUM_USEROPS: number
+    GAS_SPENT: number
 }
 
 export const paymastercolumns: ColumnDef<Paymaster>[] = [
