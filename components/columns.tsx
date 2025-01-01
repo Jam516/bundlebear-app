@@ -135,8 +135,8 @@ export const paymastercolumns: ColumnDef<Paymaster>[] = [
 ]
 
 export type Deployer = {
-    deployer_name: string
-    num_accounts: number
+    DEPLOYER_NAME: string
+    NUM_ACCOUNTS: number
 }
 
 export const deployercolumns: ColumnDef<Deployer>[] = [

@@ -273,24 +273,24 @@ export default async function YIRPage() {
 
 const top_deployers = [
     {
-        "deployer_name": "simpleaccount",
-        "num_accounts": 1580855
+        "DEPLOYER_NAME": "simpleaccount",
+        "NUM_ACCOUNTS": 1580855
     },
     {
-        "deployer_name": "biconomy",
-        "num_accounts": 858030
+        "DEPLOYER_NAME": "biconomy",
+        "NUM_ACCOUNTS": 858030
     },
     {
-        "deployer_name": "zerodev_kernel",
-        "num_accounts": 566222
+        "DEPLOYER_NAME": "zerodev_kernel",
+        "NUM_ACCOUNTS": 566222
     },
     {
-        "deployer_name": "thirdweb_managedaccount",
-        "num_accounts": 174005
+        "DEPLOYER_NAME": "thirdweb_managedaccount",
+        "NUM_ACCOUNTS": 174005
     },
     {
-        "deployer_name": "alchemy_modularaccount",
-        "num_accounts": 69390
+        "DEPLOYER_NAME": "alchemy_modularaccount",
+        "NUM_ACCOUNTS": 69390
     }
 ]
 
