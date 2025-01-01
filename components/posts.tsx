@@ -24,6 +24,11 @@ export default function Posts() {
                         <br />
                         <p className="text-sm mt-1">{"July 15, 2024"}</p>
                     </li>
+                    <li className="mt-4 text-2xl dark:text-white/90">
+                        <Link className="underline hover:text-black/70 dark:hover:text-white" href={`year-in-review/2024`}>{"2024 Year In Review"}</Link>
+                        <br />
+                        <p className="text-sm mt-1">{"July 15, 2024"}</p>
+                    </li>
                 </ul>
 
             </div>
