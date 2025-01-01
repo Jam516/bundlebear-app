@@ -24,6 +24,9 @@ type TransformedEntry = {
 const toPercent = (decimal: number, decimalPlaces: number = 1) =>
   `${(decimal * 100).toFixed(2)}%`;
 
+const toPercentTick = (decimal: number, decimalPlaces: number = 1) =>
+  `${(decimal * 100).toFixed(0)}%`;
+
 export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
 
   const transformData = (data: DataEntry[]) => {
@@ -85,7 +88,7 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={toPercent}
+          tickFormatter={toPercentTick}
         />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
