@@ -78,8 +78,8 @@ export default async function YIRPage() {
                         <h2 id="section12" className="text-xl font-bold tracking-tight pt-6">21.8M accounts made a UserOp in 2023. But only 4.3M accounts made more than one UserOp.</h2>
                         <p>The majority of accounts that were active in 2024 only transacted once.
                             People farming sign-up rewards and similar token incentive schemes drove this “single-use” behaviour.
-                            Only a few apps inspired “multi-use” behaviour, convincing users to transact more than once.</p>
-                        <p>Monthly active multi-use accounts hit a high of 1M in October.
+                            Only a few apps inspired “repeat use” behaviour, convincing users to transact more than once.</p>
+                        <p>Monthly active repeat-use accounts hit a high of 1M in October.
                             Monthly active single-use accounts peaked earlier in the year in July.</p>
                         <Card className="border-4 border-black">
                             <CardHeader>
@@ -113,27 +113,27 @@ export default async function YIRPage() {
                             Piggybox is an NFT you get when you sign up for EARN&apos;M, along with a lottery box that might contain EARNM token.
                             Cyberconnect is a social app that had a heavily farmed airdrop.
                             It&apos;s easy to see why protocols like these, which reward users even if they only transact once, struggle to retain them.</p>
-                        <h2 id="section14" className="text-xl font-bold tracking-tight pt-6">Trends in Multi-use Accounts Activity</h2>
-                        <p><a href="https://anichess.com/" className="text-blue-500 underline">Anichess</a>, a chess game where you can earn NFTs, was the most popular app amongst multi-use accounts in Q1.</p>
+                        <h2 id="section14" className="text-xl font-bold tracking-tight pt-6">Trends in Repeat-use Accounts Activity</h2>
+                        <p><a href="https://anichess.com/" className="text-blue-500 underline">Anichess</a>, a chess game where you can earn NFTs, was the most popular app amongst repeat-use accounts in Q1.</p>
                         <p>In Q2, <a href="https://x.com/alfafrens_" className="text-blue-500 underline">Alfafrens</a>, a social app where users can stake ALFA to earn DEGEN, briefly took the top spot before being overtaken by <a href="https://blocklords.com/" className="text-blue-500 underline">Blocklords</a>, a strategy game with onchain elements.</p>
-                        <p>Blocklords usage blew up in Q3 and drove a 5X+ increase in monthly active multi-use accounts.
+                        <p>Blocklords usage blew up in Q3 and drove a 5X+ increase in monthly active repeat-use accounts.
                             Then, a social app called OpenSocial took most of the market share.
                             By the end of the year, a mobile game called <a href="https://www.superchamps.com/" className="text-blue-500 underline">SuperChamps</a> had flipped OpenSocial for first place.</p>
                         <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="mx-auto">Project Share of UserOps (Multi-use Accounts)</CardTitle>
+                                <CardTitle className="mx-auto">Project Share of UserOps (Repeat-use Accounts)</CardTitle>
                             </CardHeader>
                             <CardContent >
                                 <MSBarChart data={monthly_app_share} />
                                 <CardFooter><i>* Excluding calls related to factory setup</i></CardFooter>
                             </CardContent>
                         </Card>
-                        <h2 id="section15" className="text-xl font-bold tracking-tight pt-6">55% of Multi-use accounts transacted on Base</h2>
+                        <h2 id="section15" className="text-xl font-bold tracking-tight pt-6">55% of Repeat-use accounts transacted on Base</h2>
                         <p>Base was the second largest chain by smart account usage overall, with 3.7M accounts transacting in 2024. Polygon was first with 16.6M.</p>
-                        <p>But Base had the most multi-use accounts. 2.4M accounts made more than one UserOp on Base in 2024.</p>
+                        <p>But Base had the most repeat-use accounts. 2.4M accounts made more than one UserOp on Base in 2024.</p>
                         <Card className="border-4 border-black">
                             <CardHeader>
-                                <CardTitle className="mx-auto">Chain Share of Monthly Active Multi-use Accounts</CardTitle>
+                                <CardTitle className="mx-auto">Chain Share of Monthly Active Repeat-use Accounts</CardTitle>
                             </CardHeader>
                             <CardContent >
                                 <MSChart data={month_chain_multi_accounts} xaxis={"DATE"} yaxis={"ACTIVE_ACCOUNTS"} segment={"CHAIN"} />
@@ -159,7 +159,7 @@ export default async function YIRPage() {
                             </CardContent>
                         </Card>
                         <h2 id="section22" className="text-xl font-bold tracking-tight pt-6">Top 5 Bundlers</h2>
-                        <p>Here are the Bundlers who had the most activity in 2023</p>
+                        <p>Here are the Bundlers who had the most activity in 2024</p>
                         <Card className="border-4 border-black">
                             <CardHeader>
                                 <CardTitle className="text-xl"> </CardTitle>
@@ -254,10 +254,10 @@ export default async function YIRPage() {
                             </CardContent>
                         </Card>
                         <h2 id="section42" className="text-xl font-bold tracking-tight pt-6">38% of the accounts that got multiple uses were deployed with the SimpleAccount Factory</h2>
-                        <p>SimpleAccount is a factory that was developed by the Ethereum Foundation. Blocklords used this factory to deploy their accounts and that pushed it to the top spot on the multi-use account leaderboard.</p>
+                        <p>SimpleAccount is a factory that was developed by the Ethereum Foundation. Blocklords used this factory to deploy their accounts and that pushed it to the top spot on the repeat-use account leaderboard.</p>
                         <Card className="border-4 border-black">
                             <CardHeader>
-                                <b>Top 5 Factories by Multi-use Accounts Deployed</b>
+                                <b>Top 5 Factories by Repeat-use Accounts Deployed</b>
                             </CardHeader>
                             <CardContent >
                                 <DataTable columns={deployercolumns} data={top_deployers} entity={false} />
@@ -2141,7 +2141,7 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-01-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 413695
     },
     {
@@ -2151,12 +2151,12 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-02-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 426735
     },
     {
         "DATE": "2024-03-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 126316
     },
     {
@@ -2171,7 +2171,7 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-04-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 227787
     },
     {
@@ -2181,12 +2181,12 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-05-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 124543
     },
     {
         "DATE": "2024-06-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 134619
     },
     {
@@ -2196,7 +2196,7 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-07-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 842282
     },
     {
@@ -2206,7 +2206,7 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-08-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 755304
     },
     {
@@ -2221,7 +2221,7 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-09-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 703736
     },
     {
@@ -2231,12 +2231,12 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-10-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 1080348
     },
     {
         "DATE": "2024-11-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 795474
     },
     {
@@ -2246,7 +2246,7 @@ const monthly_active_accounts_cat = [
     },
     {
         "DATE": "2024-12-01",
-        "SENDER_TYPE": "multi-use",
+        "SENDER_TYPE": "repeat-use",
         "ACTIVE_ACCOUNTS": 664930
     },
     {

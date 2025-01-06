@@ -68,7 +68,7 @@ export function LCChart({ data, xaxis, yaxis, segment, pct }: SBChartProps) {
                 <Tooltip />
                 <Legend />
                 <Line type="monotone" dataKey="single-use" stroke="#56569B" />
-                <Line type="monotone" dataKey="multi-use" stroke="#F4603E" />
+                <Line type="monotone" dataKey="repeat-use" stroke="#F4603E" />
             </LineChart>
         </ResponsiveContainer>
     );
