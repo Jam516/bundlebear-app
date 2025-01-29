@@ -58,7 +58,7 @@ export function SiteFooter() {
           </a>
           . The source code is available on{" "}
           <a
-            href="https://github.com/Jam516/bundlebear-app"
+            href="https://github.com/Jam516/BundleBear/tree/main"
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"

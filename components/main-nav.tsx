@@ -86,7 +86,7 @@ export function MainNav({
         Research
       </Link>
       <Link
-        href="https://docs.google.com/spreadsheets/d/1QJEYDOr-AMD2bNAoupfjQJYJabFgdb2TRSyekdIfquM/edit#gid=0"
+        href="https://github.com/Jam516/BundleBear/tree/main/models/erc4337/labels"
         className={cn(
           "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
           segments === "applications" ? "text-foreground" : "text-foreground/60"
