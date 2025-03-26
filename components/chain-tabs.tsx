@@ -36,6 +36,7 @@ export function ChainTabs() {
                 <TabsTrigger value="all">Cross-chain</TabsTrigger>
                 <TabsTrigger value="base">Base</TabsTrigger>
                 <TabsTrigger value="polygon">Polygon</TabsTrigger>
+                <TabsTrigger value="worldchain">Worldchain</TabsTrigger>
                 <TabsTrigger value="arbitrum">Arbitrum</TabsTrigger>
                 <TabsTrigger value="linea">Linea</TabsTrigger>
                 <TabsTrigger value="optimism">Optimism</TabsTrigger>
