@@ -75,6 +75,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Bar dataKey="avalanche" stackId="a" fill="#823038" />
         <Bar dataKey="bsc" stackId="a" fill="#F0B90B" />
         <Bar dataKey="ethereum" stackId="a" fill="#333333" />
+        <Bar dataKey="gnosis" stackId="a" fill="#0d8f75" />
       </BarChart>
     </ResponsiveContainer>
   );
