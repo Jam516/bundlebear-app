@@ -68,7 +68,7 @@ export function SBChart({ data, xaxis, yaxis, segment, usd }: SBChartProps) {
         <Bar dataKey="base" stackId="a" fill="#90C2E7" />
         <Bar dataKey="polygon" stackId="a" fill="#A982ED" />
         <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
-        <Bar dataKey="worldchain" stackId="a" fill="#121212" />
+        <Bar dataKey="worldchain" name="world chain" stackId="a" fill="#121212" />
         <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
         <Bar dataKey="arbitrum_nova" stackId="a" fill="#FF7700" />
         <Bar dataKey="celo" stackId="a" fill="#FCFF52" />
