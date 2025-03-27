@@ -57,7 +57,7 @@ export function TabContent({ data, chain, timeframe }: TabContentParams) {
         <>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <StatCard
-                    title="Total Accounts"
+                    title="Total Accounts Deployed"
                     content={data.deployments[0].NUM_DEPLOYMENTS.toLocaleString()}
                     subheader="Accounts"
                     icon={
