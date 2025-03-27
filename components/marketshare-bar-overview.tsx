@@ -102,7 +102,7 @@ export function MSChart({ data, xaxis, yaxis, segment }: SBChartProps) {
         <Bar dataKey="avalanche" stackId="a" fill="#823038" />
         <Bar dataKey="bsc" stackId="a" fill="#F0B90B" />
         <Bar dataKey="linea" stackId="a" fill="#fff069" />
-        <Bar dataKey="ethereum" stackId="a" fill="#333333" />
+        <Bar dataKey="ethereum" stackId="a" fill="#777780" />
         <Bar dataKey="gnosis" stackId="a" fill="#0d8f75" />
       </BarChart>
     </ResponsiveContainer>
